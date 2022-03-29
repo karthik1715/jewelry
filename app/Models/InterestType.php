@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
+use OwenIt\Auditing\Auditable as AuditableTrait;
 
-class InterestType extends Model
+class InterestType extends Model implements Auditable
 {
-    use HasFactory;
+    use AuditableTrait, HasFactory;
 }

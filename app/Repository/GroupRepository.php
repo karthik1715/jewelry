@@ -1,11 +1,8 @@
 <?php 
 
 namespace App\Repository;
-// namespace App\Services;
-
 use App\Models\Group;
 use App\Repository\IGroupRepository;
-// use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\GroupResource;
 
 
@@ -32,6 +29,7 @@ class GroupRepository implements IGroupRepository
         }
 
         $groupsList  = GroupResource::collection($grouplists);
+        echo "<PRE>";
         print_r($groupsList);
         // return $groupsList; 
         die;
@@ -47,19 +45,19 @@ class GroupRepository implements IGroupRepository
     public function createOrUpdate( $id = null, $collection = [] )
     {   
         if(is_null($id)) {
-            $group = new Group;
-            $group->name = $collection['name'];
-            $group->created_by = 1;//auth()->id();
+            $group              = new Group;
+            $group->name        = $collection['name'];
+            $group->created_by  = 1;//auth()->id();
             return $group->save();
         }
-        $group = Group::find($id);
-        $group->name = $collection['name'];
-        $group->updated_by = 1;//auth()->id();
+        $group                  = Group::find($id);
+        $group->name            = $collection['name'];
+        $group->updated_by      = 1;//auth()->id();
         return $group->save();
     }
     
     public function deleteGroup($id)
     {
-        /* return Group::find($id)->delete(); */
+        return Group::find($id)->delete();
     }
 }

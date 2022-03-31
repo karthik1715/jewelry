@@ -88,8 +88,8 @@ class GroupController extends Controller
 
     public function deleteGroup($id)
     {
-        /* $this->group->deleteGroup($id);
-        $message =  __('app.contacts.group.delete-success');
+        $this->group->deleteGroup($id);
+        /* $message =  __('app.contacts.group.delete-success');
         return redirect()->route('group.list')->with('success',$message); */
     }
     

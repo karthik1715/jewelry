@@ -15,7 +15,7 @@ class CreateGoldLoansTable extends Migration
     {
         Schema::create('gold_loans', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('member_id');
+            $table->bigInteger('customer_id');
             $table->string('loan_no', 50);
             $table->string('coapplicant_id');
             $table->string('nominee_name')->nullable();
@@ -32,7 +32,7 @@ class CreateGoldLoansTable extends Migration
             $table->decimal('sanction_amount', 10, 2)->default(0.0); 
             $table->string('interest_type')->nullable();
             $table->decimal('document_chrages', 10, 2)->default(0.0); 
-            $table->tinyInteger('loan_status')->default(0); 
+            $table->string('loan_status', 50)->default('pending'); 
             $table->bigInteger('created_by');
             $table->bigInteger('approved_by')->nullable();
             $table->dateTime('approved_at')->nullable();

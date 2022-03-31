@@ -15,6 +15,7 @@ class CreateGoldLoanItemsTable extends Migration
     {
         Schema::create('gold_loan_items', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('gold_loan_id');
             $table->bigInteger('group_id');
             $table->bigInteger('item_id');
             $table->tinyInteger('noof_items');
@@ -26,7 +27,7 @@ class CreateGoldLoanItemsTable extends Migration
             $table->decimal('current_gold_rate', 10, 2)->default(0.0);
             $table->decimal('lending_gold_rate', 10, 2)->default(0.0);
             $table->decimal('net_weight_value', 10, 2)->default(0.0);
-            $table->date('remarks')->nullable();
+            $table->string('remarks')->nullable();
             $table->text('item_image');
             $table->string('item_image_path');
             $table->bigInteger('created_by');

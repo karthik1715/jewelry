@@ -26,7 +26,7 @@ class SchemeController extends Controller
     {
         $collection = $request->except(['_token','_method']);
         $schemes = $this->scheme->getAllSchemes($collection);
-        // return View::make('admin.scheme.scheme', compact('schemes'));
+        return View::make('admin.scheme.scheme', compact('schemes'));
     }
     
     /**
@@ -37,7 +37,7 @@ class SchemeController extends Controller
 
     public function createScheme()
     {
-        // return View::make('admin.scheme.form');
+        return View::make('admin.scheme.schemeform');
     }
 
     /**
@@ -49,8 +49,8 @@ class SchemeController extends Controller
 
     public function getScheme($id)
     {
-        // $scheme = $this->scheme->getSchemeById($id);
-        // return View::make('admin.scheme.form', compact('scheme'));
+        $scheme = $this->scheme->getSchemeById($id);
+        return View::make('admin.scheme.schemeform', compact('scheme'));
     }
     
     /**
@@ -65,18 +65,27 @@ class SchemeController extends Controller
     {   
         $collection = $request->except(['_token','_method']);
         
+        
         if( ! is_null( $id ) ) 
         {
             $this->scheme->createOrUpdate($id, $collection);
-            $message =  __('app.contacts.scheme.update-success');
+            $message =  __('app.scheme.update-success');
         }
         else
         {
             $this->scheme->createOrUpdate($id = null, $collection);
-            // $message =  __('app.contacts.scheme.create-success');
+            $message =  __('app.scheme.create-success');
         }
-        /* 
-        return redirect()->route('scheme.list')->with('success',$message); */
+        
+        return redirect()->route('scheme.list')->with('success',$message);
+    }
+
+    public function changeStatus(Request $request, $id = null, $status = null)
+    {   
+        $collection = $request->except(['_token','_method']);
+        $this->scheme->changeStatus($id, $status);
+        $message =  __('app.scheme.update-success');
+        return redirect()->route('scheme.list')->with('success',$message); 
     }
 
     /**
@@ -89,8 +98,8 @@ class SchemeController extends Controller
     public function deleteScheme($id)
     {
         $this->scheme->deleteScheme($id);
-        /* $message =  __('app.contacts.scheme.delete-success');
-        return redirect()->route('scheme.list')->with('success',$message); */
+        $message =  __('app.scheme.delete-success');
+        return redirect()->route('scheme.list')->with('success',$message);
     }
     
 }

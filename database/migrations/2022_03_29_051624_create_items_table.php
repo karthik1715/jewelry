@@ -17,9 +17,9 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->bigInteger('group_id');
             $table->string('name');
-            $table->string('item_code', 50);
+            $table->string('item_code', 25)->nullable();
             $table->string('description')->nullable();
-            $table->string('status')->default('active');
+            $table->tinyInteger('status')->default(1);
             $table->bigInteger('created_by');
             $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('deleted_by')->nullable();

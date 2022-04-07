@@ -26,7 +26,7 @@ class GroupController extends Controller
     {
         $collection = $request->except(['_token','_method']);
         $groups = $this->group->getAllGroups($collection);
-        // return View::make('admin.group.group', compact('groups'));
+        return View::make('admin.group.group', compact('groups'));
     }
     
     /**
@@ -37,7 +37,7 @@ class GroupController extends Controller
 
     public function createGroup()
     {
-        // return View::make('admin.group.form');
+        return View::make('admin.group.groupform');
     }
 
     /**
@@ -49,8 +49,8 @@ class GroupController extends Controller
 
     public function getGroup($id)
     {
-        // $group = $this->group->getGroupById($id);
-        // return View::make('admin.group.form', compact('group'));
+        $group = $this->group->getGroupById($id);
+        return View::make('admin.group.groupform', compact('group'));
     }
     
     /**
@@ -65,18 +65,24 @@ class GroupController extends Controller
     {   
         $collection = $request->except(['_token','_method']);
         
-        if( ! is_null( $id ) ) 
-        {
+        if( ! is_null( $id ) )  {
             $this->group->createOrUpdate($id, $collection);
-            $message =  __('app.contacts.group.update-success');
+            $message =  __('app.group.update-success');
         }
-        else
-        {
+        else {
             $this->group->createOrUpdate($id = null, $collection);
-            // $message =  __('app.contacts.group.create-success');
-        }
-        /* 
-        return redirect()->route('group.list')->with('success',$message); */
+            $message =  __('app.group.create-success');
+        } 
+
+        return redirect()->route('group.list')->with('success',$message); 
+    }
+
+    public function changeStatus(Request $request, $id = null, $status = null)
+    {   
+        $collection = $request->except(['_token','_method']);
+        $this->group->changeStatus($id, $status);
+        $message =  __('app.group.update-success');
+        return redirect()->route('group.list')->with('success',$message); 
     }
 
     /**
@@ -89,8 +95,8 @@ class GroupController extends Controller
     public function deleteGroup($id)
     {
         $this->group->deleteGroup($id);
-        /* $message =  __('app.contacts.group.delete-success');
-        return redirect()->route('group.list')->with('success',$message); */
+        $message =  __('app.group.delete-success');
+        return redirect()->route('group.list')->with('success',$message);
     }
     
 }

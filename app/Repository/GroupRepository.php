@@ -29,12 +29,7 @@ class GroupRepository implements IGroupRepository
         }
 
         $groupsList  = GroupResource::collection($grouplists);
-        echo "<PRE>";
-        print_r($groupsList);
-        // return $groupsList; 
-        die;
-
-        return response([ 'projects' => GroupResource::collection($groups), 'message' => 'Retrieved successfully'], 200);
+        return $groupsList; 
     }
 
     public function getGroupById($id)
@@ -52,6 +47,18 @@ class GroupRepository implements IGroupRepository
         }
         $group                  = Group::find($id);
         $group->name            = $collection['name'];
+        $group->updated_by      = 1;//auth()->id();
+        return $group->save();
+    }
+
+    public function changeStatus( $id = null, $status = null )
+    {   
+        $group                  = Group::find($id);
+        if($status == 0) {
+            $group->status            = 1;
+        } else {
+            $group->status            = 0;
+        }
         $group->updated_by      = 1;//auth()->id();
         return $group->save();
     }

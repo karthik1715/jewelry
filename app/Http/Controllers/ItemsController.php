@@ -26,7 +26,7 @@ class ItemsController extends Controller
     {
         $collection = $request->except(['_token','_method']);
         $items = $this->item->getAllItems($collection);
-        // return View::make('admin.item.item', compact('items'));
+        return View::make('admin.item.item', compact('items'));
     }
     
     /**
@@ -35,9 +35,9 @@ class ItemsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function createItems()
+    public function createItem()
     {
-        // return View::make('admin.item.form');
+        return View::make('admin.item.itemform');
     }
 
     /**
@@ -47,10 +47,10 @@ class ItemsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function getItems($id)
+    public function getItem($id)
     {
-        // $item = $this->item->getItemsById($id);
-        // return View::make('admin.item.form', compact('item'));
+        $item = $this->item->getItemsById($id);
+        return View::make('admin.item.itemform', compact('item'));
     }
     
     /**
@@ -68,15 +68,23 @@ class ItemsController extends Controller
         if( ! is_null( $id ) ) 
         {
             $this->item->createOrUpdate($id, $collection);
-            $message =  __('app.contacts.item.update-success');
+            $message =  __('app.item.update-success');
         }
         else
         {
             $this->item->createOrUpdate($id = null, $collection);
-            // $message =  __('app.contacts.item.create-success');
+            $message =  __('app.item.create-success');
         }
-        /* 
-        return redirect()->route('item.list')->with('success',$message); */
+        
+        return redirect()->route('item.list')->with('success',$message);
+    }
+
+    public function changeStatus(Request $request, $id = null, $status = null)
+    {   
+        $collection = $request->except(['_token','_method']);
+        $this->item->changeStatus($id, $status);
+        $message =  __('app.item.update-success');
+        return redirect()->route('item.list')->with('success',$message); 
     }
 
     /**
@@ -89,8 +97,8 @@ class ItemsController extends Controller
     public function deleteItem($id)
     {
         $this->item->deleteItem($id);
-        /* $message =  __('app.contacts.item.delete-success');
-        return redirect()->route('item.list')->with('success',$message); */
+        $message =  __('app.item.delete-success');
+        return redirect()->route('item.list')->with('success',$message);
     }
     
 }

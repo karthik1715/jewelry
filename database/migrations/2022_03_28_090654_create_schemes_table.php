@@ -32,7 +32,8 @@ class CreateSchemesTable extends Migration
             $table->string('gold_approval');
             $table->decimal('minimum_loan_amount', 10, 2)->default(0.0);
             $table->decimal('maximum_loan_amount', 10, 2)->default(0.0);
-            $table->decimal('processing_fess', 8, 2)->default(0.0);
+            $table->decimal('processing_fees', 8, 2)->default(0.0);
+            $table->tinyInteger('status')->default(1);
             $table->bigInteger('created_by');
             $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('deleted_by')->nullable();

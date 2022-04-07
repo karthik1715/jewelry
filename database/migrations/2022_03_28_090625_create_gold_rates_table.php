@@ -19,6 +19,7 @@ class CreateGoldRatesTable extends Migration
             $table->decimal('current_rate', 10, 2)->default(0.0);
             $table->date('current_date')->nullable();
             $table->string('notes')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->bigInteger('created_by');
             $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('deleted_by')->nullable();

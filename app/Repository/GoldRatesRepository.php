@@ -1,11 +1,8 @@
 <?php 
 
 namespace App\Repository;
-// namespace App\Services;
-
 use App\Models\GoldRates;
 use App\Repository\IGoldRatesRepository;
-// use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\GoldRatesResource;
 
 
@@ -32,12 +29,7 @@ class GoldRatesRepository implements IGoldRatesRepository
         }
 
         $goldratesList  = GoldRatesResource::collection($goldratelists);
-        echo "<PRE>";
-        print_r($goldratesList);
-        // return $goldratesList; 
-        die;
-
-        return response([ 'projects' => GoldRatesResource::collection($goldrates), 'message' => 'Retrieved successfully'], 200);
+        return $goldratesList; 
     }
 
     public function getGoldRatesById($id)
@@ -63,6 +55,18 @@ class GoldRatesRepository implements IGoldRatesRepository
         $goldrate->notes            = $collection['notes'];
         $goldrate->updated_by       = 1;//auth()->id();
         return $goldrate->save();
+    }
+
+    public function changeStatus( $id = null, $status = null )
+    {   
+        $group                  = GoldRates::find($id);
+        if($status == 0) {
+            $group->status            = 1;
+        } else {
+            $group->status            = 0;
+        }
+        $group->updated_by      = 1;//auth()->id();
+        return $group->save();
     }
     
     public function deleteGoldRate($id)

@@ -26,7 +26,7 @@ class GoldRatesController extends Controller
     {
         $collection = $request->except(['_token','_method']);
         $goldrates = $this->goldrate->getAllGoldRates($collection);
-        // return View::make('admin.goldrate.goldrate', compact('goldrates'));
+        return View::make('admin.goldrate.goldrate', compact('goldrates'));
     }
     
     /**
@@ -37,7 +37,7 @@ class GoldRatesController extends Controller
 
     public function createGoldRate()
     {
-        // return View::make('admin.goldrate.form');
+        return View::make('admin.goldrate.goldrateform');
     }
 
     /**
@@ -49,8 +49,8 @@ class GoldRatesController extends Controller
 
     public function getGoldRate($id)
     {
-        // $goldrate = $this->goldrate->getGroupById($id);
-        // return View::make('admin.goldrate.form', compact('goldrate'));
+        $goldrate = $this->goldrate->getGoldRatesById($id);
+        return View::make('admin.goldrate.goldrateform', compact('goldrate'));
     }
     
     /**
@@ -68,15 +68,23 @@ class GoldRatesController extends Controller
         if( ! is_null( $id ) ) 
         {
             $this->goldrate->createOrUpdate($id, $collection);
-            $message =  __('app.contacts.goldrate.update-success');
+            $message =  __('app.goldrate.update-success');
         }
         else
         {
             $this->goldrate->createOrUpdate($id = null, $collection);
-            // $message =  __('app.contacts.goldrate.create-success');
+            $message =  __('app.goldrate.create-success');
         }
-        /* 
-        return redirect()->route('goldrate.list')->with('success',$message); */
+        
+        return redirect()->route('goldrate.list')->with('success',$message);
+    }
+
+    public function changeStatus(Request $request, $id = null, $status = null)
+    {   
+        $collection = $request->except(['_token','_method']);
+        $this->goldrate->changeStatus($id, $status);
+        $message =  __('app.goldrate.update-success');
+        return redirect()->route('goldrate.list')->with('success',$message); 
     }
 
     /**
@@ -89,8 +97,8 @@ class GoldRatesController extends Controller
     public function deleteGoldRate($id)
     {
         $this->goldrate->deleteGoldRate($id);
-        /* $message =  __('app.contacts.goldrate.delete-success');
-        return redirect()->route('goldrate.list')->with('success',$message); */
+        $message =  __('app.goldrate.delete-success');
+        return redirect()->route('goldrate.list')->with('success',$message);
     }
     
 }

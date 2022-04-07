@@ -9,5 +9,7 @@ interface IGroupRepository
 
     public function createOrUpdate( $id = null, $collection = [] );
 
+    public function changeStatus( $id = null, $status = null );
+
     public function deleteGroup($id);
 }

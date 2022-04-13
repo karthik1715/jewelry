@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('title')
-    {{ __('app.group.title') }}
+    {{ __('app.goldloan.title') }}
 @stop
 <!-- Container fluid start -->
 @section('content')
@@ -9,8 +9,8 @@
 		<!-- Page header start -->
 		<div class="page-header">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item">{{ __('app.group.title') }}</li>
-				<li class="breadcrumb-item active">{{ __('app.group.grouplist') }}</li>
+				<li class="breadcrumb-item">{{ __('app.goldloan.title') }}</li>
+				<li class="breadcrumb-item active">{{ __('app.goldloan.goldloanlist') }}</li>
 			</ol>
 
 			<ul class="app-actions">
@@ -19,7 +19,7 @@
 					<i class="icon-search1"></i>
 				</li>
 				<li>
-					<a href="{{route('group.create')}}" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ __('app.group.create-title') }}">
+					<a href="{{route('goldloan.create')}}" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ __('app.goldloan.create-title') }}">
 						<i class="icon-plus"></i>
 					</a>
 				</li>
@@ -42,7 +42,7 @@
 
 			<!-- Fixed body scroll start -->
 			<div class="fixedBodyScroll">
-
+	
 				<!-- Row start -->
 				<div class="row gutters">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -57,7 +57,7 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
-									<form action="#" method="post" class="groupchng-record-model">
+									<form action="#" method="post" class="goldloanchng-record-model">
                                         @csrf
 										<div class="modal-body">
 											<div class="text-center">
@@ -83,12 +83,12 @@
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="customModalLabel">{{ __('app.group.delete-title') }}</h5>
+										<h5 class="modal-title" id="customModalLabel">{{ __('app.goldloan.delete-title') }}</h5>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
-									<form action="#" method="get" class="groupremove-record-model">
+									<form action="#" method="get" class="goldloanremove-record-model">
                                         @csrf
 										<div class="modal-body">
 											<div class="text-center">
@@ -118,40 +118,55 @@
 										<thead>
 											<tr>
 												<th>{{ __('app.general.sno') }}</th>
-												<th>{{ __('app.general.name') }}</th>
-												<th>{{ __('app.general.status') }}</th>
+												<th>{{ __('app.general.appno') }}</th>
+												<th>{{ __('app.general.mname') }}</th>
+												<th>{{ __('app.general.mid') }}</th>
+												<th>{{ __('app.general.nwt') }}</th>
+												<th>{{ __('app.general.amt-apply') }}</th>
+												<th>{{ __('app.general.amt-sanction') }}</th>
+												<th>{{ __('app.general.roi') }}</th>
+												<th>{{ __('app.general.apply-date') }}</th>
+												<th>{{ __('app.general.details') }}</th>
 												<th>{{ __('app.general.action') }}</th>
 											</tr>
 										</thead>
 										<tbody>
 											@php
-												$from   = ($groups->perPage()*($groups->currentPage()-1))+1;
-												$count 	= $from;
-												$to     = ($groups->currentPage() * $groups ->perPage()) ;
-												$total  = $groups->total();
+												$from   = ($goldloans->perPage()*($goldloans->currentPage()-1))+1;
+												$count = $from;
+												$to     = ($goldloans->currentPage() * $goldloans ->perPage()) ;
+												$total  = $goldloans->total();
 												$cal = ( $to >$total )? $total : $to ;
 												$search = isset($_GET['q']) ? $_GET['q']: '';
 											@endphp
-											@forelse ($groups as $key => $grp)
+										
+											@forelse ($goldloans as $gl)
 												<tr>
 													<td>{{ $count++ }}</td>
-													<td>{{$grp->name}}</td>
-													@if ($grp->status == 1)
+													<td>{{ $gl->loan_no??'-' }}</td>
+													<td>{{ $gl->customer_id??'-' }}</td>
+													<td>{{ $gl->customer_id??'-' }}</td>
+													<td>{{ $gl->customer_id??'-' }}</td>
+													<td>{{ $gl->loan_amount??'-' }}</td>
+													<td>{{ $gl->sanction_amount??'-' }}</td>
+													<td>{{ $gl->interest_rate??'-' }}</td>
+													<td>{{ $gl->loan_date }}</td>
+													@if ($gl->status == 1)
 														<td class="text-success">Active</td>
 													@else
 														<td class="text-danger">Inactive</td>
 													@endif
 													<td>
-														<a href="{{ route('group.edit',$grp->id) }}" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ __('app.general.edit') }}">
+														<a href="{{ route('goldloan.edit',$gl->id) }}" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ __('app.general.edit') }}">
 															<i class="icon-pencil"></i>
 														</a>
-														<a class="groupchng-record" data-id="{{$grp->id}}" 
-                                                                data-url="{{ url('group/change/'.$grp->id.'/'.$grp->status) }}" data-toggle="modal" 
+														<a class="goldloanchng-record" data-id="{{$gl->id}}" 
+                                                                data-url="{{ url('goldloan/change/'.$gl->id.'/'.$gl->status) }}" data-toggle="modal" 
                                                                 data-target="#changeGroupModal" data-placement="top" title="" data-original-title="{{ __('app.general.chstatus') }}">
                                                                 <i class="icon-cycle"></i>
                                                         </a>
-														<a class="groupremove-record" data-id="{{$grp->id}}" 
-                                                                data-url="{{ route('group.delete',$grp->id) }}" data-toggle="modal" 
+														<a class="goldloanremove-record" data-id="{{$gl->id}}" 
+                                                                data-url="{{ route('goldloan.delete',$gl->id) }}" data-toggle="modal" 
                                                                 data-target="#deleteGroupModal" data-placement="top" title="" data-original-title="{{ __('app.general.delete') }}">
                                                                 <i class="icon-trash-2"></i>
                                                         </a>
@@ -163,20 +178,19 @@
 										</tbody>
 									</table>
 
-									@if ($groups->links()->paginator->hasPages())
-										
+									@if ($goldloans->links()->paginator->hasPages())
+									
 										<div class="row gutters justify-content-between">
 											<div class="col-2">
 												Showing {{ $from }} to {{ $cal }} of {{ $total  }}
 											</div>
 											<div class="col-2">
-												{!! $groups->appends(['q' => $search])->links() !!}
+												{!! $goldloans->appends(['q' => $search])->links() !!}
 											</div>
 											<div class="col-2"></div>
 										</div>
-
+											
 									@endif
-							</div>
 								</div>
 							</div>
 						</div>
@@ -192,7 +206,7 @@
 		</div>
 		<!-- Content wrapper end -->
 
-		</div>
+	</div>
 	<!-- ** Main container end ** -->
 
 <!-- Container fluid end -->
@@ -200,17 +214,24 @@
 @stop
 @section('script')
 <script> 
-$('.groupremove-record').click(function() {
+$('.goldloanremove-record').click(function() {
     var id = $(this).attr('data-id');
     var url = $(this).attr('data-url');
-    $(".groupremove-record-model").attr("action",url);
+    $(".goldloanremove-record-model").attr("action",url);
 });
 
-$('.groupchng-record').click(function() {
+$('.goldloanchng-record').click(function() {
     var id = $(this).attr('data-id');
     var url = $(this).attr('data-url');
-    $(".groupchng-record-model").attr("action",url);
+    $(".goldloanchng-record-model").attr("action",url);
 });
 
+document.addEventListener('keypress', function (e) {
+	if (e.keyCode === 13 || e.which === 13) {
+		e.preventDefault();
+		$("#changeGroupModal").modal('show');
+		return false;
+	}
+});
 </script>
 @endsection

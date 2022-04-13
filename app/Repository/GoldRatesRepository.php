@@ -45,7 +45,7 @@ class GoldRatesRepository implements IGoldRatesRepository
             $goldrate->current_rate = $collection['current_rate'];
             $goldrate->current_date = $collection['current_date'];
             $goldrate->notes        = $collection['notes'];
-            $goldrate->created_by   = 1;//auth()->id();
+            $goldrate->created_by   = auth()->id();
             return $goldrate->save();
         }
         $goldrate = GoldRates::find($id);
@@ -53,7 +53,7 @@ class GoldRatesRepository implements IGoldRatesRepository
         $goldrate->current_rate     = $collection['current_rate'];
         $goldrate->current_date     = $collection['current_date'];
         $goldrate->notes            = $collection['notes'];
-        $goldrate->updated_by       = 1;//auth()->id();
+        $goldrate->updated_by       = auth()->id();
         return $goldrate->save();
     }
 
@@ -65,7 +65,7 @@ class GoldRatesRepository implements IGoldRatesRepository
         } else {
             $group->status            = 0;
         }
-        $group->updated_by      = 1;//auth()->id();
+        $group->updated_by      = auth()->id();
         return $group->save();
     }
     

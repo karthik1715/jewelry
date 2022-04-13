@@ -42,12 +42,12 @@ class GroupRepository implements IGroupRepository
         if(is_null($id)) {
             $group              = new Group;
             $group->name        = $collection['name'];
-            $group->created_by  = 1;//auth()->id();
+            $group->created_by  = auth()->id();
             return $group->save();
         }
         $group                  = Group::find($id);
         $group->name            = $collection['name'];
-        $group->updated_by      = 1;//auth()->id();
+        $group->updated_by      = auth()->id();
         return $group->save();
     }
 
@@ -59,7 +59,7 @@ class GroupRepository implements IGroupRepository
         } else {
             $group->status            = 0;
         }
-        $group->updated_by      = 1;//auth()->id();
+        $group->updated_by      = auth()->id();
         return $group->save();
     }
     

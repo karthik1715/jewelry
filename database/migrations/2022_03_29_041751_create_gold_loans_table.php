@@ -17,11 +17,11 @@ class CreateGoldLoansTable extends Migration
             $table->id();
             $table->bigInteger('customer_id');
             $table->string('loan_no', 50);
-            $table->string('coapplicant_id');
-            $table->string('nominee_name')->nullable();
+            $table->tinyInteger('coapplicant_id')->default(0); 
+           /*  $table->string('nominee_name')->nullable();
             $table->string('nominee_relation')->nullable();
             $table->date('nominee_dob')->nullable();
-            $table->tinyInteger('nominee_age')->nullable();
+            $table->tinyInteger('nominee_age')->nullable(); */
             $table->bigInteger('scheme_ref_id');
             $table->bigInteger('payment_ref_id');
             $table->tinyInteger('tenure');

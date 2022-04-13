@@ -29,7 +29,7 @@ class CreateSchemesTable extends Migration
             $table->string('penalty')->nullable();
             $table->string('payment_basis_on')->nullable();
             $table->tinyInteger('loan_period')->nullable();
-            $table->string('gold_approval');
+            $table->string('jewel_approval');
             $table->decimal('minimum_loan_amount', 10, 2)->default(0.0);
             $table->decimal('maximum_loan_amount', 10, 2)->default(0.0);
             $table->decimal('processing_fees', 8, 2)->default(0.0);

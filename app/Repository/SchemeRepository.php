@@ -62,11 +62,11 @@ class SchemeRepository implements ISchemeRepository
                 $scheme->penalty                = $collection['penalty'];
                 $scheme->payment_basis_on       = $collection['payment_basis_on'];
                 $scheme->loan_period            = $collection['loan_period'];
-                $scheme->gold_approval          = $collection['gold_approval'];
+                $scheme->jewel_approval          = $collection['jewel_approval'];
                 $scheme->minimum_loan_amount    = $collection['minimum_loan_amount'];
                 $scheme->maximum_loan_amount    = $collection['maximum_loan_amount'];
                 $scheme->processing_fees        = $collection['processing_fees'];
-                $scheme->created_by             = 1;//auth()->id();
+                $scheme->created_by             = auth()->id();
                 $result                         = $scheme->save();
                 $insertedId                     = $scheme->id;
 
@@ -117,11 +117,11 @@ class SchemeRepository implements ISchemeRepository
             $scheme->penalty                = $collection['penalty'];
             $scheme->payment_basis_on       = $collection['payment_basis_on'];
             $scheme->loan_period            = $collection['loan_period'];
-            $scheme->gold_approval          = $collection['gold_approval'];
+            $scheme->jewel_approval          = $collection['jewel_approval'];
             $scheme->minimum_loan_amount    = $collection['minimum_loan_amount'];
             $scheme->maximum_loan_amount    = $collection['maximum_loan_amount'];
             $scheme->processing_fees        = $collection['processing_fees'];
-            $scheme->updated_by             = 1;//auth()->id();
+            $scheme->updated_by             = auth()->id();
             $result                         = $scheme->save();
             $insertedId                     = $id;
 
@@ -165,7 +165,7 @@ class SchemeRepository implements ISchemeRepository
         } else {
             $group->status            = 0;
         }
-        $group->updated_by      = 1;//auth()->id();
+        $group->updated_by      = auth()->id();
         return $group->save();
     }
     

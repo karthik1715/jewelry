@@ -62,7 +62,7 @@ class CustomerRepository implements ICustomerRepository
                 $customer->state_id          = $collection['state_id'];
                 $customer->country_id        = $collection['country_id'];
                 $customer->postal_code       = $collection['postal_code'];
-                $customer->created_by        = 1;//auth()->id();
+                $customer->created_by        = auth()->id();
                 $result                      = $customer->save();
                 DB::commit();
 
@@ -76,7 +76,7 @@ class CustomerRepository implements ICustomerRepository
         }
         /* $customer                  = Customer::find($id);
         $customer->name            = $collection['name'];
-        $customer->updated_by      = 1;//auth()->id();
+        $customer->updated_by      = auth()->id();
         return $customer->save(); */
     }
     

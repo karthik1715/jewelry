@@ -11,4 +11,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Customer extends Model implements Auditable
 {
     use AuditableTrait, HasFactory, SoftDeletes;
+
+    protected $guarded = [];
 }

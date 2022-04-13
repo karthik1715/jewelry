@@ -54,6 +54,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('dashboard', [AuthController::class, 'dashboard'])->middleware('auth');
     Route::get('/autocomplete-search', [TypeaheadController::class,'autocompleteSearch']);
     Route::get('/item-autocomplete-search', [TypeaheadController::class,'autocompleteSearchItem']);
+    Route::get('/cuscode-autocomplete-search', [TypeaheadController::class,'autocompleteSearchCusCode']);
+    Route::get('/schemecode-autocomplete-search', [TypeaheadController::class,'autocompleteSearchSchemeCode']);
 
     #Group
     Route::prefix('group')->group(function () {

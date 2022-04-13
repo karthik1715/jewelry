@@ -69,7 +69,7 @@ class ItemsRepository implements IItemsRepository
         } else {
             $group->status            = 0;
         }
-        $group->updated_by      = 1;//auth()->id();
+        $group->updated_by      = auth()->id();
         return $group->save();
     }
     

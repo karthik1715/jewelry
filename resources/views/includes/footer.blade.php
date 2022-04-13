@@ -66,7 +66,34 @@
         $('#hidden_group_id').val(item.id);
         return item;
     }
-}); */
+}); 
+
+function toggleFullScreen(elem) {
+    // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+        if (elem.requestFullScreen) {
+            elem.requestFullScreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullScreen) {
+            elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+    } else {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+}
+window.onload = toggleFullScreen(document.body);
+*/
 
 $('#btnSubmit').on('click', function(e) {
     
@@ -126,4 +153,73 @@ $(':input.itemname').typeahead({
     }
 });
 
+$(':input.customercode').typeahead({
+    source: function(query, process) {
+        var path = "{{url('cuscode-autocomplete-search')}}";
+        $.get(path, { query: query }, function (data) {
+            if(!data.length) {
+                // $("#schemeSubmit").addClass('disabled');
+            }
+            process(data);
+        });
+    },
+    updater: function(item) {
+
+        // $("#schemeSubmit").removeClass('disabled');
+        if( item.id != '' ) {
+            $('#hidden_customer_id').val(item.id);
+            $('#hidden_customer_code').val(item.customer_code);
+            $('#hidden_nominee_name').val(item.name);
+            $('#hidden_nominee_relation').val(item.customer_code);
+            $('#hidden_nominee_dob').html(item.customer_code);
+            $('#hidden_nominee_age').val(item.customer_code);
+            return item;
+        }
+    }
+});
+
+$(':input.schemename').typeahead({
+    source: function(query, process) {
+        var path = "{{url('schemecode-autocomplete-search')}}";
+        var scheme_type = $("#payment_ref_id").val();
+        $.get(path, { query: query, scheme_type:scheme_type }, function (data) {
+            if(!data.length) {
+                // $("#schemeSubmit").addClass('disabled');
+            }
+            process(data);
+        });
+    },
+    updater: function(item) {
+
+        // $("#schemeSubmit").removeClass('disabled');
+        if( item.id != '' ) {
+            var intvalue = 0;
+            if(item.interests.length > 0) {
+
+                $("#interestDetails").removeClass('d-none');
+                intvalue = item.interests[0].interest_value;
+
+                var tableBody = document.getElementById("interestTable");
+                for(var i=0; i< item.interests.length; i++) {
+                    tableBody.innerHTML += '<tr><td>' + item.interests[i]['from']+ ' to ' + item.interests[i]['to'] +" "+ item.interests[i]['type'] + '</td>'+
+                                                '<td>' + item.interests[i]['interest_value'] + '</td></tr>';
+                }
+            }
+            
+            $('#hidden_scheme_id').val(item.id);
+            $('#hidden_tenure').val(item.loan_period);
+            $('#hidden_interest_rate').val(intvalue);
+            $('#hidden_pay_frequency').html(item.payment_basis_on);
+            $('#hidden_pay_advance').html(item.payment_in_advance);
+            $('#hidden_pay_basis').html(item.payment_basis_on);
+            $('#hidden_min_loan').html(item.minimum_loan_amount);
+            $('#hidden_max_loan').html(item.maximum_loan_amount);
+            $('#hidden_document_chrg').html(item.processing_fees);
+            
+            $("#schemeDetails").removeClass('d-none');
+
+            return item;
+        }
+    }
+});
 </script>

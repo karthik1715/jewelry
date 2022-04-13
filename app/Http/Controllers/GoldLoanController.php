@@ -26,7 +26,7 @@ class GoldLoanController extends Controller
     {
         $collection = $request->except(['_token','_method']);
         $goldloans = $this->goldloan->getAllGoldLoans($collection);
-        // return View::make('admin.goldloan.goldloan', compact('goldloans'));
+        return View::make('admin.goldloan.goldloan', compact('goldloans'));
     }
     
     /**
@@ -37,7 +37,7 @@ class GoldLoanController extends Controller
 
     public function createGoldLoan()
     {
-        // return View::make('admin.goldloan.form');
+        return View::make('admin.goldloan.goldloanform');
     }
 
     /**
@@ -49,8 +49,8 @@ class GoldLoanController extends Controller
 
     public function getGoldLoan($id)
     {
-        // $goldloan = $this->goldloan->getGoldLoanById($id);
-        // return View::make('admin.goldloan.form', compact('goldloan'));
+        $goldloan = $this->goldloan->getGoldLoanById($id);
+        return View::make('admin.goldloan.goldloanform', compact('goldloan'));
     }
     
     /**
@@ -73,10 +73,18 @@ class GoldLoanController extends Controller
         else
         {
             $this->goldloan->createOrUpdate($id = null, $collection);
-            // $message =  __('app.contacts.goldloan.create-success');
+            $message =  __('app.contacts.goldloan.create-success');
         }
-        /* 
-        return redirect()->route('goldloan.list')->with('success',$message); */
+
+        return redirect()->route('goldloan.list')->with('success',$message);
+    }
+
+    public function changeStatus(Request $request, $id = null, $status = null)
+    {   
+        $collection = $request->except(['_token','_method']);
+        $this->goldloan->changeStatus($id, $status);
+        $message =  __('app.goldloan.update-success');
+        return redirect()->route('goldloan.list')->with('success',$message); 
     }
 
     /**
@@ -89,8 +97,8 @@ class GoldLoanController extends Controller
     public function deleteGoldLoan($id)
     {
         $this->goldloan->deleteGoldLoan($id);
-        /* $message =  __('app.contacts.goldloan.delete-success');
-        return redirect()->route('goldloan.list')->with('success',$message); */
+        $message =  __('app.contacts.goldloan.delete-success');
+        return redirect()->route('goldloan.list')->with('success',$message);
     }
     
 }

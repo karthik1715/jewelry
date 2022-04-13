@@ -209,7 +209,7 @@
 										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
 												<label for="inputName">{{ __('app.general.gold-approval') }}</label><span class="text-danger">*</span>
-												<input type="text" class="form-control" name="gold_approval" placeholder="{{ __('app.general.gold-approval') }}" value="{{ $scheme->gold_approval ?? '' }}" required>
+												<input type="text" class="form-control" name="jewel_approval" placeholder="{{ __('app.general.gold-approval') }}" value="{{ $scheme->jewel_approval ?? '' }}" required>
 											</div>
 										</div>
 										
@@ -253,47 +253,45 @@
 									
 									<!-- Row start -->
 									<div class="row gutters">
-									<table class="table table-bordered" id="dynamicTable">  
-										<tr>
-											<th><input type='checkbox' id="checkedAll"></th>
-											<th>{{ __('app.general.from') }}</th>
-											<th>{{ __('app.general.to') }}</th>
-											<th>{{ __('app.general.type') }}</th>
-											<th>{{ __('app.general.interest') }} (%) </th>
-											<th>{{ __('app.general.action') }}</th>
-										</tr>
-
-									@if( isset($scheme->interests) && count($scheme->interests) > 0)
-										@foreach($scheme->interests as $key => $row )   
-											<tr>  
-												<td><input type='checkbox' disabled></td>
-												<td><input type="text" name="interest_rate[{{$key}}][from]" placeholder="1" class="form-control" value="{{ ($row->from) }}" /></td>  
-												<td><input type="text" name="interest_rate[{{$key}}][to]" placeholder="30" class="form-control" value="{{ ($row->to) }}" /></td>  
-												<td><input type="text" name="interest_rate[{{$key}}][type]" placeholder="days" class="form-control" value="{{ ($row->type) }}" /></td>  
-												<td><input type="text" name="interest_rate[{{$key}}][interest_value]" placeholder="18" class="form-control" value="{{ ($row->interest_value) }}" /></td>  
-												<td><button type="button" class="btn btn-danger remove-tr">Remove</button></td>  
-											</tr>  
-										@endforeach
-											<tr>  
-												<td colspan='4'><input type="hidden" id="keyValue" value="{{ $key }}" /></td>  
-												<td><button type="button" name="add" id="add" class="btn btn-success">Add More</button>  
-													<button type="button" id="deleteButton" disabled class="btn btn-danger delete-row" >Delete Row</button></td>
-
+										<table class="table table-bordered" id="dynamicTable">  
+											<tr>
+												<th><input type='checkbox' id="checkedAll"></th>
+												<th>{{ __('app.general.from') }}</th>
+												<th>{{ __('app.general.to') }}</th>
+												<th>{{ __('app.general.type') }}</th>
+												<th>{{ __('app.general.interest') }} (%) </th>
+												<th>{{ __('app.general.action') }}</th>
 											</tr>
-									@else
-										<tr>  
-											<td><input type='checkbox' disabled></td>
-											<td><input type="text" name="interest_rate[0][from]" placeholder="1" class="form-control" /></td>  
-											<td><input type="text" name="interest_rate[0][to]" placeholder="30" class="form-control" /></td>  
-											<td><input type="text" name="interest_rate[0][type]" placeholder="days" class="form-control" /></td>  
-											<td><input type="text" name="interest_rate[0][interest_value]" placeholder="18" class="form-control" /></td>  
-											<td><button type="button" name="add" id="add" class="btn btn-success">Add More</button>
-												<button type="button" id="deleteButton" disabled class="btn btn-danger delete-row" >Delete Row</button></td>  
-										</tr>  
-									@endif
-									<span id="contact_count" class="d-none"></span>
-									<span id="error_count" class="d-none"></span>
+
+											@if( isset($scheme->interests) && count($scheme->interests) > 0)
+												@foreach($scheme->interests as $key => $row )   
+													<tr>  
+														<td><input type='checkbox' disabled></td>
+														<td><input type="text" name="interest_rate[{{$key}}][from]" placeholder="1" class="form-control" value="{{ ($row->from) }}" /></td>  
+														<td><input type="text" name="interest_rate[{{$key}}][to]" placeholder="30" class="form-control" value="{{ ($row->to) }}" /></td>  
+														<td><input type="text" name="interest_rate[{{$key}}][type]" placeholder="days" class="form-control" value="{{ ($row->type) }}" /></td>  
+														<td><input type="text" name="interest_rate[{{$key}}][interest_value]" placeholder="18" class="form-control" value="{{ ($row->interest_value) }}" /></td>  
+														<td><button type="button" class="btn btn-danger remove-tr"><i class="icon-trash-2"></i></button></td>  
+													</tr>  
+												@endforeach
+													<input type="hidden" id="keyValue" value="{{ $key }}" />
+												@else
+													<tr>  
+														<td><input type='checkbox' disabled></td>
+														<td><input type="text" name="interest_rate[0][from]" placeholder="1" class="form-control" /></td>  
+														<td><input type="text" name="interest_rate[0][to]" placeholder="30" class="form-control" /></td>  
+														<td><input type="text" name="interest_rate[0][type]" placeholder="days" class="form-control" /></td>  
+														<td><input type="text" name="interest_rate[0][interest_value]" placeholder="18" class="form-control" /></td>
+														<td></td>
+													</tr>  
+											@endif
+											<span id="contact_count" class="d-none"></span>
+											<span id="error_count" class="d-none"></span>
 										</table> 
+										<div class="custom-btn-group">
+											<button type="button" name="add" id="add" class="btn btn-success">Add More</button>
+											<button type="button" id="deleteButton" disabled class="btn btn-danger delete-row" >Delete Row</button>
+										</div>
 									</div>
 									<!-- Row end -->
 
@@ -316,7 +314,7 @@
 		</div>
 		<!-- Content wrapper end -->
 
-		</div>
+	</div>
 	<!-- ** Main container end ** -->
 
 <!-- Container fluid end -->
@@ -332,12 +330,12 @@
 			i = $key;
 		}
 		++i;
-		$("#dynamicTable").append('<tr><td><input type="checkbox" class="checkSingle" name="record"></td>'+
+		$("#dynamicTable").append('<tr><td><input type="checkbox" class="checkSingle" onchange="toggleCheckbox(this)" name="record"></td>'+
 									  '<td><input type="text" id="interest_rate_from_'+i+'" name="interest_rate['+i+'][from]" onblur="nameCheck(this)" placeholder="31" class="form-control" /></td>'+
 									  '<td><input type="text" id="interest_rate_to_'+i+'" name="interest_rate['+i+'][to]" placeholder="60" class="form-control" /></td>'+
 									  '<td><input type="text" id="interest_rate_type_'+i+'" name="interest_rate['+i+'][type]" placeholder="days" class="form-control" /></td>'+
 									  '<td><input type="text" id="interest_rate_iv_'+i+'" name="interest_rate['+i+'][interest_value]" placeholder="18" class="form-control" /></td>'+
-									  '<td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>');
+									  '<td><button type="button" class="btn btn-danger remove-tr"><i class="icon-trash-2"></i></button></td></tr>');
 		$('#keyValue').val(i);					  
 	});
 
@@ -372,31 +370,32 @@
 		}
 	});
 
-	/* $(".checkSingle").click(function () {
-		alert('hi');
-	var count = $(".checkSingle:checked").length;
-	console.log(count);
-	$('#contact_count').text(count);
-
-	if( count < 1) {
-		$("#deleteButton").prop("disabled", true);
-	}
-
-	if ($(this).is(":checked")) {
+	function toggleCheckbox(element) {
 		var isAllChecked = 0;
-		$(".checkSingle").each(function(){
-			if(!this.checked) {
-				isAllChecked = 1;
-				$("#deleteButton").prop("disabled", false); 
-			}
-		})              
-		if(isAllChecked == 0) { 
-			$("#checkedAll").prop("checked", true);
-		}     
+		var count = $(".checkSingle:checked").length;
+		
+		$('#contact_count').text(count);
+
+		if( count < 1) {
+			$("#deleteButton").prop("disabled", true);
+		}
+
+		if (element.checked) {
+			var isAllChecked = 0;
+			$(".checkSingle").each(function(){
+				if(!this.checked) {
+					isAllChecked = 1;
+					$("#deleteButton").prop("disabled", false); 
+				}
+			})              
+			if(isAllChecked == 0) { 
+				$("#checkedAll").prop("checked", true);
+			}     
 		} else {
 			$("#checkedAll").prop("checked", false);
 		}
-	}); */
+		
+	}
 
 	function nameCheck(_input) {  
 		var x = _input;

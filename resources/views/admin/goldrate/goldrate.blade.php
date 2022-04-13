@@ -117,7 +117,7 @@
 									<table class="table table-bordered table-striped">
 										<thead>
 											<tr>
-												<th>{{ __('app.general.id') }}</th>
+												<th>{{ __('app.general.sno') }}</th>
 												<th>{{ __('app.group.formtitle') }}</th>
 												<th>{{ __('app.general.goldrate') }}</th>
 												<th>{{ __('app.general.date') }}</th>
@@ -160,7 +160,7 @@
 														<a class="goldrateremove-record" data-id="{{$grs->id}}" 
                                                                 data-url="{{ route('goldrate.delete',$grs->id) }}" data-toggle="modal" 
                                                                 data-target="#deleteGroupModal" data-placement="top" title="" data-original-title="{{ __('app.general.delete') }}">
-                                                                <i class="icon-trash"></i>
+                                                                <i class="icon-trash-2"></i>
                                                         </a>
 													</td>
 												</tr>

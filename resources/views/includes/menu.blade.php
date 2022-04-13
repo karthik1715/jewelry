@@ -195,7 +195,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="appsDropdown">
                     <li>
-                        <a class="dropdown-item" href="{{url('dashboard')}}">New Gold Loan </a>
+                        <a class="dropdown-item" href="{{url('goldloan')}}">New Gold Loan </a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="{{url('dashboard')}}">Pending Gold Loans</a>

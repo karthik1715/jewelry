@@ -13,6 +13,10 @@ class Group extends Model implements Auditable
     use AuditableTrait, HasFactory, SoftDeletes;
 
     protected $guarded = [];
+    
+    protected $with = [
+        // 'goldrates','items'
+    ];
 
     public function goldrates()
     {

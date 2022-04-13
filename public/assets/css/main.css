@@ -795,7 +795,7 @@ ul.header-tasks:last-child {
 .content-wrapper {
   padding: 1.5rem 0 1.5rem 0;
   background: #ffffff;
-  height: calc(100vh - 230px);
+  height: calc(100vh - 180px);
   overflow: hidden; }
   .content-wrapper .fixedBodyScroll {
     padding: 0 1rem 0 1rem; }
@@ -7269,7 +7269,7 @@ button:focus {
     .card.secondary .card-header {
       border-bottom: 1px solid #f02727; }
   .card .card-body {
-    padding: 1.25rem 1.25rem;
+    padding: 0.25rem 1.25rem;
     position: relative; }
     .card .card-body .card-title {
       margin-bottom: .7rem;

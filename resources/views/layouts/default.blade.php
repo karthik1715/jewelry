@@ -33,7 +33,8 @@
 			************ Required JavaScript Files *************
 		************* -->
         @include('includes.footer')
-
+		<!-- <input type="button" id="someLinkId" value="click to toggle fullscreen on the body" onclick="toggleFullScreen(document.body)" /> 
+		<a id="someLinkId" onclick="toggleFullScreen(document.body)" >link</a> -->
 	</body>
     @yield('script')
 </html>

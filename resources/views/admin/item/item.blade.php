@@ -117,7 +117,7 @@
 									<table class="table table-bordered table-striped">
 										<thead>
 											<tr>
-												<th>{{ __('app.general.id') }}</th>
+												<th>{{ __('app.general.sno') }}</th>
 												<th>{{ __('app.group.formtitle') }}</th>
 												<th>{{ __('app.item.title') }}</th>
 												<th>{{ __('app.general.code') }}</th>
@@ -159,7 +159,7 @@
 														<a class="itemremove-record" data-id="{{$item->id}}" 
                                                                 data-url="{{ route('item.delete',$item->id) }}" data-toggle="modal" 
                                                                 data-target="#deleteGroupModal" data-placement="top" title="" data-original-title="{{ __('app.general.delete') }}">
-                                                                <i class="icon-trash"></i>
+                                                                <i class="icon-trash-2"></i>
                                                         </a>
 													</td>
 												</tr>

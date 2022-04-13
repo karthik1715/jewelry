@@ -123,7 +123,7 @@
 									<table class="table table-bordered table-striped">
 										<thead>
 											<tr>
-												<th>{{ __('app.general.id') }}</th>
+												<th>{{ __('app.general.sno') }}</th>
 												<th>{{ __('app.general.name') }}</th>
 												<th>{{ __('app.general.from') }}</th>
 												<th>{{ __('app.general.to') }}</th>
@@ -164,7 +164,7 @@
 														<a class="schemeremove-record" data-id="{{$sch->id}}" 
                                                                 data-url="{{ route('scheme.delete',$sch->id) }}" data-toggle="modal" 
                                                                 data-target="#deleteGroupModal" data-placement="top" title="" data-original-title="{{ __('app.general.delete') }}">
-                                                                <i class="icon-trash"></i>
+                                                                <i class="icon-trash-2"></i>
                                                         </a>
 													</td>
 												</tr>

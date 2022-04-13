@@ -136,7 +136,7 @@
 		</div>
 		<!-- Content wrapper end -->
 
-		</div>
+	</div>
 	<!-- ** Main container end ** -->
 
 <!-- Container fluid end -->

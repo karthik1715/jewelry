@@ -31,12 +31,7 @@ class GoldLoanRepository implements IGoldLoanRepository
         }
 
         $goldloansList  = GoldLoanResource::collection($goldloanlists);
-        echo "<PRE>";
-        print_r($goldloansList);
-        // return $goldloansList; 
-        die;
-
-        return response([ 'projects' => GoldLoanResource::collection($goldloans), 'message' => 'Retrieved successfully'], 200);
+        return $goldloansList; 
     }
 
     public function getGoldLoanById($id)
@@ -68,7 +63,7 @@ class GoldLoanRepository implements IGoldLoanRepository
                 $goldloan->frequency                = $collection['frequency'];
                 $goldloan->loan_date                = $collection['loan_date'];
                 $goldloan->loan_amount              = $collection['loan_amount'];
-                $goldloan->created_by               = 1;//auth()->id();
+                $goldloan->created_by               = auth()->id();
                 $result                             = $goldloan->save();
                 $insertedId                         = $goldloan->id;
 
@@ -90,7 +85,7 @@ class GoldLoanRepository implements IGoldLoanRepository
                     $glItems->remarks               = 'test';
                     $glItems->item_image            = 'profilr.jpeg';
                     $glItems->item_image_path       = 'http://localhost/';
-                    $glItems->created_by            = 1;//auth()->id();
+                    $glItems->created_by            = auth()->id();
                     $glItems->save();
 
                     DB::commit();
@@ -108,12 +103,23 @@ class GoldLoanRepository implements IGoldLoanRepository
                 DB::rollBack();
             }
             
-            
         }
         /* $goldloan                  = GoldLoans::find($id);
         $goldloan->name            = $collection['name'];
-        $goldloan->updated_by      = 1;//auth()->id();
+        $goldloan->updated_by      = auth()->id();
         return $goldloan->save(); */
+    }
+
+    public function changeStatus( $id = null, $status = null )
+    {   
+        $group                  = GoldLoans::find($id);
+        if($status == 0) {
+            $group->status            = 1;
+        } else {
+            $group->status            = 0;
+        }
+        $group->updated_by      = auth()->id();
+        return $group->save();
     }
     
     public function deleteGoldLoan($id)

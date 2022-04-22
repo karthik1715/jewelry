@@ -9,6 +9,7 @@ use App\Models\Group;
 use App\Models\Items;
 use App\Models\Customer;
 use App\Models\Scheme;
+use App\Models\GoldPurity;
 
 class TypeaheadController extends Controller
 {
@@ -41,8 +42,68 @@ class TypeaheadController extends Controller
     {
         $query          = $request->get('query');
         $scheme_type    = $request->get('scheme_type');
-        $schemeResult   = Scheme::with('goldrates')->where('loan_basis',$scheme_type)
+        $schemeResult   = Scheme::with('interests')->where('loan_basis',$scheme_type)
                                  ->where('name', 'LIKE', '%'. $query. '%')->get();
         return response()->json($schemeResult);
+    } 
+
+    # Search Group By Name
+    public function autocompleteSearchGroup(Request $request)
+    {
+        $query = $request->get('term');
+        $filterResult = Group::with('goldrates')->where('name', 'LIKE', '%'. $query. '%')->get();
+        $res = array();
+
+        if( count($filterResult) ) {
+            foreach( $filterResult as $item) {
+
+                if( !empty($item->goldrates[0]['current_rate']) ) {
+                    $current_rate = $item->goldrates[0]['current_rate'];
+                } else {
+                    $current_rate = 0;
+                }
+
+                $res[] = array("value"=>$item['id'],"label"=>$item['name'],"currate"=>$current_rate);
+            }
+        }
+
+        return response()->json($res);
+    } 
+
+    # Search Item By Name
+    public function autocompleteSearchItemNames(Request $request)
+    {
+        $query  = $request->get('term');
+        $group_id = $request->get('groupId');
+        $filterResult = Items::where('name', 'LIKE', '%'. $query. '%')->where('group_id', $group_id)->get();
+        $res = array();
+
+        if( count($filterResult) ) {
+            foreach( $filterResult as $item) {
+                $res[] = array("value"=>$item['id'],"label"=>$item['name']);
+            }
+        }
+
+        return response()->json($res);
+    } 
+
+    # Search Item By Name
+    public function getItemPurity(Request $request)
+    {
+        $group_id = $request->get('groupId');
+        $count    = $request->get('count');
+        $filterResult = GoldPurity::where('group_id', $group_id)->where('status', '1')->get();
+        $res = '<select type="text" id="add_items_purity_in_karat_'.$count.'" name="add_items['.$count.'][purity_in_karat]" data-id='.$count.' class="form-control" onchange="selectPurity(this)" >';
+
+        if( count($filterResult) ) {
+            $res .= '<option value="">Select Purity</option>';
+            foreach( $filterResult as $item) {
+                $res .= '<option value="'.$item['id'].'" data-id="'.$item['purity'].'" >'.$item['karat_type'].'</option>';
+            }
+            $res .= '</select>';
+        }else{
+            $res .= '<option value="">Purity not available</option>';
+        }
+        return response()->json($res);
     } 
 }

@@ -16,6 +16,11 @@ class Scheme extends Model implements Auditable
         'item','interests'
     ];
 
+    public function group()
+    {
+        return $this->belongsTo(Group::class,'group_ref_id','id');
+    }
+
     public function item()
     {
         return $this->belongsTo(Items::class,'item_ref_id','id');

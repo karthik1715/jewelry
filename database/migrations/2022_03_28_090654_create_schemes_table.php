@@ -18,7 +18,7 @@ class CreateSchemesTable extends Migration
             $table->bigInteger('scheme_type_id');
             $table->string('name');
             $table->text('description');
-            $table->bigInteger('item_ref_id');
+            $table->bigInteger('group_ref_id');
             $table->date('start_date');
             $table->date('end_date');
             $table->tinyInteger('loan_basis');
@@ -29,7 +29,7 @@ class CreateSchemesTable extends Migration
             $table->string('penalty')->nullable();
             $table->string('payment_basis_on')->nullable();
             $table->tinyInteger('loan_period')->nullable();
-            $table->string('jewel_approval');
+            $table->string('lending_rate');
             $table->decimal('minimum_loan_amount', 10, 2)->default(0.0);
             $table->decimal('maximum_loan_amount', 10, 2)->default(0.0);
             $table->decimal('processing_fees', 8, 2)->default(0.0);

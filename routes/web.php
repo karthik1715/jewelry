@@ -56,6 +56,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/item-autocomplete-search', [TypeaheadController::class,'autocompleteSearchItem']);
     Route::get('/cuscode-autocomplete-search', [TypeaheadController::class,'autocompleteSearchCusCode']);
     Route::get('/schemecode-autocomplete-search', [TypeaheadController::class,'autocompleteSearchSchemeCode']);
+    Route::post('/group-autocomplete-search', [TypeaheadController::class,'autocompleteSearchGroup']);
+    Route::post('/item-autocomplete-search', [TypeaheadController::class,'autocompleteSearchItemNames']);
+    Route::post('/get-purity', [TypeaheadController::class,'getItemPurity']);
+
 
     #Group
     Route::prefix('group')->group(function () {

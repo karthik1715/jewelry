@@ -18,6 +18,8 @@ class CreateCustomersTable extends Migration
             $table->string('customer_code', 50);
             $table->string('name');
             $table->tinyInteger('gender');
+            $table->date('dob')->nullable();
+            $table->tinyInteger('age')->default(0);
             $table->bigInteger('phone_no')->nullable()->unique();
             $table->string('email')->nullable()->unique();
             $table->text('address')->nullable();

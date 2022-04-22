@@ -74,7 +74,7 @@
 											<!-- Form goldrate start -->
 											<div class="form-group">
 												<label for="inputName">{{ __('app.group.formtitle') }}</label><span class="text-danger">*</span>
-												<input type="text" class="form-control groupname" id="group_name" name="group_name" placeholder="{{ __('app.group.formtitle') }}" value="{{ $goldrate->group->name ?? '' }}" required>
+												<input type="text" class="form-control groupname" id="group_name" name="group_name" autocomplete = "off" placeholder="{{ __('app.group.formtitle') }}" value="{{ $goldrate->group->name ?? '' }}" required>
 												<input type="hidden" name="group_id" id="hidden_group_id" value="{{ $goldrate->id ?? '' }}" >
 											</div>
 											<!-- Form goldrate end -->

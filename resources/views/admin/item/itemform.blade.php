@@ -74,7 +74,7 @@
 											<!-- Form item start -->
 											<div class="form-group">
 												<label for="inputName">{{ __('app.group.formtitle') }}</label><span class="text-danger">*</span>
-												<input type="text" class="form-control groupname" id="group_name" name="group_name" placeholder="{{ __('app.group.formtitle') }}" value="{{ $item->group->name ?? '' }}" >
+												<input type="text" class="form-control groupname" id="group_name" name="group_name" autocomplete = "off" placeholder="{{ __('app.group.formtitle') }}" value="{{ $item->group->name ?? '' }}" >
 												<input type="hidden" name="group_id" id="hidden_group_id" value="{{ $item->id ?? '0' }}" >
 											</div>
 											<!-- Form item end -->

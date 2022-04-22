@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2022 at 03:03 PM
+-- Generation Time: Apr 08, 2022 at 05:55 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -252,7 +252,13 @@ INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `
 (258, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 85, '[]', '{\"scheme_id\":\"76\",\"from\":\"61\",\"to\":\"90\",\"type\":\"days\",\"interest_value\":\"15.00\",\"id\":85}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36', NULL, '2022-04-07 06:09:26', '2022-04-07 06:09:26'),
 (259, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 86, '[]', '{\"scheme_id\":\"76\",\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"13.00\",\"id\":86}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36', NULL, '2022-04-07 06:11:44', '2022-04-07 06:11:44'),
 (260, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 87, '[]', '{\"scheme_id\":\"76\",\"from\":\"31\",\"to\":\"60\",\"type\":\"days\",\"interest_value\":\"14.00\",\"id\":87}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36', NULL, '2022-04-07 06:11:44', '2022-04-07 06:11:44'),
-(261, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 88, '[]', '{\"scheme_id\":\"76\",\"from\":\"61\",\"to\":\"90\",\"type\":\"days\",\"interest_value\":\"15.00\",\"id\":88}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36', NULL, '2022-04-07 06:11:44', '2022-04-07 06:11:44');
+(261, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 88, '[]', '{\"scheme_id\":\"76\",\"from\":\"61\",\"to\":\"90\",\"type\":\"days\",\"interest_value\":\"15.00\",\"id\":88}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36', NULL, '2022-04-07 06:11:44', '2022-04-07 06:11:44'),
+(262, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Scheme', 76, '{\"updated_by\":2}', '{\"updated_by\":1}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-07 23:06:50', '2022-04-07 23:06:50'),
+(263, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 89, '[]', '{\"scheme_id\":\"76\",\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"13.00\",\"id\":89}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-07 23:06:50', '2022-04-07 23:06:50'),
+(264, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 90, '[]', '{\"scheme_id\":\"76\",\"from\":\"31\",\"to\":\"60\",\"type\":\"days\",\"interest_value\":\"14.00\",\"id\":90}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-07 23:06:50', '2022-04-07 23:06:50'),
+(265, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 91, '[]', '{\"scheme_id\":\"76\",\"from\":\"61\",\"to\":\"90\",\"type\":\"days\",\"interest_value\":\"15.00\",\"id\":91}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-07 23:06:50', '2022-04-07 23:06:50'),
+(266, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 92, '[]', '{\"scheme_id\":\"76\",\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"13.00\",\"id\":92}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-08 06:23:41', '2022-04-08 06:23:41'),
+(267, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Group', 4, '{\"status\":1,\"updated_by\":null}', '{\"status\":0,\"updated_by\":1}', 'http://localhost/jewelry/group/change/4/1', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-08 09:12:59', '2022-04-08 09:12:59');
 
 -- --------------------------------------------------------
 
@@ -527,7 +533,7 @@ CREATE TABLE `groups` (
 INSERT INTO `groups` (`id`, `name`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Gold', 1, 1, 1, NULL, '2022-03-29 12:19:16', '2022-04-04 23:54:40', NULL),
 (2, 'Diamond', 1, 1, 1, NULL, '2022-03-29 22:58:53', '2022-04-05 01:12:40', NULL),
-(4, 'Silver', 1, 1, NULL, NULL, '2022-04-04 01:37:52', '2022-04-04 01:43:55', NULL);
+(4, 'Silver', 0, 1, 1, NULL, '2022-04-04 01:37:52', '2022-04-08 09:12:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -615,9 +621,13 @@ INSERT INTO `interest_rates` (`id`, `scheme_id`, `from`, `to`, `type`, `interest
 (83, 76, 1, 30, 'days', '13.00', '2022-04-07 06:09:26', '2022-04-07 06:11:44', '2022-04-07 06:11:44'),
 (84, 76, 31, 60, 'days', '14.00', '2022-04-07 06:09:26', '2022-04-07 06:11:44', '2022-04-07 06:11:44'),
 (85, 76, 61, 90, 'days', '15.00', '2022-04-07 06:09:26', '2022-04-07 06:11:44', '2022-04-07 06:11:44'),
-(86, 76, 1, 30, 'days', '13.00', '2022-04-07 06:11:44', '2022-04-07 06:11:44', NULL),
-(87, 76, 31, 60, 'days', '14.00', '2022-04-07 06:11:44', '2022-04-07 06:11:44', NULL),
-(88, 76, 61, 90, 'days', '15.00', '2022-04-07 06:11:44', '2022-04-07 06:11:44', NULL);
+(86, 76, 1, 30, 'days', '13.00', '2022-04-07 06:11:44', '2022-04-07 23:06:50', '2022-04-07 23:06:50'),
+(87, 76, 31, 60, 'days', '14.00', '2022-04-07 06:11:44', '2022-04-07 23:06:50', '2022-04-07 23:06:50'),
+(88, 76, 61, 90, 'days', '15.00', '2022-04-07 06:11:44', '2022-04-07 23:06:50', '2022-04-07 23:06:50'),
+(89, 76, 1, 30, 'days', '13.00', '2022-04-07 23:06:50', '2022-04-08 06:23:41', '2022-04-08 06:23:41'),
+(90, 76, 31, 60, 'days', '14.00', '2022-04-07 23:06:50', '2022-04-08 06:23:41', '2022-04-08 06:23:41'),
+(91, 76, 61, 90, 'days', '15.00', '2022-04-07 23:06:50', '2022-04-08 06:23:41', '2022-04-08 06:23:41'),
+(92, 76, 1, 30, 'days', '13.00', '2022-04-08 06:23:41', '2022-04-08 06:23:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -839,7 +849,7 @@ INSERT INTO `schemes` (`id`, `scheme_type_id`, `name`, `description`, `item_ref_
 (72, 1, 'Coderz222', 'eerr', 1, '2022-04-06', '2022-04-08', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:49:12', '2022-04-06 07:49:12', NULL),
 (73, 1, 'Coderzqqq', 'qqqqq', 1, '2022-04-06', '2022-04-07', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:51:13', '2022-04-06 07:51:13', NULL),
 (74, 1, 'Coderz222', 'eerr', 1, '2022-04-06', '2022-04-08', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, 1, NULL, '2022-04-07 02:00:04', '2022-04-07 02:00:04', NULL),
-(76, 1, 'Coderz2k', 'eerr', 1, '2022-04-06', '2022-04-08', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, 1, NULL, '2022-04-07 02:00:37', '2022-04-07 03:14:37', NULL);
+(76, 1, 'Coderz2k', 'eerr', 1, '2022-04-06', '2022-04-08', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, 1, NULL, '2022-04-07 02:00:37', '2022-04-07 23:06:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -866,7 +876,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `status`, `view_permission`, `role_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@coderzvision.com', NULL, '$2y$10$xqD3uxBu98gQobC6xCPgo..WmVUW6Mqoa.e15HAkX6a5g.gXBFkmi', 0, 'global', 0, 'PHvQShzGR3f4U2asnoECejdAySpoeFifbPLLyGLK5es5zqldDbs8Xp1oJVhq', '2022-04-06 04:42:55', NULL);
+(1, 'Admin', 'admin@coderzvision.com', NULL, '$2y$10$xqD3uxBu98gQobC6xCPgo..WmVUW6Mqoa.e15HAkX6a5g.gXBFkmi', 0, 'global', 0, 'BulKVi4RBXTpqZs87o5vMDFTywucVsURpkNLkK8p2I2UQtzhX9vVFYttLvET', '2022-04-06 04:42:55', NULL);
 
 --
 -- Indexes for dumped tables
@@ -1010,7 +1020,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `audits`
 --
 ALTER TABLE `audits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=262;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=268;
 
 --
 -- AUTO_INCREMENT for table `branches`
@@ -1070,7 +1080,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `interest_rates`
 --
 ALTER TABLE `interest_rates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `interest_types`

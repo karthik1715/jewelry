@@ -8,7 +8,7 @@
 <script src="{{ URL::asset('public/assets/js/jquery.min.js') }}"></script>
 <script src="{{ URL::asset('public/assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ URL::asset('public/assets/js/moment.js') }}"></script>
-<!-- <script src="{{ URL::asset('public/assets/js/jquery-ui.min.js') }}"></script> -->
+<script src="{{ URL::asset('public/assets/js/jquery-ui.min.js') }}"></script>
 
 <script src="{{ URL::asset('public/assets/js/typeahead.min.js') }}"></script>
 
@@ -43,6 +43,7 @@
 
 <!-- Main Js Required -->
 <script src="{{ URL::asset('public/assets/js/main.js') }}"></script>
+<script src="{{ URL::asset('public/assets/js/customs.js') }}"></script>
 
 <script type="text/javascript">
 
@@ -167,6 +168,7 @@ $(':input.customercode').typeahead({
 
         // $("#schemeSubmit").removeClass('disabled');
         if( item.id != '' ) {
+            $("#gl_card").removeClass('d-none');
             $('#hidden_customer_id').val(item.id);
             $('#hidden_customer_code').val(item.customer_code);
             $('#hidden_nominee_name').val(item.name);
@@ -199,9 +201,13 @@ $(':input.schemename').typeahead({
                 $("#interestDetails").removeClass('d-none');
                 intvalue = item.interests[0].interest_value;
 
-                var tableBody = document.getElementById("interestTable");
+                var tableBody  = document.getElementById("interestTable");
+                var tableBody1 = document.getElementById("interestTable1");
+                
                 for(var i=0; i< item.interests.length; i++) {
                     tableBody.innerHTML += '<tr><td>' + item.interests[i]['from']+ ' to ' + item.interests[i]['to'] +" "+ item.interests[i]['type'] + '</td>'+
+                                                '<td>' + item.interests[i]['interest_value'] + '</td></tr>';
+                    tableBody1.innerHTML += '<tr><td>' + item.interests[i]['from']+ ' to ' + item.interests[i]['to'] +" "+ item.interests[i]['type'] + '</td>'+
                                                 '<td>' + item.interests[i]['interest_value'] + '</td></tr>';
                 }
             }
@@ -209,12 +215,16 @@ $(':input.schemename').typeahead({
             $('#hidden_scheme_id').val(item.id);
             $('#hidden_tenure').val(item.loan_period);
             $('#hidden_interest_rate').val(intvalue);
-            $('#hidden_pay_frequency').html(item.payment_basis_on);
-            $('#hidden_pay_advance').html(item.payment_in_advance);
-            $('#hidden_pay_basis').html(item.payment_basis_on);
-            $('#hidden_min_loan').html(item.minimum_loan_amount);
-            $('#hidden_max_loan').html(item.maximum_loan_amount);
-            $('#hidden_document_chrg').html(item.processing_fees);
+            $('.hidden_scheme_name').html(item.name);
+            $('.hidden_scheme_tenure').html(item.loan_period);
+            $('.hidden_scheme_ir').html(intvalue);
+            $('.hidden_pay_frequency').html(item.payment_basis_on);
+            $('.hidden_pay_advance').html(item.payment_in_advance);
+            $('.hidden_pay_basis').html(item.payment_basis_on);
+            $('.hidden_min_loan').html(item.minimum_loan_amount);
+            $('.hidden_max_loan').html(item.maximum_loan_amount);
+            $('.hidden_document_chrg').html(item.processing_fees);
+            $('.hidden_lend_rate').val(item.lending_rate);
             
             $("#schemeDetails").removeClass('d-none');
 

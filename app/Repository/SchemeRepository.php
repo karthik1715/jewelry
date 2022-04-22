@@ -51,7 +51,7 @@ class SchemeRepository implements ISchemeRepository
                 $scheme->scheme_type_id         = $collection['scheme_type_id'];
                 $scheme->name                   = $collection['name'];
                 $scheme->description            = $collection['description'];
-                $scheme->item_ref_id            = $collection['item_ref_id'];
+                $scheme->group_ref_id            = $collection['group_ref_id'];
                 $scheme->start_date             = $collection['start_date'];
                 $scheme->end_date               = $collection['end_date'];
                 $scheme->loan_basis             = $collection['loan_basis'];
@@ -62,7 +62,7 @@ class SchemeRepository implements ISchemeRepository
                 $scheme->penalty                = $collection['penalty'];
                 $scheme->payment_basis_on       = $collection['payment_basis_on'];
                 $scheme->loan_period            = $collection['loan_period'];
-                $scheme->jewel_approval          = $collection['jewel_approval'];
+                $scheme->lending_rate           = $collection['lending_rate'];
                 $scheme->minimum_loan_amount    = $collection['minimum_loan_amount'];
                 $scheme->maximum_loan_amount    = $collection['maximum_loan_amount'];
                 $scheme->processing_fees        = $collection['processing_fees'];
@@ -107,7 +107,7 @@ class SchemeRepository implements ISchemeRepository
             $scheme->scheme_type_id         = $collection['scheme_type_id'];
             $scheme->name                   = $collection['name'];
             $scheme->description            = $collection['description'];
-            $scheme->item_ref_id            = $collection['item_ref_id'];
+            $scheme->group_ref_id            = $collection['group_ref_id'];
             $scheme->start_date             = $collection['start_date'];
             $scheme->end_date               = $collection['end_date'];
             $scheme->loan_basis             = $collection['loan_basis'];
@@ -117,7 +117,7 @@ class SchemeRepository implements ISchemeRepository
             $scheme->penalty                = $collection['penalty'];
             $scheme->payment_basis_on       = $collection['payment_basis_on'];
             $scheme->loan_period            = $collection['loan_period'];
-            $scheme->jewel_approval          = $collection['jewel_approval'];
+            $scheme->lending_rate           = $collection['lending_rate'];
             $scheme->minimum_loan_amount    = $collection['minimum_loan_amount'];
             $scheme->maximum_loan_amount    = $collection['maximum_loan_amount'];
             $scheme->processing_fees        = $collection['processing_fees'];

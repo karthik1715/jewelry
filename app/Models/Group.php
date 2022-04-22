@@ -27,4 +27,9 @@ class Group extends Model implements Auditable
     {
         return $this->hasMany(Items::class);
     }
+
+    public function scheme()
+    {
+        return $this->hasMany(Scheme::class);
+    }
 }

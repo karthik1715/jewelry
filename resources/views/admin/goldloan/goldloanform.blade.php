@@ -48,16 +48,47 @@
 			<!-- Fixed body scroll start -->
 			<div class="fixedBodyScroll">
 
+			<!-- deleteModal -->
+			<div class="modal fade" id="glModalSubmit" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="customModalLabel">{{ __('app.goldloan.create-title') }}</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form action="#" method="get" class="goldloanremove-record-model">
+                                        @csrf
+										<div class="modal-body">
+											<div class="text-center">
+												<p class="mb-3">{{ __('app.general.addMessage') }}</p>
+											</div>
+										</div>
+										<div class="modal-footer custom">
+											<div class="left-side">
+												<button type="button" class="btn btn-link danger" data-dismiss="modal">{{ __('app.general.cancel') }}</button>
+											</div>
+											<div class="divider"></div>
+											<div class="right-side">
+												<button type="submit" class="btn btn-link success">{{ __('app.general.submit') }}</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
 				<!-- Row start -->
 				<div class="row gutters">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 						<div id="example-form">
+
 							<h3>{{ __('app.goldloan.appinfo') }}</h3>
 							<section>
 								<div class="row gutters">
 									<!-- Row start -->
 									<div class="row gutters">
-										<form id="contactFrom" role="form" method="POST"
+										<form id="glFrom" role="form" method="POST"
 											action="{{ isset($goldloan) ? route('goldloan.update',$goldloan->id) : route('goldloan.create') }}" >
 												@csrf
 											@isset($goldloan)
@@ -78,7 +109,7 @@
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.mname') }}</label><span class="text-danger">*</span>
-																	<input type="text" class="form-control customercode" name="customer_code" placeholder="{{ __('app.general.mname') }}" value="" required>
+																	<input type="text" class="form-control customercode" name="customer_code" autocomplete="off" placeholder="{{ __('app.general.mname') }}" value="" required>
 																	<input type="hidden" name="customer_id" id="hidden_customer_id" value="{{ $goldloan->customer_id ?? '' }}" >
 																</div>
 															</div>
@@ -122,29 +153,29 @@
 														<div class="row gutters">
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
-																	<label for="inputName">{{ __('app.general.name') }}</label><span class="text-danger">*</span>
-																	<input type="text" class="form-control itemname" id="hidden_nominee_name" name="nominee_name" placeholder="{{ __('app.general.name') }}" value="{{ $goldloan->nominee_name ?? '' }}" required>
+																	<label for="inputName">{{ __('app.general.name') }}</label>
+																	<input type="text" class="form-control itemname" id="hidden_nominee_name" name="nominee_name" readonly placeholder="{{ __('app.general.name') }}" value="{{ $goldloan->nominee_name ?? '' }}" required>
 																</div>
 															</div>
 
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.relation') }}</label>
-																	<input type="text" class="form-control" id="hidden_nominee_relation" name="nominee_relation" placeholder="{{ __('app.general.relation') }}" value="{{ $goldloan->nominee_relation ?? '' }}">
+																	<input type="text" class="form-control" id="hidden_nominee_relation" name="nominee_relation" readonly placeholder="{{ __('app.general.relation') }}" value="{{ $goldloan->nominee_relation ?? '' }}">
 																</div>
 															</div>
 
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.dob') }}</label>
-																	<input type="date" class="form-control" id="hidden_nominee_dob" name="nominee_dob" placeholder="{{ __('app.general.dob') }}" value="{{ $goldloan->nominee_dob ?? '' }}">
+																	<input type="text" class="form-control" id="hidden_nominee_dob" name="nominee_dob" readonly placeholder="{{ __('app.general.dob') }}" value="{{ $goldloan->nominee_dob ?? '' }}">
 																</div>
 															</div>
 
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.age') }}</label>
-																	<input type="text" class="form-control" id="hidden_nominee_age" name="nominee_age" placeholder="{{ __('app.general.age') }}" value="{{ $goldloan->nominee_age ?? '' }}" >
+																	<input type="text" class="form-control" id="hidden_nominee_age" name="nominee_age" readonly placeholder="{{ __('app.general.age') }}" value="{{ $goldloan->nominee_age ?? '' }}" >
 																</div>
 															</div>
 
@@ -156,7 +187,7 @@
 												<!-- Card end -->
 
 												<!-- Card start -->
-												<div class="card">
+												<div class="card d-none" id="gl_card">
 													<div class="card-header">
 														<div class="card-title">
 															{{ __('app.goldloan.ldetails') }}
@@ -185,22 +216,23 @@
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.selectscheme') }}</label>
-																	<input type="text" class="form-control schemename" name="selectscheme" placeholder="{{ __('app.general.selectscheme') }}" value="{{ $goldloan->scheme_ref_id ?? '' }}">
+																	<input type="text" class="form-control schemename" autocomplete = "off" name="selectscheme" placeholder="{{ __('app.general.selectscheme') }}" value="{{ $goldloan->scheme_ref_id ?? '' }}">
 																	<input type="hidden" name="scheme_ref_id" id="hidden_scheme_id" value="{{ $goldloan->scheme_ref_id ?? '0' }}" >
+																	<input type="hidden" class="hidden_lend_rate" name="hidden_lend_rate" id="hidden_lend_rate" value="" >
 																</div>
 															</div>
 
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.tenure') }}</label>
-																	<input type="text" class="form-control" id="hidden_tenure" name="tenure" placeholder="{{ __('app.general.tenure') }}" value="{{ $goldloan->tenure ?? '' }}">
+																	<input type="text" class="form-control" id="hidden_tenure" name="tenure" placeholder="{{ __('app.general.tenure') }}" readonly value="{{ $goldloan->tenure ?? '' }}">
 																</div>
 															</div>
 
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.ir') }}</label>
-																	<input type="text" class="form-control" id="hidden_interest_rate" name="interest_rate" placeholder="{{ __('app.general.ir') }}" value="{{ $goldloan->interest_rate ?? '' }}" >
+																	<input type="text" class="form-control" id="hidden_interest_rate" name="interest_rate" placeholder="{{ __('app.general.ir') }}" readonly value="{{ $goldloan->interest_rate ?? '' }}" >
 																</div>
 															</div>
 
@@ -225,11 +257,11 @@
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.loan-amount') }}</label>
-																	<input type="text" class="form-control" name="loan_amount" placeholder="{{ __('app.general.loan-amount') }}" value="{{ $goldloan->loan_amount ?? '' }}">
+																	<input type="text" class="form-control" name="loan_amount" placeholder="{{ __('app.general.loan-amount') }}" onkeyup="copyReqLoan(this)" value="{{ $goldloan->loan_amount ?? '' }}">
 																</div>
 															</div>
 
-															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12 d-none">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.loan-no') }}</label>
 																	<input type="text" class="form-control" name="loan_no" placeholder="{{ __('app.general.loan-no') }}" value="{{ $goldloan->loan_no ?? '' }}">
@@ -239,7 +271,7 @@
 															<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 																<div class="form-group">
 																	<label for="inputName">{{ __('app.general.loan-date') }}</label>
-																	<input type="date" class="form-control" name="loan_date" placeholder="{{ __('app.general.loan-date') }}" value="{{ $goldloan->loan_date ?? '' }}">
+																	<input type="date" class="form-control" name="loan_date" placeholder="{{ __('app.general.loan-date') }}" onchange="selectDate(this)" value="{{ $goldloan->loan_date ?? '' }}">
 																</div>
 															</div>
 
@@ -278,22 +310,22 @@
 															<table class="table table-bordered" id="dynamicTable1">  
 																<tr>  
 																	<td>{{ __('app.general.pay-frequency') }}</td>
-																	<td id="hidden_pay_frequency">-</td>  
+																	<td class="hidden_pay_frequency">-</td>  
 																	<td>{{ __('app.general.pay-advance') }}</td>  
-																	<td id="hidden_pay_advance">-</td>
+																	<td class="hidden_pay_advance">-</td>
 																	<td>{{ __('app.general.pay-basis') }}</td>
-																	<td id="hidden_pay_basis">-</td>
+																	<td class="hidden_pay_basis">-</td>
 																</tr>
 																<tr>  
 																	<td>{{ __('app.general.min-loan') }}</td>
-																	<td id="hidden_min_loan">-</td>  
+																	<td class="hidden_min_loan">-</td>  
 																	<td>{{ __('app.general.max-loan') }}</td>  
-																	<td id="hidden_max_loan">-</td>
+																	<td class="hidden_max_loan">-</td>
 																	<td>{{ __('app.general.document-chrg') }}</td>
-																	<td id="hidden_document_chrg">-</td>  
+																	<td class="hidden_document_chrg">-</td>  
 																</tr>
 																<tr>  
-																	<td  id="hidden_loyalty">{{ __('app.general.loyalty') }}</td>  
+																	<td  class="hidden_loyalty">{{ __('app.general.loyalty') }}</td>  
 																	<td>-</td>
 																	<td></td>
 																	<td></td>
@@ -320,19 +352,11 @@
 														
 														<!-- Row start -->
 														<div class="row gutters">
-															<table class="table table-bordered" id="interestTable">  
+															<table class="table table-bordered interestTable" id="interestTable">  
 																<tr>
 																	<th>{{ __('app.general.terms') }}</th>
-																	<th>{{ __('app.general.ir') }}</th>
+																	<th>{{ __('app.general.ir') }} ( % ) </th>
 																</tr>
-																<!-- <tr>  
-																	<td>0 to 30 days</td>
-																	<td>15.00%</td>  
-																</tr>  
-																<tr>  
-																	<td>0 to 30 days</td>
-																	<td>15.00%</td>  
-																</tr>  -->
 															</table> 
 														</div>
 														<!-- Row end -->
@@ -351,13 +375,14 @@
 									<!-- Row end -->
 								</div>
 							</section>
+							
 							<h3>{{ __('app.goldloan.additems') }}</h3>
 							<section>
 								<div class="row gutters">
 									<!-- Card start -->
 									<div class="card">
 										<div class="card-header">
-											<div class="card-title">{{ __('app.general.interest') }}</div>
+											<div class="card-title">{{ __('app.goldloan.itemdetail') }}</div>
 										</div>
 										<div class="card-body">
 											
@@ -371,10 +396,11 @@
 														<th>{{ __('app.item.noof-items') }}</th>
 														<th>{{ __('app.goldloan.selecttype') }}</th>
 														<th>{{ __('app.goldloan.purity') }}</th>
-														<th>{{ __('app.goldloan.grwt') }} ( {{ __('app.general.gms') }} ) </th>
-														<th>{{ __('app.goldloan.stwt') }}</th>
-														<th>{{ __('app.general.nwt') }}</th>
-														<th>{{ __('app.general.currate') }}{{ __('app.general.pergm') }}</th>
+														<th>{{ __('app.goldloan.grwt') }} {{ __('app.general.gms') }}</th>
+														<th>{{ __('app.goldloan.stwt') }} {{ __('app.general.gms') }}</th>
+														<th>{{ __('app.general.nwt') }} {{ __('app.general.gms') }}</th>
+														<th>{{ __('app.general.currate') }} {{ __('app.general.pergm') }}</th>
+														<th>{{ __('app.general.perc-deduction') }} {{ __('app.general.gms') }}</th>
 														<th>{{ __('app.goldloan.lend-rate') }}{{ __('app.general.pergm') }}</th>
 														<th>{{ __('app.goldloan.nwtvalue') }}</th>
 														<th>{{ __('app.goldloan.remarks') }}</th>
@@ -382,28 +408,78 @@
 													</tr>
 													<tr>  
 														<td><input type='checkbox' disabled></td>
-														<td><input type="text" id="add_items_group_id_0" name="add_items[0][group_id]" placeholder="{{ __('app.group.item-grp') }}" data-id='0' onkeyup="nameCheck(this)" class="form-control" />
+														<td><input type="text" id="add_items_group_id_0" name="add_items[0][group_id]" placeholder="{{ __('app.group.item-grp') }}" data-id='0' onkeyup="searchByGroup(this)" onmouseenter="searchByGroup(this)" class="form-control group-name" />
 															<input type="hidden" name="groupId[]" id="groupId_0" value=""></td>  
-														<td><input type="text" id="add_items_item_id_0" name="add_items[0][item_id]" placeholder="{{ __('app.item.formtitle') }}"  data-id='0' class="form-control" /></td>  
+														<td><input type="text" id="add_items_item_id_0" name="add_items[0][item_id]" placeholder="{{ __('app.item.formtitle') }}"  data-id='0' class="form-control" readonly onkeypress="searchByItem(this)" />
+															<input type="hidden" name="itemId[]" id="itemId_0" value=""></td>  
 														<td><input type="text" id="add_items_noof_items_0" name="add_items[0][noof_items]" placeholder="0"  data-id='0' class="form-control" /></td>  
-														<td><input type="text" id="add_items_gold_type_0" name="add_items[0][gold_type]" placeholder="Karrot"  data-id='0' class="form-control" /></td>  
-														<td><input type="text" id="add_items_purity_in_karrot_0" name="add_items[0][purity_in_karrot]" placeholder="0.00"  data-id='0' class="form-control" /></td>  
-														<td><input type="text" id="add_items_gross_weight_0" name="add_items[0][gross_weight]" placeholder="0.00" class="form-control" data-id='0' onkeyup="calculate(this)"  /></td>  
-														<td><input type="text" id="add_items_stone_weight_0" name="add_items[0][stone_weight]" placeholder="0.00"  data-id='0' class="form-control" /></td>  
-														<td><input type="text" id="add_items_net_weight_0" name="add_items[0][net_weight]" placeholder="0.00" data-id='0' class="form-control" /></td>  
-														<td><input type="text" id="add_items_current_gold_rate_0" name="add_items[0][current_gold_rate]" data-id='0' placeholder="0.00" class="form-control" value="2000" /></td>  
-														<td><input type="text" id="add_items_lending_gold_rate_0" name="add_items[0][lending_gold_rate]" placeholder="0.00"  data-id='0' class="form-control" /></td>  
-														<td><input type="text" id="add_items_net_weight_value_0" name="add_items[0][net_weight_value]" data-id='0' placeholder="0.00" class="form-control totalprice" /></td> 
+														<td><select type="text" id="add_items_gold_type_0" name="add_items[0][gold_type]" data-id='0' class="form-control" onchange="checkPurity(this)">
+																<option value="">Select</option>
+																<option value="1">Karat</option>
+																<option value="2">Percentage</option>
+															</select></td>
+														<td id="purity_type_0"><input type="text" class="form-control" readonly /></td>  
+														<td><input type="text" id="add_items_gross_weight_0" name="add_items[0][gross_weight]" placeholder="0.00" class="form-control totalGrossWt" data-id='0' onkeyup="calculate(this)"  />
+															<input type="hidden" name="purity_karat_value[]" id="purity_karat_value_0" value=""></td>  
+														<td><input type="text" id="add_items_stone_weight_0" name="add_items[0][stone_weight]" placeholder="0.00"  data-id='0' class="form-control totalStoneWt" onkeyup="calculate(this)" /></td>  
+														<td><input type="text" id="add_items_net_weight_0" name="add_items[0][net_weight]" placeholder="0.00" data-id='0' class="form-control totalNetWt" readonly /></td>  
+														<td><input type="text" id="add_items_current_gold_rate_0" name="add_items[0][current_gold_rate]" data-id='0' placeholder="0.00" class="form-control" value="" readonly />
+															<input type="hidden" id="add_items_wo_deduct_value_0" name="add_items[0][wo_deduct_value]" data-id='0' class="form-control toatlWoNetValue" value="" /></td>  
+														<td><input type="text" id="add_items_deduct_value_0" name="add_items[0][deduct_value]" data-id='0' placeholder="0.00" class="form-control toatlDeductNetWt" value="" readonly />
+															<input type="hidden" id="add_items_deduct_gold_value_0" name="add_items[0][deduct_gold_value]" data-id='0'  class="form-control toatlDeductNetWtValue"  value="" /></td>  
+														<td><input type="text" id="add_items_lending_gold_rate_0" name="add_items[0][lending_gold_rate]" placeholder="0.00"  data-id='0' class="form-control" readonly /></td>  
+														<td><input type="text" id="add_items_net_weight_value_0" name="add_items[0][net_weight_value]" data-id='0' placeholder="0.00" class="form-control netAmountValue" readonly /></td> 
 														<td><input type="text" id="add_items_remarks_0" name="add_items[0][remarks]" placeholder="{{ __('app.goldloan.remarks') }}" class="form-control" /></td> 
-														<td></td> 
+														<td><button type="button" class="btn btn-info clear-row" data-id='0' ><i class="icon-circle-with-cross"></i></button></td> 
 													</tr>  
 												</table> 
-												<span id="totalAmount"></span>
-												<div class="custom-btn-group">
+												<!-- <div class="custom-btn-group">
 													<button type="button" name="add" id="add" class="btn btn-success">Add More</button>
 													<button type="button" id="deleteButton" disabled class="btn btn-danger delete-row" >Delete Row</button>
-												</div>
+												</div> -->
 											</div>
+											<!-- Row start -->
+											<div class="row gutters">
+														<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+															<div class="custom-btn-group">
+																<button type="button" name="add" id="add" class="btn btn-info">Add More</button>
+																<button type="button" id="deleteButton" disabled class="btn btn-danger delete-row" >Delete Row</button>
+															</div>
+														</div>
+														<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+															<table class="table table-bordered" id="dynamicTable12" >  
+																<tr>  
+																	<td>{{ __('app.general.total') }} {{ __('app.goldloan.grwt') }} {{ __('app.general.gms') }} </td>
+																	<td class="totalGrossValue" align="right">0.00</td>
+																</tr>
+																<tr>  
+																	<td> {{ __('app.general.total') }} {{ __('app.goldloan.stwt') }} {{ __('app.general.gms') }} </td>
+																	<td class="totalStoneValue" align="right">0.00</td>
+																</tr>
+																<tr>  
+																	<td>{{ __('app.general.total') }} {{ __('app.general.nwt') }} {{ __('app.general.gms') }}</td>
+																	<td class="totalNetValue" align="right">0.00</td>
+																</tr>
+																<tr>  
+																	<td>{{ __('app.general.total') }} {{ __('app.general.perc-deduction') }} {{ __('app.general.gms') }}</td>
+																	<td class="totalDeductValue" align="right">0.00</td>
+																</tr>
+																<tr>  
+																	<td> {{ __('app.goldloan.vnwt') }}</td>
+																	<td class="woNetAmountValue" align="right">0.00</td>
+																</tr>
+																<tr>  
+																	<td>{{ __('app.general.total') }} {{ __('app.general.dnwt') }}</td>
+																	<td class="totalDeductAmount" align="right">0.00</td>
+																</tr>
+																<tr>  
+																	<td>{{ __('app.general.total') }} {{ __('app.goldloan.nwtvalue') }}</td>
+																	<td class="totalNetAmount" align="right">0.00</td>
+																</tr>
+															</table> 
+														</div>
+													</div>
+													<!-- Row end -->
 											<!-- Row end -->
 
 										</div>
@@ -411,7 +487,8 @@
 									<!-- Card end -->
 								</div>
 							</section>
-							<h3>{{ __('app.goldloan.sendapproval') }}</h3>
+
+							<h3>{{ __('app.goldloan.glapproval') }}</h3>
 							<section>
 								<div class="row gutters">
 									<!-- Row start -->
@@ -430,49 +507,44 @@
 														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 															<table class="table table-bordered" id="dynamicTable12" >  
 																<tr>  
-																	<td>{{ __('app.general.loan-no') }}</td>
+																	<td>{{ __('app.scheme.formtitle') }}</td>
 																	<td>:</td>  
-																	<td>200</td>
+																	<td class="hidden_scheme_name"></td>
 																</tr>
 																<tr>  
 																	<td>{{ __('app.goldloan.grwt') }}</td>
 																	<td>:</td>  
-																	<td>40.00</td>
+																	<td class="totalGrossValue"></td>
 																</tr>
 																<tr>  
-																	<td>{{ __('app.goldloan.nwt') }}</td>
+																	<td>{{ __('app.general.nwt') }}</td>
 																	<td>:</td>  
-																	<td>40.00</td>
+																	<td class="totalNetValue"></td>
+																</tr>
+																<tr>  
+																	<td>{{ __('app.general.req-loan-amount') }}</td>
+																	<td>:</td>  
+																	<td class="req_loan_amount"></td>
 																</tr>
 																<tr>  
 																	<td>{{ __('app.general.appraiser') }} </td>
 																	<td>:</td>  
-																	<td>User</td>
+																	<td>{{ auth()->id() }}</td>
 																</tr>
-																<tr>  
+																<!-- <tr>  
 																	<td>{{ __('app.goldloan.lending') }} ( % ) </td>
 																	<td>:</td>  
 																	<td>85</td>
-																</tr>
-																<tr>  
-																	<td>{{ __('app.general.pay-basis') }} </td>
-																	<td>:</td>  
-																	<td>Interest</td>
-																</tr>
+																</tr> -->
 																<tr>  
 																	<td>{{ __('app.general.tenure') }} </td>
 																	<td>:</td>  
-																	<td>24</td>
-																</tr>
-																<tr>  
-																	<td>{{ __('app.general.pay-frequency') }} </td>
-																	<td>:</td>  
-																	<td>Daily</td>
+																	<td class="hidden_scheme_tenure"></td>
 																</tr>
 																<tr>  
 																	<td>{{ __('app.general.amt-sanction') }} </td>
 																	<td>:</td>  
-																	<td>85000.00</td>
+																	<td><input type="text" class="form-control" name="sanction_amount" id="sanction_amount" /></td>
 																</tr>
 															</table> 
 														</div>
@@ -481,42 +553,32 @@
 																<tr>  
 																	<td>{{ __('app.general.loan-date') }}</td>
 																	<td>:</td>  
-																	<td>11/04/2022</td>
+																	<td class="hidden_loan_date"></td>
 																</tr>
 																<tr>  
 																	<td>{{ __('app.goldloan.stwt') }}</td>
 																	<td>:</td>  
-																	<td>1.00</td>
+																	<td class="totalStoneValue"></td>
 																</tr>
 																<tr>  
-																	<td>{{ __('app.goldloan.nwtvalue') }}</td>
+																	<td>{{ __('app.goldloan.vnwt') }}</td>
 																	<td>:</td>  
-																	<td>120000.00</td>
-																</tr>
-																<tr>  
-																	<td>{{ __('app.general.req-loan-amount') }}</td>
-																	<td>:</td>  
-																	<td>100000.00</td>
+																	<td class="woNetAmountValue"></td>
 																</tr>
 																<tr>  
 																	<td>{{ __('app.general.eligible-amount') }}</td>
 																	<td>:</td>  
-																	<td>100000.00</td>
+																	<td class="totalNetAmount"></td>
 																</tr>
 																<tr>  
 																	<td>{{ __('app.general.appraise-code') }}</td>
 																	<td>:</td>  
-																	<td>12345</td>
+																	<td>{{ auth()->id() }}</td>
 																</tr>
 																<tr>  
-																	<td>{{ __('app.scheme.formtitle') }}</td>
+																	<td>{{ __('app.general.ir') }} ( % )</td>
 																	<td>:</td>  
-																	<td>1 yr Loan</td>
-																</tr>
-																<tr>  
-																	<td>{{ __('app.general.ir') }}</td>
-																	<td>:</td>  
-																	<td>12%</td>
+																	<td class="hidden_scheme_ir"></td>
 																</tr>
 																<tr>  
 																	<td>{{ __('app.general.irt') }}</td>
@@ -545,30 +607,30 @@
 													<!-- Row start -->
 													<div class="row gutters">
 														<table class="table table-bordered" id="dynamicTable1">  
-															<tr>  
-																<td>{{ __('app.general.pay-frequency') }}</td>
-																<td>1</td>  
-																<td>{{ __('app.general.pay-advance') }}</td>  
-																<td>no</td>
-																<td>{{ __('app.general.pay-basis') }}</td>
-																<td>1</td>
-															</tr>
-															<tr>  
-																<td>{{ __('app.general.min-loan') }}</td>
-																<td>1000</td>  
-																<td>{{ __('app.general.max-loan') }}</td>  
-																<td>20000</td>
-																<td>{{ __('app.general.tenure') }}</td>
-																<td>12</td>
-															</tr>
-															<tr>  
-																<td>{{ __('app.general.document-chrg') }}</td>
-																<td>100</td>  
-																<td>{{ __('app.general.loyalty') }}</td>  
-																<td>12</td>
-																<td></td>
-																<td></td>
-															</tr>
+														<tr>  
+																	<td>{{ __('app.general.pay-frequency') }}</td>
+																	<td class="hidden_pay_frequency">-</td>  
+																	<td>{{ __('app.general.pay-advance') }}</td>  
+																	<td class="hidden_pay_advance">-</td>
+																	<td>{{ __('app.general.pay-basis') }}</td>
+																	<td class="hidden_pay_basis">-</td>
+																</tr>
+																<tr>  
+																	<td>{{ __('app.general.min-loan') }}</td>
+																	<td class="hidden_min_loan">-</td>  
+																	<td>{{ __('app.general.max-loan') }}</td>  
+																	<td class="hidden_max_loan">-</td>
+																	<td>{{ __('app.general.document-chrg') }}</td>
+																	<td class="hidden_document_chrg">-</td>  
+																</tr>
+																<tr>  
+																	<td  class="hidden_loyalty">{{ __('app.general.loyalty') }}</td>  
+																	<td>-</td>
+																	<td>{{ __('app.general.loyalty') }}</td>  
+																	<td>12</td>
+																	<td></td>
+																	<td></td>
+																</tr>
 														</table> 
 													</div>
 													<!-- Row end -->
@@ -589,19 +651,12 @@
 													
 													<!-- Row start -->
 													<div class="row gutters">
-														<table class="table table-bordered" id="dynamicTable2">  
+														<table class="table table-bordered interestTable" id="interestTable1">  
 															<tr>
 																<th>{{ __('app.general.terms') }}</th>
-																<th>{{ __('app.general.ir') }}</th>
+																<th>{{ __('app.general.ir') }} ( % ) </th>
 															</tr>
-															<tr>  
-																<td>0 to 30 days</td>
-																<td>15.00%</td>  
-															</tr>  
-															<tr>  
-																<td>0 to 30 days</td>
-																<td>15.00%</td>  
-															</tr> 
+															
 														</table> 
 													</div>
 													<!-- Row end -->
@@ -615,6 +670,7 @@
 									<!-- Row end -->
 								</div>
 							</section>
+
 						</div>
 					</div>
 				</div>
@@ -643,25 +699,52 @@
 		}
 		++i;
 		$("#dynamicTable").append('<tr><td><input type="checkbox" class="checkSingle" name="record"  onchange="toggleCheckbox(this)"></td>'+
-									  '<td><input type="text" id="add_items_group_id_'+i+'" name="add_items['+i+'][group_id]" data-id='+i+' onkeyup="nameCheck(this)" placeholder="{{ __('app.group.item-grp') }}" class="form-control" />'+
+									  '<td><input type="text" id="add_items_group_id_'+i+'" name="add_items['+i+'][group_id]" data-id='+i+' onmouseenter="searchByGroup(this)" onkeyup="searchByGroup(this)" placeholder="{{ __('app.group.item-grp') }}" class="form-control group-name" />'+
 									  '<input type="hidden" name="groupId[]" id="groupId_'+i+'" value=""></td>'+
-									  '<td><input type="text" id="add_items_item_id_'+i+'" name="add_items['+i+'][item_id]" data-id='+i+' placeholder="{{ __('app.item.formtitle') }}" class="form-control" /></td>'+
+									  '<td><input type="text" id="add_items_item_id_'+i+'" name="add_items['+i+'][item_id]" data-id='+i+' onkeypress="searchByItem(this)" readonly placeholder="{{ __('app.item.formtitle') }}" class="form-control" />'+
+									  '<input type="hidden" name="itemId[]" id="itemId_'+i+'" value=""></td>'+
 									  '<td><input type="text" id="add_items_noof_items_'+i+'" name="add_items['+i+'][noof_items]" data-id='+i+' placeholder="0" class="form-control" /></td>'+
-									  '<td><input type="text" id="add_items_gold_type_'+i+'" name="add_items['+i+'][gold_type]" data-id='+i+' placeholder="Karrot" class="form-control" /></td>'+
-									  '<td><input type="text" id="add_items_purity_in_karrot_'+i+'" name="add_items['+i+'][purity_in_karrot]" data-id='+i+' placeholder="0.00" class="form-control" /></td>'+
-									  '<td><input type="text" id="add_items_gross_weight_'+i+'" name="add_items['+i+'][gross_weight]" data-id='+i+' onkeyup="calculate(this)" placeholder="0.00" class="form-control" /></td>'+
-									  '<td><input type="text" id="add_items_stone_weight_'+i+'" name="add_items['+i+'][stone_weight]" data-id='+i+' placeholder="0.00" class="form-control" /></td>'+
-									  '<td><input type="text" id="add_items_net_weight_'+i+'" name="add_items['+i+'][net_weight]" data-id='+i+' placeholder="0.00" class="form-control" /></td>'+
-									  '<td><input type="text" id="add_items_current_gold_rate_'+i+'" name="add_items['+i+'][current_gold_rate]" value="1000" data-id='+i+' placeholder="0.00" class="form-control" /></td>'+
-									  '<td><input type="text" id="add_items_lending_gold_rate_'+i+'" name="add_items['+i+'][lending_gold_rate]" data-id='+i+' placeholder="0.00" class="form-control" /></td>'+
-									  '<td><input type="text" id="add_items_net_weight_value_'+i+'" name="add_items['+i+'][net_weight_value]" data-id='+i+' placeholder="0.00" class="form-control totalprice" /></td>'+
+									  '<td><select type="text" id="add_items_gold_type_'+i+'" name="add_items['+i+'][gold_type]" data-id='+i+' class="form-control" onchange="checkPurity(this)" ><option value="">Select</option><option value="1">Karat</option><option value="2">Percentage</option></select></td>'+
+									  '<td id="purity_type_'+i+'"><input type="text" class="form-control" readonly /></td>'+
+									  '<td><input type="text" id="add_items_gross_weight_'+i+'" name="add_items['+i+'][gross_weight]" data-id='+i+' onkeyup="calculate(this)" placeholder="0.00" class="form-control totalGrossWt" /><input type="hidden" name="purity_karat_value[]" id="purity_karat_value_'+i+'" value=""></td>'+
+									  '<td><input type="text" id="add_items_stone_weight_'+i+'" name="add_items['+i+'][stone_weight]" data-id='+i+' onkeyup="calculate(this)" placeholder="0.00" class="form-control totalStoneWt" /></td>'+
+									  '<td><input type="text" id="add_items_net_weight_'+i+'" name="add_items['+i+'][net_weight]" data-id='+i+' placeholder="0.00" class="form-control totalNetWt" readonly /></td>'+
+									  '<td><input type="text" id="add_items_current_gold_rate_'+i+'" name="add_items['+i+'][current_gold_rate]" value="" data-id='+i+' placeholder="0.00" class="form-control" readonly />'+
+									  '<input type="hidden" id="add_items_wo_deduct_value_'+i+'" name="add_items['+i+'][wo_deduct_value]" data-id='+i+'  class="form-control toatlWoNetValue"  value="" /></td>'+
+									  '<td><input type="text" id="add_items_deduct_value_'+i+'" name="add_items['+i+'][deduct_value]" data-id='+i+' placeholder="0.00" class="form-control toatlDeductNetWt" value="" readonly />'+
+									  '<input type="hidden" id="add_items_deduct_gold_value_'+i+'" name="add_items['+i+'][deduct_gold_value]" data-id='+i+'  class="form-control toatlDeductNetWtValue"  value="" /></td>'+
+									  '<td><input type="text" id="add_items_lending_gold_rate_'+i+'" name="add_items['+i+'][lending_gold_rate]" data-id='+i+' placeholder="0.00" class="form-control" readonly /></td>'+
+									  '<td><input type="text" id="add_items_net_weight_value_'+i+'" name="add_items['+i+'][net_weight_value]" data-id='+i+' placeholder="0.00" class="form-control netAmountValue" readonly /></td>'+
 									  '<td><input type="text" id="add_items_remarks_'+i+'" name="add_items['+i+'][remarks]" data-id='+i+' placeholder="{{ __('app.goldloan.remarks') }}" class="form-control" /></td>'+
-									  '<td><button type="button" class="btn btn-danger remove-tr"><i class="icon-trash-2"></i></button></td></tr>');
+									  '<td><button type="button" class="btn btn-danger remove-tr" data-id='+i+' ><i class="icon-trash-2"></i></button></td></tr>');
 		$('#keyValue').val(i);					  
 	});
 
+	$(document).on('click', '.clear-row', function(){  
+			$("#add_items_group_id_0").val('');
+			$("#groupId_0").val('');
+			$("#add_items_item_id_0").val('');
+			$("#itemId_0").val('');
+			$("#add_items_noof_items_0").val('');
+			$("#add_items_purity_in_karat_0").val('');
+			$("#purity_karat_value_0").val('');
+			$("#add_items_gross_weight_0").val('');
+			$("#add_items_stone_weight_0").val('');
+			$("#add_items_net_weight_0").val('');
+			$("#add_items_current_gold_rate_0").val('');
+			$("#add_items_deduct_value_0").val('');
+			$("#add_items_lending_gold_rate_0").val('');
+			$("#add_items_net_weight_value_0").val('');
+			$("#add_items_remarks_0").val('');
+			$("#add_items_deduct_gold_value_0").val('');
+			$("#add_items_wo_deduct_value_0").val('');
+			// $(this).parents('tr').remove();
+			totalValue();
+	});  
+	
 	$(document).on('click', '.remove-tr', function(){  
 			$(this).parents('tr').remove();
+			totalValue();
 	});  
 
 	$(".delete-row").click(function(){
@@ -691,6 +774,16 @@
 		}
 	});
 
+	function glSubmit(_input) {
+		var x = _input;
+		var dataId = $("#"+x.id).data("id");
+		
+		if( dataId == "finish") {
+			console.log(x.href);
+			$("#glModalSubmit").modal('show');
+		}
+	}
+
 	function toggleCheckbox(element) {
 		var isAllChecked = 0;
 		var count = $(".checkSingle:checked").length;
@@ -715,77 +808,252 @@
 		} else {
 			$("#checkedAll").prop("checked", false);
 		}
-		
 	}
 
-	/* function nameCheck(_input) {  
+	function searchByGroup(_input) {  
 		var x = _input;
-		var value = $("#error_count").html();
-		if(x.value == '') {
-			$("#"+x.id).css("border","2px solid red");
-			$("#error_count").html(Number(value)+1);
-		} else {
-			$("#"+x.id).css("border","");
-			$("#error_count").html(Number(value)-1);
-		}
-
-		/* if( error_count <= 0) {
-			$("#goldloanSubmit").removeClass('disabled');
-		} else {
-			$("#goldloanSubmit").addClass('disabled');
-		} */
-		
-	// }   */
-
-	function nameCheck(_input) {  
-		var x = _input;
-		// console.log($("#"+x.id).val());
 		var dataId = $("#"+x.id).data("id");
+		var id = "#"+x.id;
 
-		$("#"+x.id).typeahead({
-			source: function(query, process) {
-				var path = "{{url('autocomplete-search')}}";
-				$.get(path, { query: query }, function (data) {
-					if(!data.length) {
-						// $("#schemeSubmit").addClass('disabled');
+		$(id).autocomplete({
+			minLength: 0,
+			source: function(request, response) {
+				$.ajax({
+					url: "{{url('group-autocomplete-search')}}",
+					type: 'post',
+					dataType: "json",
+					data: {
+						_token : "{{ csrf_token() }}",
+						term: request.term
+					},
+					success: function(data) {
+						response(data);
 					}
-					process(data);
 				});
 			},
-			updater: function(item) {
-
-				$("#schemeSubmit").removeClass('disabled');
-
-				if( item.id != '' ) {
-					console.log(item);
-
-					$("#add_items_current_gold_rate_"+dataId).val(item.name);
-					$('#groupId_'+dataId).val(item.id);
-					
-					return item;
-				}
-			}
+			select: function (event, ui) {
+				$("#"+x.id).val(ui.item.label); // display the selected text
+				$('#groupId_'+dataId).val(ui.item.value); // save selected id to input
+				$("#add_items_current_gold_rate_"+dataId).val(ui.item.currate);
+				$("#add_items_item_id_"+dataId).attr('readonly',false);
+				$("#add_items_lending_gold_rate_"+dataId).val($('#hidden_lend_rate').val());
+				return false;
+			},
+			/* focus: function(event, ui){
+				console.log('hello')
+				 $("#"+x.id).val(ui.item.label);
+				$('#groupId_'+dataId).val(ui.item.value);
+				$("#add_items_current_gold_rate_"+dataId).val(ui.item.value);
+				return false; 
+			},   */
+		}).focus(function() {
+			$("#"+x.id).autocomplete("search", $("#"+x.id).val());
 		});
-	}  
+	}
+	
 
 	function calculate(_input) {  
-		var x = _input;
-		
-		var dataId 				= $("#"+x.id).data("id");
-		var grossWeight 		= x.value;
-		var current_gold_rate 	= Number($("#add_items_current_gold_rate_"+dataId).val());
-		
-		var netValue 			= grossWeight * current_gold_rate;
-		$("#add_items_net_weight_value_"+dataId).val(netValue);
 
-		var sum = 0;
-        var total = $('.totalprice').val();
-        $('.totalprice').each(function()
+		var x = _input;
+		var dataId 				= $("#"+x.id).data("id");
+
+		var grossWeight 		= Number($("#add_items_gross_weight_"+dataId).val());
+		var stoneWeight			= Number($("#add_items_stone_weight_"+dataId).val());
+		var current_gold_rate 	= Number($("#add_items_current_gold_rate_"+dataId).val());
+		var lending_gold_rate 	= Number($("#add_items_lending_gold_rate_"+dataId).val());
+
+		if ( grossWeight > stoneWeight ) {
+
+			var netWeight 				= grossWeight - stoneWeight;
+			$("#add_items_net_weight_"+dataId).val(netWeight);
+
+			var purity_karat_value 		= Number($("#purity_karat_value_"+dataId).val())/100;
+			
+			var netValue 				= netWeight * lending_gold_rate * purity_karat_value;
+			$("#add_items_net_weight_value_"+dataId).val(netValue.toFixed(2));
+
+			var total_item_value 	= netWeight * current_gold_rate;
+			$("#add_items_wo_deduct_value_"+dataId).val(total_item_value.toFixed(2));
+			
+			var deduction_value 		= netWeight - ( netWeight * purity_karat_value );
+			$("#add_items_deduct_value_"+dataId).val(deduction_value.toFixed(2));
+
+			var deduct_gold_value 		= deduction_value * current_gold_rate;
+			$("#add_items_deduct_gold_value_"+dataId).val(deduct_gold_value.toFixed(2));
+
+		} else {
+			alert('Gross weight should be greater than to Stone weight.');
+		}
+
+		totalValue();
+	}
+	
+	function totalValue() {
+
+		var gv_grosswt 		= 0;
+		var gv_stonewt 		= 0;
+		var gv_netwt 		= 0;
+		var gv_sum 			= 0;
+		var gv_wo_netwt		= 0;
+		var gv_dedt_wt		= 0;
+		var gv_dedt_wt_val	= 0;
+       
+        $('.totalGrossWt').each(function()
         {
-            sum += parseInt(this.value);
+			if ( this.value != '' ) {
+            	gv_grosswt += Number(this.value);
+			}
         });
-        $('#totalAmount').html(sum.toFixed(2));
+
+		$('.totalStoneWt').each(function()
+        {
+			if ( this.value != '' ) {
+            	gv_stonewt += Number(this.value);
+			}
+        });
+
+		$('.totalNetWt').each(function()
+        {
+			if ( this.value != '' ) {
+            	gv_netwt += Number(this.value);
+			}
+        });
+
+		$('.toatlWoNetValue').each(function()
+        {
+			if ( this.value != '' ) {
+            	gv_wo_netwt += Number(this.value);
+			}
+        });
+
+		$('.toatlDeductNetWt').each(function()
+        {
+			if ( this.value != '' ) {
+            	gv_dedt_wt += Number(this.value);
+			}
+        });
+
+		$('.toatlDeductNetWtValue').each(function()
+        {
+			if ( this.value != '' ) {
+            	gv_dedt_wt_val += Number(this.value);
+			}
+        });
+
+		$('.netAmountValue').each(function()
+        {
+			if ( this.value != '' ) {
+            	gv_sum += Number(this.value);
+			}
+        });
+
+        /* $('#totalGrossValue').html(Number(gv_grosswt));
+        $('#totalStoneValue').html(Number(gv_stonewt));
+        $('#totalNetValue').html(Number(gv_netwt));
+        $('#totalNetAmount').html(Number(gv_sum)); */
+
+		 $('.totalGrossValue').html(gv_grosswt.toFixed(2));
+		 $('.totalStoneValue').html(gv_stonewt.toFixed(2));
+         $('.totalNetValue').html(gv_netwt.toFixed(2));
+         $('.woNetAmountValue').html(gv_wo_netwt.toFixed(2));
+         $('.totalDeductValue').html(gv_dedt_wt.toFixed(2));
+         $('.totalDeductAmount').html(gv_dedt_wt_val.toFixed(2));
+         $('.totalNetAmount').html(gv_sum.toFixed(2));
+
 	}
 
+	function searchByItem(_input) {  
+		var x 			= _input;
+		var dataId 		= $("#"+x.id).data("id");
+		var groupId 	= $('#groupId_'+dataId).val();
+		var id 			= "#"+x.id;
+
+		$(id).autocomplete({
+			minLength: 1,
+			source: function(request, response) {
+				$.ajax({
+					url: "{{url('item-autocomplete-search')}}",
+					type: 'post',
+					dataType: "json",
+					data: {
+						_token : "{{ csrf_token() }}",
+						term : request.term,
+						groupId : groupId
+					},
+					success: function(data) {
+						response(data);
+					}
+				});
+			},
+			select: function (event, ui) {
+				$("#"+x.id).val(ui.item.label); // display the selected text
+				$('#itemId_'+dataId).val(ui.item.value); // save selected id to input
+				return false;
+			},
+		}).focus(function() {
+			$("#"+x.id).autocomplete("search", $("#"+x.id).val());
+		});
+	}
+
+	function checkPurity(_input)
+	{
+		var x 			= _input;
+		var dataId 		= $("#"+x.id).data("id");
+
+		if(x.value == 1) {
+			var groupId = $('#groupId_'+dataId).val();
+			$.ajax({
+				url: "{{url('get-purity')}}",
+				type: 'post',
+				dataType: "json",
+				data: {
+					_token : "{{ csrf_token() }}",
+					groupId : groupId,
+					count : dataId
+				},
+				success: function(response) {
+					console.log(response);
+					$('#purity_type_'+dataId).html(response);
+				}
+			});
+		} else {
+			var response = '<input type="text" id="add_items_purity_in_karat_'+dataId+'" name="add_items['+i+'][purity_in_karat]" data-id='+dataId+' onkeyup="copyValue(this)" placeholder="0.00" class="form-control" />';
+			$('#purity_type_'+dataId).html(response);
+			// alert(" Please Enter Purity Value ")
+		}
+	}
+
+	function selectPurity(_input) {
+		var x 				= _input;
+		var dataId 			= $("#"+x.id).data("id");
+		var dataPurityValue =  $("#"+x.id).children("option:selected").data("id");
+		$('#purity_karat_value_'+dataId).val(dataPurityValue);
+		calculate(_input);
+	}
+
+	function copyValue(_input) {
+		var x 				= _input;
+		var dataId 			= $("#"+x.id).data("id");
+		$('#purity_karat_value_'+dataId).val(x.value);
+		calculate(_input);
+	}
+
+	function copyReqLoan(_input) {
+		var x 				= _input;
+		$('.req_loan_amount').html(x.value);
+	}
+
+	function selectDate(_input) {
+		var x 				= _input;
+		$('.hidden_loan_date').html(x.value);
+	}
+	
 </script>
+<style>
+	/* table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	} */
+</style>
 @endsection

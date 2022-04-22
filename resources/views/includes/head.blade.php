@@ -19,7 +19,8 @@
 <link rel="stylesheet" href="{{ URL::asset('public/assets/fonts/style.css') }}">
 <!-- Main css -->
 <link rel="stylesheet" href="{{ URL::asset('public/assets/css/main.css') }}">
-
+<!-- Autocomplte css -->
+<link rel="stylesheet" href="{{ URL::asset('public/assets/css/jquery-ui.css') }}" />
 <!-- *************
     ************ Vendor Css Files *************
 ************ -->

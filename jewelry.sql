@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2022 at 05:55 PM
+-- Generation Time: Apr 13, 2022 at 12:08 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -258,7 +258,11 @@ INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `
 (264, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 90, '[]', '{\"scheme_id\":\"76\",\"from\":\"31\",\"to\":\"60\",\"type\":\"days\",\"interest_value\":\"14.00\",\"id\":90}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-07 23:06:50', '2022-04-07 23:06:50'),
 (265, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 91, '[]', '{\"scheme_id\":\"76\",\"from\":\"61\",\"to\":\"90\",\"type\":\"days\",\"interest_value\":\"15.00\",\"id\":91}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-07 23:06:50', '2022-04-07 23:06:50'),
 (266, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 92, '[]', '{\"scheme_id\":\"76\",\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"13.00\",\"id\":92}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-08 06:23:41', '2022-04-08 06:23:41'),
-(267, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Group', 4, '{\"status\":1,\"updated_by\":null}', '{\"status\":0,\"updated_by\":1}', 'http://localhost/jewelry/group/change/4/1', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-08 09:12:59', '2022-04-08 09:12:59');
+(267, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Group', 4, '{\"status\":1,\"updated_by\":null}', '{\"status\":0,\"updated_by\":1}', 'http://localhost/jewelry/group/change/4/1', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-08 09:12:59', '2022-04-08 09:12:59'),
+(268, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldRates', 4, '{\"current_rate\":\"50000.00\"}', '{\"current_rate\":\"2000.00\"}', 'http://localhost/jewelry/goldrate/edit/4', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-11 02:01:09', '2022-04-11 02:01:09'),
+(269, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldRates', 4, '{\"status\":0}', '{\"status\":1}', 'http://localhost/jewelry/goldrate/change/4/0', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-11 02:01:16', '2022-04-11 02:01:16'),
+(270, 'App\\Models\\User', 1, 'created', 'App\\Models\\Items', 9, '[]', '{\"group_id\":\"1\",\"name\":\"Bangle\",\"description\":\"description12\",\"created_by\":1,\"id\":9}', 'http://localhost/jewelry/item/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-12 23:55:32', '2022-04-12 23:55:32'),
+(271, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Items', 9, '{\"item_code\":null}', '{\"item_code\":\"000009\"}', 'http://localhost/jewelry/item/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-12 23:55:32', '2022-04-12 23:55:32');
 
 -- --------------------------------------------------------
 
@@ -319,7 +323,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `customer_code`, `name`, `gender`, `phone_no`, `email`, `address`, `city_id`, `state_id`, `country_id`, `postal_code`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(9, '001', 'kar', 1, 9888888, 'test@gmail.com1', 'address', 1, 1, 1, '600001', 'active', 1, NULL, NULL, '2022-03-31 03:10:01', '2022-03-31 03:10:01', NULL);
+(9, 'It001', 'kar', 1, 9888888, 'test@gmail.com1', 'address', 1, 1, 1, '600001', 'active', 1, NULL, NULL, '2022-03-31 03:10:01', '2022-03-31 03:10:01', NULL),
+(14, 'It002', 'kart', 1, 98888882, 'test@gmailt.com1', 'addresst', 1, 1, 1, '600001', 'active', 1, NULL, NULL, '2022-03-31 03:10:01', '2022-03-31 03:10:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -402,7 +407,7 @@ CREATE TABLE `gold_loans` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `customer_id` bigint(20) NOT NULL,
   `loan_no` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `coapplicant_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coapplicant_id` tinyint(4) NOT NULL DEFAULT 0,
   `nominee_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nominee_relation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nominee_dob` date DEFAULT NULL,
@@ -435,9 +440,9 @@ CREATE TABLE `gold_loans` (
 --
 
 INSERT INTO `gold_loans` (`id`, `customer_id`, `loan_no`, `coapplicant_id`, `nominee_name`, `nominee_relation`, `nominee_dob`, `nominee_age`, `scheme_ref_id`, `payment_ref_id`, `tenure`, `interest_rate`, `frequency`, `loan_date`, `loan_amount`, `sanction_amount`, `interest_type`, `document_chrages`, `loan_status`, `created_by`, `approved_by`, `approved_at`, `rejected_by`, `rejected_at`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, '001', '1', 'kar', 'fathar', '2000-03-21', 22, 1, 1, 12, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:10:54', '2022-03-31 04:10:54', NULL),
-(3, 1, '001', '1', 'kar', 'fathar', '2000-03-21', 22, 1, 1, 12, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:27:39', '2022-03-31 04:27:39', NULL),
-(5, 1, '001', '1', 'kar', 'fathar', '2000-03-21', 22, 1, 1, 12, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:28:23', '2022-03-31 04:28:23', NULL);
+(1, 1, '001', 1, 'kar', 'fathar', '2000-03-21', 22, 1, 1, 12, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:10:54', '2022-03-31 04:10:54', NULL),
+(3, 1, '001', 1, 'kar', 'fathar', '2000-03-21', 22, 1, 1, 12, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:27:39', '2022-03-31 04:27:39', NULL),
+(5, 1, '001', 1, 'kar', 'fathar', '2000-03-21', 22, 1, 1, 12, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:28:23', '2022-03-31 04:28:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -506,7 +511,7 @@ CREATE TABLE `gold_rates` (
 INSERT INTO `gold_rates` (`id`, `group_id`, `current_rate`, `current_date`, `notes`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, '2511.00', '2022-03-30', 'notes', 1, 1, 1, NULL, '2022-03-30 01:46:32', '2022-04-04 07:20:53', NULL),
 (3, 1, '23120.00', '2022-03-21', 'test', 1, 1, 1, NULL, '2022-04-04 07:12:20', '2022-04-04 07:14:44', '2022-04-04 07:14:44'),
-(4, 4, '50000.00', '2022-04-08', 'test', 0, 1, 1, NULL, '2022-04-05 00:53:54', '2022-04-05 01:12:14', NULL);
+(4, 4, '2000.00', '2022-04-08', 'test', 1, 1, 1, NULL, '2022-04-05 00:53:54', '2022-04-11 02:01:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -558,11 +563,9 @@ CREATE TABLE `interest_rates` (
 --
 
 INSERT INTO `interest_rates` (`id`, `scheme_id`, `from`, `to`, `type`, `interest_value`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 3, 3, 3, 'days', '3.00', '2022-03-30 05:03:29', '2022-03-30 05:03:29', NULL),
-(2, 4, 1, 30, 'days', '12.00', '2022-03-30 05:04:29', '2022-03-30 05:04:29', NULL),
 (3, 3, 1, 30, 'days', '12.00', '2022-03-30 05:58:30', '2022-03-30 05:58:30', NULL),
-(4, 3, 1, 30, 'days', '12.00', '2022-03-30 06:13:38', '2022-03-30 06:13:38', NULL),
-(5, 3, 1, 30, 'days', '12.00', '2022-03-30 06:15:32', '2022-03-30 06:15:32', NULL),
+(4, 3, 31, 90, 'days', '13.00', '2022-03-30 06:13:38', '2022-03-30 06:13:38', NULL),
+(5, 3, 91, 180, 'days', '14.00', '2022-03-30 06:15:32', '2022-03-30 06:15:32', NULL),
 (6, 7, 1, 30, 'days', '12.00', '2022-03-30 06:16:23', '2022-03-30 06:16:23', NULL),
 (7, 9, 1, 30, 'days', '12.00', '2022-03-30 06:18:32', '2022-03-30 06:18:32', NULL),
 (8, 11, 1, 30, 'days', '12.00', '2022-03-30 06:23:04', '2022-03-30 06:23:04', NULL),
@@ -687,7 +690,8 @@ INSERT INTO `items` (`id`, `group_id`, `name`, `item_code`, `description`, `stat
 (5, 5, 'tttrew', NULL, '12333', 1, 1, 1, NULL, '2022-04-05 03:23:17', '2022-04-05 03:32:35', '2022-04-05 03:32:35'),
 (6, 2, 'tttrew', '000006', '12333', 1, 1, NULL, NULL, '2022-04-05 03:23:45', '2022-04-05 03:23:45', NULL),
 (7, 0, '1', '000007', 'segment description', 1, 1, NULL, NULL, '2022-04-05 03:31:52', '2022-04-05 03:32:05', '2022-04-05 03:32:05'),
-(8, 1, 'product2', '000008', 'description', 1, 1, 1, NULL, '2022-04-05 05:39:34', '2022-04-05 05:39:59', NULL);
+(8, 1, 'product2', '000008', 'description', 1, 1, 1, NULL, '2022-04-05 05:39:34', '2022-04-05 05:39:59', NULL),
+(9, 1, 'Bangle', '000009', 'description12', 1, 1, NULL, NULL, '2022-04-12 23:55:32', '2022-04-12 23:55:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -802,7 +806,7 @@ CREATE TABLE `schemes` (
   `penalty` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `payment_basis_on` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `loan_period` tinyint(4) DEFAULT NULL,
-  `gold_approval` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lending_rate` decimal(10,2) NOT NULL DEFAULT 0.00,
   `minimum_loan_amount` decimal(10,2) NOT NULL DEFAULT 0.00,
   `maximum_loan_amount` decimal(10,2) NOT NULL DEFAULT 0.00,
   `processing_fees` decimal(8,2) NOT NULL DEFAULT 0.00,
@@ -819,21 +823,21 @@ CREATE TABLE `schemes` (
 -- Dumping data for table `schemes`
 --
 
-INSERT INTO `schemes` (`id`, `scheme_type_id`, `name`, `description`, `item_ref_id`, `start_date`, `end_date`, `loan_basis`, `subscheme`, `payment_in_advance`, `preclosure_time`, `penalty_type`, `penalty`, `payment_basis_on`, `loan_period`, `gold_approval`, `minimum_loan_amount`, `maximum_loan_amount`, `processing_fees`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:14:34', '2022-03-29 23:14:34', NULL),
-(2, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:32:17', '2022-03-29 23:32:17', NULL),
-(3, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:33:28', '2022-03-29 23:33:28', NULL),
-(4, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:34:29', '2022-03-29 23:34:29', NULL),
-(5, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:43:37', '2022-03-30 00:43:37', NULL),
-(6, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:45:32', '2022-03-30 00:45:32', NULL),
-(7, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:46:23', '2022-03-30 00:46:23', NULL),
-(8, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:47:59', '2022-03-30 00:47:59', NULL),
-(9, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:48:32', '2022-03-30 00:48:32', NULL),
-(10, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:48:43', '2022-03-30 00:48:43', NULL),
-(11, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:53:04', '2022-03-30 00:53:04', NULL),
-(12, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:53:20', '2022-03-30 00:53:20', NULL),
-(14, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 0, 1, 1, NULL, '2022-03-30 00:55:10', '2022-04-05 00:25:38', '2022-04-05 00:25:38'),
-(44, 1, 'schemename', 'des1233', 0, '2022-04-06', '2022-04-16', 1, 0, '1', 12, '2', '2', '1', 24, '12', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 06:54:53', '2022-04-06 06:54:53', NULL),
+INSERT INTO `schemes` (`id`, `scheme_type_id`, `name`, `description`, `item_ref_id`, `start_date`, `end_date`, `loan_basis`, `subscheme`, `payment_in_advance`, `preclosure_time`, `penalty_type`, `penalty`, `payment_basis_on`, `loan_period`, `jewel_approval`, `minimum_loan_amount`, `maximum_loan_amount`, `processing_fees`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 2, 'Scheme1', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:14:34', '2022-03-29 23:14:34', NULL),
+(2, 2, 'Scheme2', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:32:17', '2022-03-29 23:32:17', NULL),
+(3, 2, 'Scheme3', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:33:28', '2022-03-29 23:33:28', NULL),
+(4, 2, 'Scheme4', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:34:29', '2022-03-29 23:34:29', NULL),
+(5, 2, 'Scheme5', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:43:37', '2022-03-30 00:43:37', NULL),
+(6, 2, 'Scheme6', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:45:32', '2022-03-30 00:45:32', NULL),
+(7, 2, 'Scheme7', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:46:23', '2022-03-30 00:46:23', NULL),
+(8, 2, 'Scheme8', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:47:59', '2022-03-30 00:47:59', NULL),
+(9, 2, 'Scheme9', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:48:32', '2022-03-30 00:48:32', NULL),
+(10, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:48:43', '2022-03-30 00:48:43', NULL),
+(11, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:53:04', '2022-03-30 00:53:04', NULL),
+(12, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:53:20', '2022-03-30 00:53:20', NULL),
+(14, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 0, 1, 1, NULL, '2022-03-30 00:55:10', '2022-04-05 00:25:38', '2022-04-05 00:25:38'),
+(44, 1, 'schemename', 'des1233', 0, '2022-04-06', '2022-04-16', 2, 0, '1', 12, '2', '2', '1', 24, '12', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 06:54:53', '2022-04-06 06:54:53', NULL),
 (48, 1, 'Testproduct', 'test122', 2, '2022-04-07', '2022-04-09', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 06:59:48', '2022-04-06 06:59:48', NULL),
 (49, 1, 'Coderz', 'twess', 2, '2022-04-06', '2022-04-23', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:02:00', '2022-04-06 07:02:00', NULL),
 (50, 1, 'Coderz1', 'test', 1, '2022-04-07', '2022-04-19', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:05:21', '2022-04-06 07:05:21', NULL),
@@ -876,7 +880,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `status`, `view_permission`, `role_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@coderzvision.com', NULL, '$2y$10$xqD3uxBu98gQobC6xCPgo..WmVUW6Mqoa.e15HAkX6a5g.gXBFkmi', 0, 'global', 0, 'BulKVi4RBXTpqZs87o5vMDFTywucVsURpkNLkK8p2I2UQtzhX9vVFYttLvET', '2022-04-06 04:42:55', NULL);
+(1, 'Admin', 'admin@coderzvision.com', NULL, '$2y$10$xqD3uxBu98gQobC6xCPgo..WmVUW6Mqoa.e15HAkX6a5g.gXBFkmi', 0, 'global', 0, 'VNxsqxsahyA0tGKBtDi0m2ei0ruVDjXXCu9LGXubImAhqhFMGyEZP3MIii7A', '2022-04-06 04:42:55', NULL);
 
 --
 -- Indexes for dumped tables
@@ -1020,7 +1024,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `audits`
 --
 ALTER TABLE `audits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=268;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=272;
 
 --
 -- AUTO_INCREMENT for table `branches`
@@ -1032,7 +1036,7 @@ ALTER TABLE `branches`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `designations`
@@ -1092,7 +1096,7 @@ ALTER TABLE `interest_types`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `migrations`

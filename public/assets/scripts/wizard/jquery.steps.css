@@ -148,9 +148,9 @@
 	list-style: disc !important;
 }
 
-.wizard > .content > .body ul>li {
+/* .wizard > .content > .body ul>li {
 	display: list-item;
-}
+} */
 
 .wizard > .content > .body>iframe {
 	border: 0 none;

@@ -171,10 +171,10 @@ $(':input.customercode').typeahead({
             $("#gl_card").removeClass('d-none');
             $('#hidden_customer_id').val(item.id);
             $('#hidden_customer_code').val(item.customer_code);
-            $('#hidden_nominee_name').val(item.name);
-            $('#hidden_nominee_relation').val(item.customer_code);
-            $('#hidden_nominee_dob').html(item.customer_code);
-            $('#hidden_nominee_age').val(item.customer_code);
+            $('#hidden_nominee_name').val(item.nominee_name);
+            $('#hidden_nominee_relation').val(item.nominee_relation);
+            $('#hidden_nominee_dob').val(item.nominee_dob);
+            $('#hidden_nominee_age').val(item.nominee_age);
             return item;
         }
     }
@@ -195,6 +195,9 @@ $(':input.schemename').typeahead({
 
         // $("#schemeSubmit").removeClass('disabled');
         if( item.id != '' ) {
+            $("#navlink_next").removeClass('disabled');
+            $("#navlink_previous").removeClass('disabled');
+            
             var intvalue = 0;
             if(item.interests.length > 0) {
 

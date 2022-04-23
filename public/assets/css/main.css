@@ -8315,3 +8315,7 @@ label {
 code {
   color: #f77eb9;
   word-break: break-word; }
+
+  .bt-0 {
+    border-top: 0px !important;
+  }

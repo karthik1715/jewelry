@@ -21,12 +21,16 @@ class CreateGoldLoanItemsTable extends Migration
             $table->tinyInteger('noof_items');
             $table->string('gold_type');
             $table->tinyInteger('purity_in_karrot');
+            $table->decimal('purity_karat_value', 8, 2)->default(0.0);
             $table->decimal('gross_weight', 8, 2);
             $table->decimal('stone_weight', 8, 2)->default(0.0);
             $table->decimal('net_weight', 10, 2)->default(0.0);
             $table->decimal('current_gold_rate', 10, 2)->default(0.0);
             $table->decimal('lending_gold_rate', 10, 2)->default(0.0);
             $table->decimal('net_weight_value', 10, 2)->default(0.0);
+            $table->decimal('wo_deduct_value', 10, 2)->default(0.0);
+            $table->decimal('deduct_value', 10, 2)->default(0.0);
+            $table->decimal('deduct_gold_value', 10, 2)->default(0.0);
             $table->string('remarks')->nullable();
             $table->text('item_image');
             $table->string('item_image_path');

@@ -27,6 +27,10 @@ class CreateCustomersTable extends Migration
             $table->tinyInteger('state_id');
             $table->integer('country_id');
             $table->string('postal_code');
+            $table->string('nominee_name')->nullable();
+            $table->string('nominee_relation')->nullable();
+            $table->date('nominee_dob')->nullable();
+            $table->tinyInteger('nominee_age')->nullable();
             $table->string('status')->default('active');
             $table->bigInteger('created_by');
             $table->bigInteger('updated_by')->nullable();

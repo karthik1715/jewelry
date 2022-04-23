@@ -16,16 +16,11 @@ class CreateGoldLoansTable extends Migration
         Schema::create('gold_loans', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('customer_id');
-            $table->string('loan_no', 50);
-            $table->tinyInteger('coapplicant_id')->default(0); 
-           /*  $table->string('nominee_name')->nullable();
-            $table->string('nominee_relation')->nullable();
-            $table->date('nominee_dob')->nullable();
-            $table->tinyInteger('nominee_age')->nullable(); */
+            $table->string('loan_no', 50)->nullable();
             $table->bigInteger('scheme_ref_id');
             $table->bigInteger('payment_ref_id');
-            $table->tinyInteger('tenure');
-            $table->tinyInteger('interest_rate');
+            /* $table->tinyInteger('tenure');
+            $table->tinyInteger('interest_rate'); */
             $table->tinyInteger('frequency')->nullable();
             $table->date('loan_date')->nullable();
             $table->decimal('loan_amount', 10, 2)->default(0.0); 

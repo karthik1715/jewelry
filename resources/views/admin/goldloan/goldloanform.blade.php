@@ -383,10 +383,27 @@
 										<form action="#" method="get" id="glItemsFrom">
 											<!-- Row start -->
 											<div class="row gutters">
+												
+												<div class="col-xl-8 col-lglg-8 col-md-8 col-sm-6 col-12">
+												</div>
+												<div class="col-xl-2 col-lglg-2 col-md-2 col-sm-6 col-6">
+													<div class="form-group">
+														<label for="inputName">{{ __('app.general.currate') }} {{ __('app.general.pergm') }}</label>
+														<input type="text" class="form-control hidden_group_gold_rate" id="hidden_group_gold_rate" value="" readonly >
+														<input type="hidden" class="hidden_group_ref_id" id="hidden_group_ref_id" value=""  >
+													</div>
+												</div>
+												<div class="col-xl-2 col-lglg-2 col-md-2 col-sm-6 col-6">
+													<div class="form-group">
+														<label for="inputName">{{ __('app.goldloan.lend-rate') }} {{ __('app.general.pergm') }}</label>
+														<input type="text" class="form-control hidden_lend_rate" id="hidden_lend_rate" value="" readonly >
+													</div>
+												</div>
+
 												<table class="table table-bordered" id="dynamicTable">  
 													<tr>
 														<th><input type='checkbox' id="checkedAll"></th>
-														<th style="width: 90px;">{{ __('app.group.item-grp') }}</th>
+														<!-- <th style="width: 90px;">{{ __('app.group.item-grp') }}</th> -->
 														<th style="width: 90px;">{{ __('app.item.formtitle') }}</th>
 														<th>{{ __('app.item.noof-items') }}</th>
 														<th style="width: 90px;">{{ __('app.goldloan.selecttype') }}</th>
@@ -394,18 +411,18 @@
 														<th>{{ __('app.goldloan.grwt') }} {{ __('app.general.gms') }}</th>
 														<th>{{ __('app.goldloan.stwt') }} {{ __('app.general.gms') }}</th>
 														<th>{{ __('app.general.nwt') }} {{ __('app.general.gms') }}</th>
-														<th style="width: 90px;">{{ __('app.general.currate') }} {{ __('app.general.pergm') }}</th>
+														<!-- <th style="width: 90px;">{{ __('app.general.currate') }} {{ __('app.general.pergm') }}</th> -->
 														<th style="width: 90px;">{{ __('app.general.perc-deduction') }} {{ __('app.general.gms') }}</th>
-														<th style="width: 90px;">{{ __('app.goldloan.lend-rate') }}{{ __('app.general.pergm') }}</th>
+														<!-- <th style="width: 90px;">{{ __('app.goldloan.lend-rate') }}{{ __('app.general.pergm') }}</th> -->
 														<th style="width: 90px;">{{ __('app.goldloan.nwtvalue') }}</th>
 														<th>{{ __('app.goldloan.remarks') }}</th>
 														<th style="width: 20px;">{{ __('app.general.action') }}</th>
 													</tr>
 													<tr>  
 														<td><input type='checkbox' disabled></td>
-														<td><input type="text" id="add_items_group_name_0" name="add_items[0][group_name]" placeholder="{{ __('app.group.item-grp') }}" data-id='0' onkeyup="searchByGroup(this)" onmouseenter="searchByGroup(this)" class="form-control group-name" />
-															<input type="hidden" id="groupId_0" name="add_items[0][group_id]" value=""></td>  
-														<td><input type="text" id="add_items_item_name_0" name="add_items[0][item_name]" placeholder="{{ __('app.item.formtitle') }}"  data-id='0' class="form-control" readonly onkeypress="searchByItem(this)" />
+														<!-- <td><input type="text" id="add_items_group_name_0" name="add_items[0][group_name]" placeholder="{{ __('app.group.item-grp') }}" data-id='0' onkeyup="searchByGroup(this)" onmouseenter="searchByGroup(this)" class="form-control group-name" />
+															<input type="hidden" id="groupId_0" name="add_items[0][group_id]" value=""></td>   -->
+														<td><input type="text" id="add_items_item_name_0" name="add_items[0][item_name]" placeholder="{{ __('app.item.formtitle') }}"  data-id='0' class="form-control" onkeypress="searchByItem(this)" />
 															<input type="hidden" id="itemId_0" name="add_items[0][item_id]" value=""></td>  
 														<td><input type="text" id="add_items_noof_items_0" name="add_items[0][noof_items]" placeholder="0"  data-id='0' class="form-control" /></td>  
 														<td><select type="text" id="add_items_gold_type_0" name="add_items[0][gold_type]" data-id='0' class="form-control" onchange="checkPurity(this)">
@@ -417,12 +434,12 @@
 														<td><input type="text" id="add_items_gross_weight_0" name="add_items[0][gross_weight]" placeholder="0.00" class="form-control totalGrossWt" data-id='0' onkeyup="calculate(this)"  />
 															<input type="hidden" name="add_items[0][purity_karat_value]" id="purity_karat_value_0" value=""></td>  
 														<td><input type="text" id="add_items_stone_weight_0" name="add_items[0][stone_weight]" placeholder="0.00"  data-id='0' class="form-control totalStoneWt" onkeyup="calculate(this)" /></td>  
-														<td><input type="text" id="add_items_net_weight_0" name="add_items[0][net_weight]" placeholder="0.00" data-id='0' class="form-control totalNetWt" readonly /></td>  
-														<td><input type="text" id="add_items_current_gold_rate_0" name="add_items[0][current_gold_rate]" data-id='0' placeholder="0.00" class="form-control" value="" readonly />
-															<input type="hidden" id="add_items_wo_deduct_value_0" name="add_items[0][wo_deduct_value]" data-id='0' class="form-control toatlWoNetValue" value="" /></td>  
+														<td><input type="text" id="add_items_net_weight_0" name="add_items[0][net_weight]" placeholder="0.00" data-id='0' class="form-control totalNetWt" readonly />
+															<input type="hidden" id="add_items_wo_deduct_value_0" name="add_items[0][wo_deduct_value]" data-id='0' class="form-control toatlWoNetValue" value="" /></td>    
+														<!-- <td><input type="text" id="add_items_current_gold_rate_0" name="add_items[0][current_gold_rate]" data-id='0' placeholder="0.00" class="form-control" value="" readonly /> -->
 														<td><input type="text" id="add_items_deduct_value_0" name="add_items[0][deduct_value]" data-id='0' placeholder="0.00" class="form-control toatlDeductNetWt" value="" readonly />
 															<input type="hidden" id="add_items_deduct_gold_value_0" name="add_items[0][deduct_gold_value]" data-id='0'  class="form-control toatlDeductNetWtValue"  value="" /></td>  
-														<td><input type="text" id="add_items_lending_gold_rate_0" name="add_items[0][lending_gold_rate]" placeholder="0.00"  data-id='0' class="form-control" readonly /></td>  
+														<!-- <td><input type="text" id="add_items_lending_gold_rate_0" name="add_items[0][lending_gold_rate]" placeholder="0.00"  data-id='0' class="form-control" readonly /></td>   -->
 														<td><input type="text" id="add_items_net_weight_value_0" name="add_items[0][net_weight_value]" data-id='0' placeholder="0.00" class="form-control netAmountValue" readonly /></td> 
 														<td><input type="text" id="add_items_remarks_0" name="add_items[0][remarks]" placeholder="{{ __('app.goldloan.remarks') }}" class="form-control" /></td> 
 														<td><button type="button" class="btn btn-info clear-row" data-id='0' ><i class="icon-circle-with-cross"></i></button></td> 
@@ -436,7 +453,7 @@
 											<!-- Row start -->
 											<div class="row gutters">
 												<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
-													<div class="custom-btn-group">
+													<div class="">
 														<button type="button" name="add" id="add" class="btn btn-info">Add More</button>
 														<button type="button" id="deleteButton" disabled class="btn btn-danger delete-row" >Delete Row</button>
 													</div>
@@ -691,21 +708,21 @@
 		}
 		++i;
 		$("#dynamicTable").append('<tr><td><input type="checkbox" class="checkSingle" name="record"  onchange="toggleCheckbox(this)"></td>'+
-									  '<td><input type="text" id="add_items_group_name_'+i+'" name="add_items['+i+'][group_name]" data-id='+i+' onmouseenter="searchByGroup(this)" onkeyup="searchByGroup(this)" placeholder="{{ __('app.group.item-grp') }}" class="form-control group-name" />'+
-									  '<input type="hidden" id="groupId_'+i+'" name="add_items['+i+'][group_id]" value=""></td>'+
-									  '<td><input type="text" id="add_items_item_name_'+i+'" name="add_items['+i+'][item_name]" data-id='+i+' onkeypress="searchByItem(this)" readonly placeholder="{{ __('app.item.formtitle') }}" class="form-control" />'+
+									  /* '<td><input type="text" id="add_items_group_name_'+i+'" name="add_items['+i+'][group_name]" data-id='+i+' onmouseenter="searchByGroup(this)" onkeyup="searchByGroup(this)" placeholder="{{ __('app.group.item-grp') }}" class="form-control group-name" />'+
+									  '<input type="hidden" id="groupId_'+i+'" name="add_items['+i+'][group_id]" value=""></td>'+ */
+									  '<td><input type="text" id="add_items_item_name_'+i+'" name="add_items['+i+'][item_name]" data-id='+i+' onkeypress="searchByItem(this)" placeholder="{{ __('app.item.formtitle') }}" class="form-control" />'+
 									  '<input type="hidden" id="itemId_'+i+'" name="add_items['+i+'][item_id]" value=""></td>'+
 									  '<td><input type="text" id="add_items_noof_items_'+i+'" name="add_items['+i+'][noof_items]" data-id='+i+' placeholder="0" class="form-control" /></td>'+
 									  '<td><select type="text" id="add_items_gold_type_'+i+'" name="add_items['+i+'][gold_type]" data-id='+i+' class="form-control" onchange="checkPurity(this)" ><option value="">Select</option><option value="1">Karat</option><option value="2">Percentage</option></select></td>'+
 									  '<td id="purity_type_'+i+'"><input type="text" class="form-control" readonly /></td>'+
 									  '<td><input type="text" id="add_items_gross_weight_'+i+'" name="add_items['+i+'][gross_weight]" data-id='+i+' onkeyup="calculate(this)" placeholder="0.00" class="form-control totalGrossWt" /><input type="hidden" name="add_items['+i+'][purity_karat_value]" id="purity_karat_value_'+i+'" value=""></td>'+
 									  '<td><input type="text" id="add_items_stone_weight_'+i+'" name="add_items['+i+'][stone_weight]" data-id='+i+' onkeyup="calculate(this)" placeholder="0.00" class="form-control totalStoneWt" /></td>'+
-									  '<td><input type="text" id="add_items_net_weight_'+i+'" name="add_items['+i+'][net_weight]" data-id='+i+' placeholder="0.00" class="form-control totalNetWt" readonly /></td>'+
-									  '<td><input type="text" id="add_items_current_gold_rate_'+i+'" name="add_items['+i+'][current_gold_rate]" value="" data-id='+i+' placeholder="0.00" class="form-control" readonly />'+
+									  '<td><input type="text" id="add_items_net_weight_'+i+'" name="add_items['+i+'][net_weight]" data-id='+i+' placeholder="0.00" class="form-control totalNetWt" readonly />'+
 									  '<input type="hidden" id="add_items_wo_deduct_value_'+i+'" name="add_items['+i+'][wo_deduct_value]" data-id='+i+'  class="form-control toatlWoNetValue"  value="" /></td>'+
+									  /* '<td><input type="text" id="add_items_current_gold_rate_'+i+'" name="add_items['+i+'][current_gold_rate]" value="" data-id='+i+' placeholder="0.00" class="form-control" readonly /></td>'+ */
 									  '<td><input type="text" id="add_items_deduct_value_'+i+'" name="add_items['+i+'][deduct_value]" data-id='+i+' placeholder="0.00" class="form-control toatlDeductNetWt" value="" readonly />'+
 									  '<input type="hidden" id="add_items_deduct_gold_value_'+i+'" name="add_items['+i+'][deduct_gold_value]" data-id='+i+'  class="form-control toatlDeductNetWtValue"  value="" /></td>'+
-									  '<td><input type="text" id="add_items_lending_gold_rate_'+i+'" name="add_items['+i+'][lending_gold_rate]" data-id='+i+' placeholder="0.00" class="form-control" readonly /></td>'+
+									  /* '<td><input type="text" id="add_items_lending_gold_rate_'+i+'" name="add_items['+i+'][lending_gold_rate]" data-id='+i+' placeholder="0.00" class="form-control" readonly /></td>'+ */
 									  '<td><input type="text" id="add_items_net_weight_value_'+i+'" name="add_items['+i+'][net_weight_value]" data-id='+i+' placeholder="0.00" class="form-control netAmountValue" readonly /></td>'+
 									  '<td><input type="text" id="add_items_remarks_'+i+'" name="add_items['+i+'][remarks]" data-id='+i+' placeholder="{{ __('app.goldloan.remarks') }}" class="form-control" /></td>'+
 									  '<td><button type="button" class="btn btn-danger remove-tr" data-id='+i+' ><i class="icon-trash-2"></i></button></td></tr>');
@@ -714,8 +731,9 @@
 
 	$(document).on('click', '.clear-row', function(){  
 			$("#add_items_group_name_0").val('');
-			$("#groupId_0").val('');
+			// $("#groupId_0").val('');
 			$("#add_items_item_id_0").val('');
+			$("#add_items_item_name_0").val('');
 			$("#itemId_0").val('');
 			$("#add_items_noof_items_0").val('');
 			$("#add_items_purity_in_karat_0").val('');
@@ -723,9 +741,9 @@
 			$("#add_items_gross_weight_0").val('');
 			$("#add_items_stone_weight_0").val('');
 			$("#add_items_net_weight_0").val('');
-			$("#add_items_current_gold_rate_0").val('');
+			// $("#add_items_current_gold_rate_0").val('');
 			$("#add_items_deduct_value_0").val('');
-			$("#add_items_lending_gold_rate_0").val('');
+			// $("#add_items_lending_gold_rate_0").val('');
 			$("#add_items_net_weight_value_0").val('');
 			$("#add_items_remarks_0").val('');
 			$("#add_items_deduct_gold_value_0").val('');
@@ -801,7 +819,7 @@
 		}
 	}
 
-	function searchByGroup(_input) {  
+	/* function searchByGroup(_input) {  
 		var x = _input;
 		var dataId = $("#"+x.id).data("id");
 		var id = "#"+x.id;
@@ -830,16 +848,16 @@
 				$("#add_items_lending_gold_rate_"+dataId).val($('#hidden_lend_rate').val());
 				return false;
 			},
-			/* focus: function(event, ui){
-				 $("#"+x.id).val(ui.item.label);
-				$('#groupId_'+dataId).val(ui.item.value);
-				$("#add_items_current_gold_rate_"+dataId).val(ui.item.value);
-				return false; 
-			},   */
+			// focus: function(event, ui){
+			//	 $("#"+x.id).val(ui.item.label);
+			//	$('#groupId_'+dataId).val(ui.item.value);
+			//	$("#add_items_current_gold_rate_"+dataId).val(ui.item.value);
+			//	return false; 
+			//},   
 		}).focus(function() {
 			$("#"+x.id).autocomplete("search", $("#"+x.id).val());
 		});
-	}
+	} */
 	
 
 	function calculate(_input) {  
@@ -849,8 +867,12 @@
 
 		var grossWeight 		= Number($("#add_items_gross_weight_"+dataId).val());
 		var stoneWeight			= Number($("#add_items_stone_weight_"+dataId).val());
-		var current_gold_rate 	= Number($("#add_items_current_gold_rate_"+dataId).val());
-		var lending_gold_rate 	= Number($("#add_items_lending_gold_rate_"+dataId).val());
+
+		/* var current_gold_rate 	= Number($("#add_items_current_gold_rate_"+dataId).val());
+		var lending_gold_rate 	= Number($("#add_items_lending_gold_rate_"+dataId).val()); */
+
+		var current_gold_rate 	= Number($("#hidden_group_gold_rate").val());
+		var lending_gold_rate 	= Number($("#hidden_lend_rate").val());
 
 		if ( grossWeight > stoneWeight ) {
 
@@ -955,7 +977,7 @@
 	function searchByItem(_input) {  
 		var x 			= _input;
 		var dataId 		= $("#"+x.id).data("id");
-		var groupId 	= $('#groupId_'+dataId).val();
+		// var groupId 	= $('#groupId_'+dataId).val();
 		var id 			= "#"+x.id;
 
 		$(id).autocomplete({
@@ -968,7 +990,7 @@
 					data: {
 						_token : "{{ csrf_token() }}",
 						term : request.term,
-						groupId : groupId
+						// groupId : groupId
 					},
 					success: function(data) {
 						response(data);
@@ -991,7 +1013,8 @@
 		var dataId 		= $("#"+x.id).data("id");
 
 		if(x.value == 1) {
-			var groupId = $('#groupId_'+dataId).val();
+			// var groupId = $('#groupId_'+dataId).val();
+			var groupId = $('#hidden_group_ref_id').val();
 			$.ajax({
 				url: "{{url('get-purity')}}",
 				type: 'post',
@@ -1039,17 +1062,20 @@
 
 	function glSubmitForm() {
 
-		var totalGrossValue 	= $('.totalGrossValue').html();
-		var totalStoneValue 	= $('.totalStoneValue').html();
-		var totalNetValue  		= $('.totalNetValue ').html();
-		var totalDeductValue 	= $('.totalDeductValue').html();
-		var woNetAmountValue  	= $('.woNetAmountValue ').html();
-		var totalDeductAmount 	= $('.totalDeductAmount').html();
-		var totalNetAmount		= $('.totalNetAmount').html();
-		var sanction_amount		= $('#sanction_amount').val();
-		var appraiser_id		= $('#appraiser_id').html();
-		var id  				= $("#hiddenGlId").val();
-		var url         		= $("#hiddenUrl").val();
+		var totalGrossValue 		= $('.totalGrossValue').html();
+		var totalStoneValue 		= $('.totalStoneValue').html();
+		var totalNetValue  			= $('.totalNetValue ').html();
+		var totalDeductValue 		= $('.totalDeductValue').html();
+		var woNetAmountValue  		= $('.woNetAmountValue ').html();
+		var totalDeductAmount 		= $('.totalDeductAmount').html();
+		var totalNetAmount			= $('.totalNetAmount').html();
+		var sanction_amount			= $('#sanction_amount').val();
+		var appraiser_id			= $('#appraiser_id').html();
+		var hidden_group_ref_id  	= $("#hidden_group_ref_id").val();
+		var hidden_lend_rate  		= $("#hidden_lend_rate").val();
+		var hidden_group_gold_rate  = $("#hidden_group_gold_rate").val();
+		var id  					= $("#hiddenGlId").val();
+		var url         			= $("#hiddenUrl").val();
 
 		if( id != '') {
 			var _method = "POST"; // instead of PUT method.
@@ -1061,7 +1087,8 @@
 		var glForm 				= $("#glFrom").serialize();
 		var glItemsFrom 		= $("#glItemsFrom").serialize();
 		var glData 				= '+&totalGrossValue='+totalGrossValue+'+&totalStoneValue='+totalStoneValue+'+&totalNetValue='+totalNetValue+'+&totalDeductValue='+totalDeductValue+'+&woNetAmountValue='+woNetAmountValue+
-								  '+&totalDeductAmount='+totalDeductAmount+'+&totalNetAmount='+totalNetAmount+'+&sanction_amount='+sanction_amount+'+&appraiser_id='+appraiser_id+'+&hiddenGlId='+hiddenGlId;
+								  '+&totalDeductAmount='+totalDeductAmount+'+&totalNetAmount='+totalNetAmount+'+&sanction_amount='+sanction_amount+'+&appraiser_id='+appraiser_id+'+&hiddenGlId='+hiddenGlId+
+								  '+&hidden_group_ref_id='+hidden_group_ref_id+'+&hidden_lend_rate='+hidden_lend_rate+'+&hidden_group_gold_rate='+hidden_group_gold_rate;
 
 		$.ajax({
 			url		: url,
@@ -1074,7 +1101,7 @@
 			},
 			success: function(response) {
 				console.log(response);
-				die;
+				window.location.href = "{{ route('goldloan.list') }}"
 			}
 		});
 		

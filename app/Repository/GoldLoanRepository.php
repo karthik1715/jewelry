@@ -51,6 +51,7 @@ class GoldLoanRepository implements IGoldLoanRepository
             parse_str($collection['glForm'], $glFormValue);
         }
         $id = $glFormValue['hiddenGlId'];
+        // print_r($collection['glItemsFrom']);
 // die;
         
 
@@ -98,6 +99,10 @@ class GoldLoanRepository implements IGoldLoanRepository
 
                 if ( $result ) {
 
+                    $hidden_group_ref_id        = $glFormValue['hidden_group_ref_id'];
+                    $hidden_group_gold_rate     = $glFormValue['hidden_group_gold_rate'];
+                    $hidden_lend_rate   = $glFormValue['hidden_lend_rate'];
+
                     if ( $collection['glItemsFrom'] ) {
                         parse_str($collection['glItemsFrom'], $glFormItemValue);
                         
@@ -105,7 +110,7 @@ class GoldLoanRepository implements IGoldLoanRepository
                             
                             $glItems                        = new GoldLoanItems;
                             $glItems->gold_loan_id          = $insertedId;
-                            $glItems->group_id              = $value['group_id'];
+                            $glItems->group_id              = $hidden_group_ref_id;
                             $glItems->item_id               = $value['item_id'];
                             $glItems->noof_items            = $value['noof_items'];
                             $glItems->gold_type             = $value['gold_type'];
@@ -113,12 +118,12 @@ class GoldLoanRepository implements IGoldLoanRepository
                             $glItems->gross_weight          = $value['gross_weight'];
                             $glItems->stone_weight          = $value['stone_weight']?$value['stone_weight']:'0.00';
                             $glItems->net_weight            = $value['net_weight'];
-                            $glItems->current_gold_rate     = $value['current_gold_rate'];
+                            $glItems->current_gold_rate     = $hidden_group_gold_rate;
                             $glItems->purity_karat_value    = $value['purity_karat_value'];
                             $glItems->wo_deduct_value       = $value['wo_deduct_value'];
                             $glItems->deduct_value          = $value['deduct_value'];
                             $glItems->deduct_gold_value     = $value['deduct_gold_value'];
-                            $glItems->lending_gold_rate     = $value['lending_gold_rate'];
+                            $glItems->lending_gold_rate     = $hidden_lend_rate;
                             $glItems->net_weight_value      = $value['net_weight_value'];
                             $glItems->remarks               = $value['remarks'];
                             $glItems->item_image            = 'profilr.jpeg';

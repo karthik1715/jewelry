@@ -98,16 +98,16 @@
 
 										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
-												<label for="inputName">{{ __('app.item.formtitle') }}</label><span class="text-danger">*</span>
-												<input type="text" class="form-control itemname" name="item_name" placeholder="{{ __('app.item.formtitle') }}" value="{{ $scheme->item->name ?? '' }}" required>
-												<input type="hidden" name="item_ref_id" id="hidden_scheme_id" value="{{ $scheme->item_ref_id ?? '0' }}" >
+												<label for="inputName">{{ __('app.group.formtitle') }}</label><span class="text-danger">*</span>
+												<input type="text" class="form-control groupname" name="group_name" placeholder="{{ __('app.group.formtitle') }}" value="{{ $scheme->group->name ?? '' }}" required>
+												<input type="hidden" name="group_ref_id" id="hidden_group_id" value="{{ $scheme->group_ref_id ?? '0' }}" >
 											</div>
 										</div>
 
 										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
-												<label for="inputName">{{ __('app.general.applicable-from') }}</label><span class="text-danger">*</span>
-												<input type="date" class="form-control" name="start_date" placeholder="{{ __('app.general.applicable-from') }}" value="{{ $scheme->start_date ?? '' }}" required>
+												<label for="inputName">{{ __('app.general.apply-from') }}</label><span class="text-danger">*</span>
+												<input type="date" class="form-control" name="start_date" placeholder="{{ __('app.general.apply-from') }}" value="{{ $scheme->start_date ?? '' }}" required>
 											</div>
 										</div>
 
@@ -199,17 +199,17 @@
 											</div>
 										</div>
 										
-										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+										<!-- <div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
-												<label for="inputName">{{ __('app.general.loan-period') }}</label><span class="text-danger">*</span>
-												<input type="text" class="form-control" name="loan_period" placeholder="{{ __('app.general.loan-period') }}" value="{{ $scheme->loan_period ?? '' }}" required>
+												<label for="inputName">{{ __('app.general.loan-approval') }}</label><span class="text-danger">*</span>
+												<input type="text" class="form-control" name="loan_approval" placeholder="{{ __('app.general.loan-approval') }}" value="{{ $scheme->loan_approval ?? '' }}" required>
 											</div>
-										</div>
-										
+										</div> -->
+
 										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
-												<label for="inputName">{{ __('app.general.gold-approval') }}</label><span class="text-danger">*</span>
-												<input type="text" class="form-control" name="jewel_approval" placeholder="{{ __('app.general.gold-approval') }}" value="{{ $scheme->jewel_approval ?? '' }}" required>
+												<label for="inputName">{{ __('app.general.lending_rate') }} {{ __('app.general.pergm') }}</label><span class="text-danger">*</span>
+												<input type="text" class="form-control" name="lending_rate" placeholder="{{ __('app.general.lending_rate') }}" value="{{ $scheme->lending_rate ?? '' }}" required>
 											</div>
 										</div>
 										

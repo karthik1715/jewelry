@@ -214,8 +214,14 @@ $(':input.schemename').typeahead({
                                                 '<td>' + item.interests[i]['interest_value'] + '</td></tr>';
                 }
             }
-            
+            var current_gold_rate = 0;
+            if( item.gold_rates ) {
+                current_gold_rate = item.gold_rates[0].current_rate;
+            }
+
             $('#hidden_scheme_id').val(item.id);
+            $('#hidden_group_ref_id').val(item.group_ref_id);
+            $('#hidden_group_gold_rate').val(current_gold_rate);
             $('#hidden_tenure').val(item.loan_period);
             $('#hidden_interest_rate').val(intvalue);
             $('.hidden_scheme_name').html(item.name);

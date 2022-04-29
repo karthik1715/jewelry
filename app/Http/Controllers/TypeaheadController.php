@@ -42,7 +42,7 @@ class TypeaheadController extends Controller
     {
         $query          = $request->get('query');
         $scheme_type    = $request->get('scheme_type');
-        $schemeResult   = Scheme::with('interests')->where('loan_basis',$scheme_type)
+        $schemeResult   = Scheme::with('interests','gold_rates')->where('loan_basis',$scheme_type)
                                  ->where('name', 'LIKE', '%'. $query. '%')->get();
         return response()->json($schemeResult);
     } 
@@ -74,8 +74,10 @@ class TypeaheadController extends Controller
     public function autocompleteSearchItemNames(Request $request)
     {
         $query  = $request->get('term');
-        $group_id = $request->get('groupId');
-        $filterResult = Items::where('name', 'LIKE', '%'. $query. '%')->where('group_id', $group_id)->get();
+        // $group_id = $request->get('groupId');
+        // $filterResult = Items::where('name', 'LIKE', '%'. $query. '%')->where('group_id', $group_id)->get();
+        $filterResult = Items::where('name', 'LIKE', '%'. $query. '%')->get();
+
         $res = array();
 
         if( count($filterResult) ) {

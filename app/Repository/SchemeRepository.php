@@ -49,23 +49,32 @@ class SchemeRepository implements ISchemeRepository
 
                 $scheme                         = new Scheme;
                 $scheme->scheme_type_id         = $collection['scheme_type_id'];
+                $scheme->group_ref_id           = $collection['group_ref_id'];
                 $scheme->name                   = $collection['name'];
-                $scheme->description            = $collection['description'];
-                $scheme->group_ref_id            = $collection['group_ref_id'];
                 $scheme->start_date             = $collection['start_date'];
                 $scheme->end_date               = $collection['end_date'];
                 $scheme->loan_basis             = $collection['loan_basis'];
-                // $scheme->subscheme              = $collection['subscheme'];
+                $scheme->calc_method            = $collection['calc_method'];
+                $scheme->pay_frequency          = $collection['pay_frequency'];
+                $scheme->compound_interest      = $collection['compound_interest'];
                 $scheme->payment_in_advance     = $collection['payment_in_advance'];
+                $scheme->loyal_point            = $collection['loyal_point'];
+                $scheme->auto_round             = $collection['auto_round'];
+                $scheme->round_to               = $collection['round_to'];
+                $scheme->round_mode             = $collection['round_mode'];
                 $scheme->preclosure_time        = $collection['preclosure_time'];
                 $scheme->penalty_type           = $collection['penalty_type'];
                 $scheme->penalty                = $collection['penalty'];
                 $scheme->payment_basis_on       = $collection['payment_basis_on'];
                 $scheme->loan_period            = $collection['loan_period'];
-                $scheme->lending_rate           = $collection['lending_rate'];
                 $scheme->minimum_loan_amount    = $collection['minimum_loan_amount'];
                 $scheme->maximum_loan_amount    = $collection['maximum_loan_amount'];
+                $scheme->process_feestype       = $collection['process_feestype'];
                 $scheme->processing_fees        = $collection['processing_fees'];
+                $scheme->lending_rate           = $collection['lending_rate'];
+                $scheme->loan_approval          = $collection['loan_approval'];
+                $scheme->description            = $collection['description'];
+                $scheme->subscheme              = 0; //$collection['subscheme'];
                 $scheme->created_by             = auth()->id();
                 $result                         = $scheme->save();
                 $insertedId                     = $scheme->id;
@@ -85,6 +94,7 @@ class SchemeRepository implements ISchemeRepository
                             $intRates->save();
                             DB::commit();
                         }
+                        return $result;
                     }
                 }
                 else
@@ -106,21 +116,31 @@ class SchemeRepository implements ISchemeRepository
 
             $scheme->scheme_type_id         = $collection['scheme_type_id'];
             $scheme->name                   = $collection['name'];
-            $scheme->description            = $collection['description'];
-            $scheme->group_ref_id            = $collection['group_ref_id'];
+            $scheme->group_ref_id           = $collection['group_ref_id'];
             $scheme->start_date             = $collection['start_date'];
             $scheme->end_date               = $collection['end_date'];
             $scheme->loan_basis             = $collection['loan_basis'];
+            $scheme->calc_method            = $collection['calc_method'];
+            $scheme->pay_frequency          = $collection['pay_frequency'];
+            $scheme->compound_interest      = $collection['compound_interest'];
             $scheme->payment_in_advance     = $collection['payment_in_advance'];
+            $scheme->loyal_point            = $collection['loyal_point'];
+            $scheme->auto_round             = $collection['auto_round'];
+            $scheme->round_to               = $collection['round_to'];
+            $scheme->round_mode             = $collection['round_mode'];
             $scheme->preclosure_time        = $collection['preclosure_time'];
             $scheme->penalty_type           = $collection['penalty_type'];
             $scheme->penalty                = $collection['penalty'];
             $scheme->payment_basis_on       = $collection['payment_basis_on'];
             $scheme->loan_period            = $collection['loan_period'];
-            $scheme->lending_rate           = $collection['lending_rate'];
             $scheme->minimum_loan_amount    = $collection['minimum_loan_amount'];
             $scheme->maximum_loan_amount    = $collection['maximum_loan_amount'];
+            $scheme->process_feestype       = $collection['process_feestype'];
             $scheme->processing_fees        = $collection['processing_fees'];
+            $scheme->lending_rate           = $collection['lending_rate'];
+            $scheme->loan_approval          = $collection['loan_approval'];
+            $scheme->description            = $collection['description'];
+            $scheme->subscheme              = 0; //$collection['subscheme'];
             $scheme->updated_by             = auth()->id();
             $result                         = $scheme->save();
             $insertedId                     = $id;
@@ -142,6 +162,7 @@ class SchemeRepository implements ISchemeRepository
                         $intRates->save();
                         DB::commit();
                     }
+                    return $result;
                 }
             }
             else

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2022 at 10:44 AM
+-- Generation Time: Apr 13, 2022 at 12:08 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -262,84 +262,7 @@ INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `
 (268, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldRates', 4, '{\"current_rate\":\"50000.00\"}', '{\"current_rate\":\"2000.00\"}', 'http://localhost/jewelry/goldrate/edit/4', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-11 02:01:09', '2022-04-11 02:01:09'),
 (269, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldRates', 4, '{\"status\":0}', '{\"status\":1}', 'http://localhost/jewelry/goldrate/change/4/0', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-11 02:01:16', '2022-04-11 02:01:16'),
 (270, 'App\\Models\\User', 1, 'created', 'App\\Models\\Items', 9, '[]', '{\"group_id\":\"1\",\"name\":\"Bangle\",\"description\":\"description12\",\"created_by\":1,\"id\":9}', 'http://localhost/jewelry/item/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-12 23:55:32', '2022-04-12 23:55:32'),
-(271, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Items', 9, '{\"item_code\":null}', '{\"item_code\":\"000009\"}', 'http://localhost/jewelry/item/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-12 23:55:32', '2022-04-12 23:55:32'),
-(272, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Items', 8, '{\"group_id\":1,\"name\":\"product2\"}', '{\"group_id\":\"8\",\"name\":\"Ring\"}', 'http://localhost/jewelry/item/edit/8', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-19 01:36:58', '2022-04-19 01:36:58'),
-(273, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Items', 8, '{\"group_id\":8}', '{\"group_id\":\"1\"}', 'http://localhost/jewelry/item/edit/8', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-19 01:37:30', '2022-04-19 01:37:30'),
-(274, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Items', 1, '{\"name\":\"Silver\"}', '{\"name\":\"Chain\"}', 'http://localhost/jewelry/item/edit/1', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-19 01:37:50', '2022-04-19 01:37:50'),
-(275, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Scheme', 76, '{\"lending_rate\":\"80.00\"}', '{\"lending_rate\":\"2000.00\"}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-19 05:18:52', '2022-04-19 05:18:52'),
-(276, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 93, '[]', '{\"scheme_id\":\"76\",\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"13.00\",\"id\":93}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-19 05:18:52', '2022-04-19 05:18:52'),
-(277, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Scheme', 76, '{\"group_ref_id\":1}', '{\"group_ref_id\":\"4\"}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-19 05:45:47', '2022-04-19 05:45:47'),
-(278, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 94, '[]', '{\"scheme_id\":\"76\",\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"13.00\",\"id\":94}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-19 05:45:47', '2022-04-19 05:45:47'),
-(279, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Scheme', 76, '{\"loan_basis\":1}', '{\"loan_basis\":\"3\"}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-19 06:59:43', '2022-04-19 06:59:43'),
-(280, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 95, '[]', '{\"scheme_id\":\"76\",\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"13.00\",\"id\":95}', 'http://localhost/jewelry/scheme/edit/76', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-19 06:59:43', '2022-04-19 06:59:43'),
-(285, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 8, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-23\",\"loan_amount\":\"10045\",\"sanction_amount\":\"1000 \",\"created_by\":1,\"id\":8}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:28:18', '2022-04-23 07:28:18'),
-(286, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 8, '{\"loan_no\":null}', '{\"loan_no\":\"000008\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:28:18', '2022-04-23 07:28:18'),
-(287, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 3, '[]', '{\"gold_loan_id\":8,\"group_id\":\"1\",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"1\",\"gross_weight\":\"1\",\"net_weight\":\"1\",\"current_gold_rate\":\"2511.00\",\"lending_gold_rate\":\"80.00\",\"net_weight_value\":\"79.92\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":3}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:28:18', '2022-04-23 07:28:18'),
-(288, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 9, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-23\",\"loan_amount\":\"10045\",\"sanction_amount\":\"1000 \",\"created_by\":1,\"id\":9}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:28:46', '2022-04-23 07:28:46'),
-(289, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 9, '{\"loan_no\":null}', '{\"loan_no\":\"000009\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:28:46', '2022-04-23 07:28:46');
-INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `auditable_id`, `old_values`, `new_values`, `url`, `ip_address`, `user_agent`, `tags`, `created_at`, `updated_at`) VALUES
-(290, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 4, '[]', '{\"gold_loan_id\":9,\"group_id\":\"1\",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"1\",\"gross_weight\":\"1\",\"net_weight\":\"1\",\"current_gold_rate\":\"2511.00\",\"lending_gold_rate\":\"80.00\",\"net_weight_value\":\"79.92\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":4}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:28:46', '2022-04-23 07:28:46'),
-(291, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 10, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-23\",\"loan_amount\":\"10045\",\"sanction_amount\":\"1000 \",\"created_by\":1,\"id\":10}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:29:50', '2022-04-23 07:29:50'),
-(292, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 10, '{\"loan_no\":null}', '{\"loan_no\":\"000010\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:29:50', '2022-04-23 07:29:50'),
-(293, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 5, '[]', '{\"gold_loan_id\":10,\"group_id\":\"1\",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"1\",\"gross_weight\":\"1\",\"stone_weight\":\"0.00\",\"net_weight\":\"1\",\"current_gold_rate\":\"2511.00\",\"lending_gold_rate\":\"80.00\",\"net_weight_value\":\"79.92\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":5}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:29:50', '2022-04-23 07:29:50'),
-(294, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 11, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-23\",\"loan_amount\":\"10045\",\"sanction_amount\":\"1000 \",\"created_by\":1,\"id\":11}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:39:03', '2022-04-23 07:39:03'),
-(295, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 11, '{\"loan_no\":null}', '{\"loan_no\":\"000011\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:39:03', '2022-04-23 07:39:03'),
-(296, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 6, '[]', '{\"gold_loan_id\":11,\"group_id\":\"1\",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"1\",\"gross_weight\":\"1\",\"stone_weight\":\"0.00\",\"net_weight\":\"1\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"99.90\",\"wo_deduct_value\":\"2511.00\",\"deduct_value\":\"0.00\",\"deduct_gold_value\":\"2.51\",\"lending_gold_rate\":\"80.00\",\"net_weight_value\":\"79.92\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":6}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:39:03', '2022-04-23 07:39:03'),
-(297, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 12, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-23\",\"loan_amount\":\"10045\",\"sanction_amount\":\"1000 \",\"loan_status\":\"completed\",\"created_by\":1,\"id\":12}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:42:35', '2022-04-23 07:42:35'),
-(298, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 12, '{\"loan_no\":null}', '{\"loan_no\":\"000012\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:42:35', '2022-04-23 07:42:35'),
-(299, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 7, '[]', '{\"gold_loan_id\":12,\"group_id\":\"1\",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"1\",\"gross_weight\":\"1\",\"stone_weight\":\"0.00\",\"net_weight\":\"1\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"99.90\",\"wo_deduct_value\":\"2511.00\",\"deduct_value\":\"0.00\",\"deduct_gold_value\":\"2.51\",\"lending_gold_rate\":\"80.00\",\"net_weight_value\":\"79.92\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":7}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 07:42:35', '2022-04-23 07:42:35'),
-(320, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 22, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-23\",\"loan_amount\":\"10045\",\"sanction_amount\":\"1000 \",\"loan_status\":\"completed\",\"created_by\":1,\"approved_by\":1,\"id\":22}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 08:40:53', '2022-04-23 08:40:53'),
-(321, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 22, '{\"loan_no\":null}', '{\"loan_no\":\"000022\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 08:40:53', '2022-04-23 08:40:53'),
-(322, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItemTotal', 3, '[]', '{\"loan_type_id\":22,\"total_gross_weight\":\"1.00 \",\"total_stone_weight\":\"0.00 \",\"total_net_weight\":\"1.00 \",\"total_percentage_deduction\":\"0.50 \",\"total_value_for_item\":\"2511.00 \",\"total_value_for_deduction\":\"1255.50 \",\"total_value_for_net_weight\":\"40.00 \",\"id\":3}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 08:40:53', '2022-04-23 08:40:53'),
-(323, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanStatusHistory', 1, '[]', '{\"loan_type_id\":22,\"loan_status\":\"completed\",\"created_by\":1,\"id\":1}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 08:40:53', '2022-04-23 08:40:53'),
-(324, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 8, '[]', '{\"gold_loan_id\":22,\"group_id\":\"1\",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"2\",\"purity_in_karrot\":\"50\",\"gross_weight\":\"1\",\"stone_weight\":\"0.00\",\"net_weight\":\"1\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"50\",\"wo_deduct_value\":\"2511.00\",\"deduct_value\":\"0.50\",\"deduct_gold_value\":\"1255.50\",\"lending_gold_rate\":\"80.00\",\"net_weight_value\":\"40.00\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":8}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-23 08:40:53', '2022-04-23 08:40:53'),
-(325, 'App\\Models\\User', 1, 'created', 'App\\Models\\Scheme', 77, '[]', '{\"scheme_type_id\":\"1\",\"group_ref_id\":\"0\",\"name\":\"Scheme 1\",\"start_date\":\"2022-04-06\",\"end_date\":\"2022-04-27\",\"loan_basis\":\"1\",\"calc_method\":\"1\",\"pay_frequency\":\"0\",\"compound_interest\":\"1\",\"payment_in_advance\":\"1\",\"loyal_point\":\"0\",\"auto_round\":\"1\",\"round_to\":\"0\",\"round_mode\":\"1\",\"preclosure_time\":\"20\",\"penalty_type\":\"1\",\"penalty\":\"10\",\"payment_basis_on\":\"1\",\"loan_period\":\"365\",\"minimum_loan_amount\":\"1000\",\"maximum_loan_amount\":\"12000\",\"process_feestype\":\"1\",\"processing_fees\":\"0\",\"lending_rate\":\"2000\",\"loan_approval\":\"100\",\"description\":\"des\",\"subscheme\":0,\"created_by\":1,\"id\":77}', 'http://localhost/jewelry/scheme/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:15:07', '2022-04-25 07:15:07'),
-(326, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 96, '[]', '{\"scheme_id\":77,\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"18\",\"id\":96}', 'http://localhost/jewelry/scheme/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:15:07', '2022-04-25 07:15:07'),
-(327, 'App\\Models\\User', 1, 'created', 'App\\Models\\Scheme', 78, '[]', '{\"scheme_type_id\":\"1\",\"group_ref_id\":\"0\",\"name\":\"Scheme 1\",\"start_date\":\"2022-04-06\",\"end_date\":\"2022-04-27\",\"loan_basis\":\"1\",\"calc_method\":\"1\",\"pay_frequency\":\"0\",\"compound_interest\":\"1\",\"payment_in_advance\":\"1\",\"loyal_point\":\"0\",\"auto_round\":\"1\",\"round_to\":\"0\",\"round_mode\":\"1\",\"preclosure_time\":\"20\",\"penalty_type\":\"1\",\"penalty\":\"10\",\"payment_basis_on\":\"1\",\"loan_period\":\"365\",\"minimum_loan_amount\":\"1000\",\"maximum_loan_amount\":\"12000\",\"process_feestype\":\"1\",\"processing_fees\":\"0\",\"lending_rate\":\"2000\",\"loan_approval\":\"100\",\"description\":\"des\",\"subscheme\":0,\"created_by\":1,\"id\":78}', 'http://localhost/jewelry/scheme/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:27:32', '2022-04-25 07:27:32'),
-(328, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 97, '[]', '{\"scheme_id\":78,\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"18\",\"id\":97}', 'http://localhost/jewelry/scheme/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:27:32', '2022-04-25 07:27:32'),
-(331, 'App\\Models\\User', 1, 'created', 'App\\Models\\Scheme', 81, '[]', '{\"scheme_type_id\":\"1\",\"group_ref_id\":\"0\",\"name\":\"Scheme 1\",\"start_date\":\"2022-04-06\",\"end_date\":\"2022-04-27\",\"loan_basis\":\"1\",\"calc_method\":\"1\",\"pay_frequency\":\"0\",\"compound_interest\":\"1\",\"payment_in_advance\":\"1\",\"loyal_point\":\"0\",\"auto_round\":\"1\",\"round_to\":\"0\",\"round_mode\":\"1\",\"preclosure_time\":\"20\",\"penalty_type\":\"1\",\"penalty\":\"10\",\"payment_basis_on\":\"1\",\"loan_period\":\"365\",\"minimum_loan_amount\":\"1000\",\"maximum_loan_amount\":\"12000\",\"process_feestype\":\"1\",\"processing_fees\":\"0\",\"lending_rate\":\"2000\",\"loan_approval\":\"100\",\"description\":\"des\",\"subscheme\":0,\"created_by\":1,\"id\":81}', 'http://localhost/jewelry/scheme/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:32:31', '2022-04-25 07:32:31'),
-(332, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 98, '[]', '{\"scheme_id\":81,\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"18\",\"id\":98}', 'http://localhost/jewelry/scheme/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:32:31', '2022-04-25 07:32:31'),
-(333, 'App\\Models\\User', 1, 'created', 'App\\Models\\Scheme', 82, '[]', '{\"scheme_type_id\":\"1\",\"group_ref_id\":\"0\",\"name\":\"Scheme 1\",\"start_date\":\"2022-04-06\",\"end_date\":\"2022-04-27\",\"loan_basis\":\"1\",\"calc_method\":\"1\",\"pay_frequency\":\"0\",\"compound_interest\":\"1\",\"payment_in_advance\":\"1\",\"loyal_point\":\"0\",\"auto_round\":\"1\",\"round_to\":\"0\",\"round_mode\":\"1\",\"preclosure_time\":\"20\",\"penalty_type\":\"1\",\"penalty\":\"10\",\"payment_basis_on\":\"1\",\"loan_period\":\"365\",\"minimum_loan_amount\":\"1000\",\"maximum_loan_amount\":\"12000\",\"process_feestype\":\"1\",\"processing_fees\":\"0\",\"lending_rate\":\"2000\",\"loan_approval\":\"100\",\"description\":\"des\",\"subscheme\":0,\"created_by\":1,\"id\":82}', 'http://localhost/jewelry/scheme/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:35:02', '2022-04-25 07:35:02'),
-(334, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 99, '[]', '{\"scheme_id\":82,\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"18\",\"id\":99}', 'http://localhost/jewelry/scheme/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:35:02', '2022-04-25 07:35:02'),
-(335, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Scheme', 82, '{\"group_ref_id\":0,\"updated_by\":null}', '{\"group_ref_id\":\"1\",\"updated_by\":1}', 'http://localhost/jewelry/scheme/edit/82', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:36:25', '2022-04-25 07:36:25'),
-(336, 'App\\Models\\User', 1, 'created', 'App\\Models\\InterestRates', 100, '[]', '{\"scheme_id\":\"82\",\"from\":\"1\",\"to\":\"30\",\"type\":\"days\",\"interest_value\":\"19.00\",\"id\":100}', 'http://localhost/jewelry/scheme/edit/82', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 07:36:25', '2022-04-25 07:36:25'),
-(345, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 25, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-27\",\"loan_amount\":\"100\",\"sanction_amount\":\"1 \",\"loan_status\":\"completed\",\"created_by\":1,\"approved_by\":1,\"id\":25}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:07', '2022-04-25 09:38:07'),
-(346, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 25, '{\"loan_no\":null}', '{\"loan_no\":\"000025\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:07', '2022-04-25 09:38:07'),
-(347, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItemTotal', 6, '[]', '{\"loan_type_id\":25,\"total_gross_weight\":\"11.00 \",\"total_stone_weight\":\"1.10 \",\"total_net_weight\":\"9.90 \",\"total_percentage_deduction\":\"9.00 \",\"total_value_for_item\":\"24858.90 \",\"total_value_for_deduction\":\"22601.26 \",\"total_value_for_net_weight\":\"71.93 \",\"id\":6}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:07', '2022-04-25 09:38:07'),
-(348, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanStatusHistory', 4, '[]', '{\"loan_type_id\":25,\"loan_status\":\"completed\",\"created_by\":1,\"id\":4}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:07', '2022-04-25 09:38:07'),
-(349, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 9, '[]', '{\"gold_loan_id\":25,\"group_id\":\"2511.00\",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"1\",\"gross_weight\":\"1\",\"stone_weight\":\"0.10\",\"net_weight\":\"0.9\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"99.90\",\"wo_deduct_value\":\"2259.90\",\"deduct_value\":\"0.00\",\"deduct_gold_value\":\"2.26\",\"lending_gold_rate\":\"80.00 \",\"net_weight_value\":\"71.93\",\"remarks\":\"test\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":9}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:07', '2022-04-25 09:38:07'),
-(350, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 26, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-27\",\"loan_amount\":\"100\",\"sanction_amount\":\"1 \",\"loan_status\":\"completed\",\"created_by\":1,\"approved_by\":1,\"id\":26}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:54', '2022-04-25 09:38:54'),
-(351, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 26, '{\"loan_no\":null}', '{\"loan_no\":\"000026\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:54', '2022-04-25 09:38:54'),
-(352, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItemTotal', 7, '[]', '{\"loan_type_id\":26,\"total_gross_weight\":\"11.00 \",\"total_stone_weight\":\"1.10 \",\"total_net_weight\":\"9.90 \",\"total_percentage_deduction\":\"9.00 \",\"total_value_for_item\":\"24858.90 \",\"total_value_for_deduction\":\"22601.26 \",\"total_value_for_net_weight\":\"71.93 \",\"id\":7}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:54', '2022-04-25 09:38:54'),
-(353, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanStatusHistory', 5, '[]', '{\"loan_type_id\":26,\"loan_status\":\"completed\",\"created_by\":1,\"id\":5}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:54', '2022-04-25 09:38:54'),
-(354, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 10, '[]', '{\"gold_loan_id\":26,\"group_id\":\"2511.00\",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"1\",\"gross_weight\":\"1\",\"stone_weight\":\"0.10\",\"net_weight\":\"0.9\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"99.90\",\"wo_deduct_value\":\"2259.90\",\"deduct_value\":\"0.00\",\"deduct_gold_value\":\"2.26\",\"lending_gold_rate\":\"80.00 \",\"net_weight_value\":\"71.93\",\"remarks\":\"test\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":10}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:38:54', '2022-04-25 09:38:54'),
-(355, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 27, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-27\",\"loan_amount\":\"100\",\"sanction_amount\":\"1 \",\"loan_status\":\"completed\",\"created_by\":1,\"approved_by\":1,\"id\":27}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:39:12', '2022-04-25 09:39:12'),
-(356, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 27, '{\"loan_no\":null}', '{\"loan_no\":\"000027\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:39:12', '2022-04-25 09:39:12'),
-(357, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItemTotal', 8, '[]', '{\"loan_type_id\":27,\"total_gross_weight\":\"11.00 \",\"total_stone_weight\":\"1.10 \",\"total_net_weight\":\"9.90 \",\"total_percentage_deduction\":\"9.00 \",\"total_value_for_item\":\"24858.90 \",\"total_value_for_deduction\":\"22601.26 \",\"total_value_for_net_weight\":\"71.93 \",\"id\":8}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:39:12', '2022-04-25 09:39:12'),
-(358, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanStatusHistory', 6, '[]', '{\"loan_type_id\":27,\"loan_status\":\"completed\",\"created_by\":1,\"id\":6}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:39:12', '2022-04-25 09:39:12'),
-(359, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 11, '[]', '{\"gold_loan_id\":27,\"group_id\":\"2511.00\",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"1\",\"gross_weight\":\"1\",\"stone_weight\":\"0.10\",\"net_weight\":\"0.9\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"99.90\",\"wo_deduct_value\":\"2259.90\",\"deduct_value\":\"0.00\",\"deduct_gold_value\":\"2.26\",\"lending_gold_rate\":\"80.00 \",\"net_weight_value\":\"71.93\",\"remarks\":\"test\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":11}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:39:12', '2022-04-25 09:39:12'),
-(364, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 29, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-27\",\"loan_amount\":\"100\",\"sanction_amount\":\"1 \",\"loan_status\":\"completed\",\"created_by\":1,\"approved_by\":1,\"id\":29}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:23', '2022-04-25 09:47:23'),
-(365, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 29, '{\"loan_no\":null}', '{\"loan_no\":\"000029\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:23', '2022-04-25 09:47:23'),
-(366, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItemTotal', 10, '[]', '{\"loan_type_id\":29,\"total_gross_weight\":\"20.00 \",\"total_stone_weight\":\"0.00 \",\"total_net_weight\":\"20.00 \",\"total_percentage_deduction\":\"10.00 \",\"total_value_for_item\":\"50220.00 \",\"total_value_for_deduction\":\"25110.00 \",\"total_value_for_net_weight\":\"800.00 \",\"id\":10}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:23', '2022-04-25 09:47:23'),
-(367, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanStatusHistory', 8, '[]', '{\"loan_type_id\":29,\"loan_status\":\"completed\",\"created_by\":1,\"id\":8}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:23', '2022-04-25 09:47:23'),
-(368, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 12, '[]', '{\"gold_loan_id\":29,\"group_id\":\"1 \",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"8\",\"gross_weight\":\"10\",\"stone_weight\":\"0.00\",\"net_weight\":\"10\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"50.00\",\"wo_deduct_value\":\"25110.00\",\"deduct_value\":\"5.00\",\"deduct_gold_value\":\"12555.00\",\"lending_gold_rate\":\"80.00 \",\"net_weight_value\":\"400.00\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":12}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:23', '2022-04-25 09:47:23'),
-(369, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 13, '[]', '{\"gold_loan_id\":29,\"group_id\":\"1 \",\"item_id\":\"8\",\"noof_items\":\"1\",\"gold_type\":\"2\",\"purity_in_karrot\":\"50\",\"gross_weight\":\"10\",\"stone_weight\":\"0.00\",\"net_weight\":\"10\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"50\",\"wo_deduct_value\":\"25110.00\",\"deduct_value\":\"5.00\",\"deduct_gold_value\":\"12555.00\",\"lending_gold_rate\":\"80.00 \",\"net_weight_value\":\"400.00\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":13}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:23', '2022-04-25 09:47:23'),
-(370, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 30, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-27\",\"loan_amount\":\"100\",\"sanction_amount\":\"1 \",\"loan_status\":\"completed\",\"created_by\":1,\"approved_by\":1,\"id\":30}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:44', '2022-04-25 09:47:44'),
-(371, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 30, '{\"loan_no\":null}', '{\"loan_no\":\"000030\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:44', '2022-04-25 09:47:44'),
-(372, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItemTotal', 11, '[]', '{\"loan_type_id\":30,\"total_gross_weight\":\"20.00 \",\"total_stone_weight\":\"0.00 \",\"total_net_weight\":\"20.00 \",\"total_percentage_deduction\":\"10.00 \",\"total_value_for_item\":\"50220.00 \",\"total_value_for_deduction\":\"25110.00 \",\"total_value_for_net_weight\":\"800.00 \",\"id\":11}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:44', '2022-04-25 09:47:44'),
-(373, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanStatusHistory', 9, '[]', '{\"loan_type_id\":30,\"loan_status\":\"completed\",\"created_by\":1,\"id\":9}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:44', '2022-04-25 09:47:44'),
-(374, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 14, '[]', '{\"gold_loan_id\":30,\"group_id\":\"1 \",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"8\",\"gross_weight\":\"10\",\"stone_weight\":\"0.00\",\"net_weight\":\"10\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"50.00\",\"wo_deduct_value\":\"25110.00\",\"deduct_value\":\"5.00\",\"deduct_gold_value\":\"12555.00\",\"lending_gold_rate\":\"80.00 \",\"net_weight_value\":\"400.00\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":14}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:44', '2022-04-25 09:47:44'),
-(375, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 15, '[]', '{\"gold_loan_id\":30,\"group_id\":\"1 \",\"item_id\":\"8\",\"noof_items\":\"1\",\"gold_type\":\"2\",\"purity_in_karrot\":\"50\",\"gross_weight\":\"10\",\"stone_weight\":\"0.00\",\"net_weight\":\"10\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"50\",\"wo_deduct_value\":\"25110.00\",\"deduct_value\":\"5.00\",\"deduct_gold_value\":\"12555.00\",\"lending_gold_rate\":\"80.00 \",\"net_weight_value\":\"400.00\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":15}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-25 09:47:44', '2022-04-25 09:47:44'),
-(376, 'App\\Models\\User', 1, 'created', 'App\\Models\\Group', 6, '[]', '{\"name\":\"Silver1\",\"created_by\":1,\"id\":6}', 'http://localhost/jewelry/group/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:07:14', '2022-04-26 02:07:14'),
-(377, 'App\\Models\\User', 1, 'created', 'App\\Models\\Items', 10, '[]', '{\"group_id\":\"1\",\"name\":\"necklace\",\"description\":\"test\",\"created_by\":1,\"id\":10}', 'http://localhost/jewelry/item/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:08:46', '2022-04-26 02:08:46'),
-(378, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Items', 10, '{\"item_code\":null}', '{\"item_code\":\"000010\"}', 'http://localhost/jewelry/item/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:08:46', '2022-04-26 02:08:46'),
-(379, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoans', 31, '[]', '{\"customer_id\":\"9\",\"scheme_ref_id\":\"3\",\"payment_ref_id\":\"1\",\"loan_date\":\"2022-04-26\",\"loan_amount\":\"10000\",\"sanction_amount\":\"10000 \",\"loan_status\":\"completed\",\"created_by\":1,\"approved_by\":1,\"id\":31}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:18:01', '2022-04-26 02:18:01'),
-(380, 'App\\Models\\User', 1, 'updated', 'App\\Models\\GoldLoans', 31, '{\"loan_no\":null}', '{\"loan_no\":\"000031\"}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:18:01', '2022-04-26 02:18:01'),
-(381, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItemTotal', 12, '[]', '{\"loan_type_id\":31,\"total_gross_weight\":\"11.00 \",\"total_stone_weight\":\"0.10 \",\"total_net_weight\":\"10.90 \",\"total_percentage_deduction\":\"2.12 \",\"total_value_for_item\":\"27369.90 \",\"total_value_for_deduction\":\"5323.32 \",\"total_value_for_net_weight\":\"702.40 \",\"id\":12}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:18:01', '2022-04-26 02:18:01'),
-(382, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanStatusHistory', 10, '[]', '{\"loan_type_id\":31,\"loan_status\":\"completed\",\"created_by\":1,\"id\":10}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:18:01', '2022-04-26 02:18:01'),
-(383, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 16, '[]', '{\"gold_loan_id\":31,\"group_id\":\"1 \",\"item_id\":\"1\",\"noof_items\":\"1\",\"gold_type\":\"2\",\"purity_in_karrot\":\"50\",\"gross_weight\":\"1\",\"stone_weight\":\"0.10\",\"net_weight\":\"0.9\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"50\",\"wo_deduct_value\":\"2259.90\",\"deduct_value\":\"0.45\",\"deduct_gold_value\":\"1129.95\",\"lending_gold_rate\":\"80.00 \",\"net_weight_value\":\"36.00\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":16}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:18:01', '2022-04-26 02:18:01'),
-(384, 'App\\Models\\User', 1, 'created', 'App\\Models\\GoldLoanItems', 17, '[]', '{\"gold_loan_id\":31,\"group_id\":\"1 \",\"item_id\":\"8\",\"noof_items\":\"1\",\"gold_type\":\"1\",\"purity_in_karrot\":\"4\",\"gross_weight\":\"10\",\"stone_weight\":\"0.00\",\"net_weight\":\"10\",\"current_gold_rate\":\"2511.00\",\"purity_karat_value\":\"83.30\",\"wo_deduct_value\":\"25110.00\",\"deduct_value\":\"1.67\",\"deduct_gold_value\":\"4193.37\",\"lending_gold_rate\":\"80.00 \",\"net_weight_value\":\"666.40\",\"remarks\":\"\",\"item_image\":\"profilr.jpeg\",\"item_image_path\":\"http:\\/\\/localhost\\/\",\"created_by\":1,\"id\":17}', 'http://localhost/jewelry/goldloan/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:18:01', '2022-04-26 02:18:01'),
-(385, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Scheme', 82, '{\"status\":1}', '{\"status\":0}', 'http://localhost/jewelry/scheme/change/82/1', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', NULL, '2022-04-26 02:23:52', '2022-04-26 02:23:52');
+(271, 'App\\Models\\User', 1, 'updated', 'App\\Models\\Items', 9, '{\"item_code\":null}', '{\"item_code\":\"000009\"}', 'http://localhost/jewelry/item/create', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', NULL, '2022-04-12 23:55:32', '2022-04-12 23:55:32');
 
 -- --------------------------------------------------------
 
@@ -379,8 +302,6 @@ CREATE TABLE `customers` (
   `customer_code` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gender` tinyint(4) NOT NULL,
-  `dob` date DEFAULT NULL,
-  `age` tinyint(4) NOT NULL DEFAULT 0,
   `phone_no` bigint(20) DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -388,10 +309,6 @@ CREATE TABLE `customers` (
   `state_id` tinyint(4) NOT NULL,
   `country_id` int(11) NOT NULL,
   `postal_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nominee_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nominee_relation` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nominee_dob` date DEFAULT NULL,
-  `nominee_age` tinyint(4) DEFAULT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
   `created_by` bigint(20) NOT NULL,
   `updated_by` bigint(20) DEFAULT NULL,
@@ -405,9 +322,9 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `customer_code`, `name`, `gender`, `dob`, `age`, `phone_no`, `email`, `address`, `city_id`, `state_id`, `country_id`, `postal_code`, `nominee_name`, `nominee_relation`, `nominee_dob`, `nominee_age`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(9, 'It001', 'kar', 1, NULL, 0, 9888888, 'test@gmail.com1', 'address', 1, 1, 1, '600001', 'Test', 'Father', '1970-04-13', 52, 'active', 1, NULL, NULL, '2022-03-31 03:10:01', '2022-03-31 03:10:01', NULL),
-(14, 'It002', 'kart', 1, NULL, 0, 98888882, 'test@gmailt.com1', 'addresst', 1, 1, 1, '600001', 'Test', 'Father', '1970-04-13', 52, 'active', 1, NULL, NULL, '2022-03-31 03:10:01', '2022-03-31 03:10:01', NULL);
+INSERT INTO `customers` (`id`, `customer_code`, `name`, `gender`, `phone_no`, `email`, `address`, `city_id`, `state_id`, `country_id`, `postal_code`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(9, 'It001', 'kar', 1, 9888888, 'test@gmail.com1', 'address', 1, 1, 1, '600001', 'active', 1, NULL, NULL, '2022-03-31 03:10:01', '2022-03-31 03:10:01', NULL),
+(14, 'It002', 'kart', 1, 98888882, 'test@gmailt.com1', 'addresst', 1, 1, 1, '600001', 'active', 1, NULL, NULL, '2022-03-31 03:10:01', '2022-03-31 03:10:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -489,9 +406,16 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `gold_loans` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `customer_id` bigint(20) NOT NULL,
-  `loan_no` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `loan_no` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coapplicant_id` tinyint(4) NOT NULL DEFAULT 0,
+  `nominee_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nominee_relation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nominee_dob` date DEFAULT NULL,
+  `nominee_age` tinyint(4) DEFAULT NULL,
   `scheme_ref_id` bigint(20) NOT NULL,
   `payment_ref_id` bigint(20) NOT NULL,
+  `tenure` tinyint(4) NOT NULL,
+  `interest_rate` tinyint(4) NOT NULL,
   `frequency` tinyint(4) DEFAULT NULL,
   `loan_date` date DEFAULT NULL,
   `loan_amount` decimal(10,2) NOT NULL DEFAULT 0.00,
@@ -515,22 +439,10 @@ CREATE TABLE `gold_loans` (
 -- Dumping data for table `gold_loans`
 --
 
-INSERT INTO `gold_loans` (`id`, `customer_id`, `loan_no`, `scheme_ref_id`, `payment_ref_id`, `frequency`, `loan_date`, `loan_amount`, `sanction_amount`, `interest_type`, `document_chrages`, `loan_status`, `created_by`, `approved_by`, `approved_at`, `rejected_by`, `rejected_at`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, '001', 1, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:10:54', '2022-03-31 04:10:54', NULL),
-(3, 1, '001', 1, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:27:39', '2022-03-31 04:27:39', NULL),
-(5, 1, '001', 1, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:28:23', '2022-03-31 04:28:23', NULL),
-(8, 9, '000008', 3, 1, NULL, '2022-04-23', '10045.00', '1000.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-23 07:28:18', '2022-04-23 07:28:18', NULL),
-(9, 9, '000009', 3, 1, NULL, '2022-04-23', '10045.00', '1000.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-23 07:28:46', '2022-04-23 07:28:46', NULL),
-(10, 9, '000010', 3, 1, NULL, '2022-04-23', '10045.00', '1000.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-23 07:29:50', '2022-04-23 07:29:50', NULL),
-(11, 9, '000011', 3, 1, NULL, '2022-04-23', '10045.00', '1000.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-23 07:39:03', '2022-04-23 07:39:03', NULL),
-(12, 9, '000012', 3, 1, NULL, '2022-04-23', '10045.00', '1000.00', NULL, '0.00', 'completed', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-23 07:42:35', '2022-04-23 07:42:35', NULL),
-(22, 9, '000022', 3, 1, NULL, '2022-04-23', '10045.00', '1000.00', NULL, '0.00', 'completed', 1, 1, NULL, NULL, NULL, NULL, NULL, '2022-04-23 08:40:53', '2022-04-23 08:40:53', NULL),
-(25, 9, '000025', 3, 1, NULL, '2022-04-27', '100.00', '1.00', NULL, '0.00', 'completed', 1, 1, NULL, NULL, NULL, NULL, NULL, '2022-04-25 09:38:07', '2022-04-25 09:38:07', NULL),
-(26, 9, '000026', 3, 1, NULL, '2022-04-27', '100.00', '1.00', NULL, '0.00', 'completed', 1, 1, NULL, NULL, NULL, NULL, NULL, '2022-04-25 09:38:54', '2022-04-25 09:38:54', NULL),
-(27, 9, '000027', 3, 1, NULL, '2022-04-27', '100.00', '1.00', NULL, '0.00', 'completed', 1, 1, NULL, NULL, NULL, NULL, NULL, '2022-04-25 09:39:12', '2022-04-25 09:39:12', NULL),
-(29, 9, '000029', 3, 1, NULL, '2022-04-27', '100.00', '1.00', NULL, '0.00', 'completed', 1, 1, NULL, NULL, NULL, NULL, NULL, '2022-04-25 09:47:23', '2022-04-25 09:47:23', NULL),
-(30, 9, '000030', 3, 1, NULL, '2022-04-27', '100.00', '1.00', NULL, '0.00', 'completed', 1, 1, NULL, NULL, NULL, NULL, NULL, '2022-04-25 09:47:44', '2022-04-25 09:47:44', NULL),
-(31, 9, '000031', 3, 1, NULL, '2022-04-26', '10000.00', '10000.00', NULL, '0.00', 'completed', 1, 1, NULL, NULL, NULL, NULL, NULL, '2022-04-26 02:18:01', '2022-04-26 02:18:01', NULL);
+INSERT INTO `gold_loans` (`id`, `customer_id`, `loan_no`, `coapplicant_id`, `nominee_name`, `nominee_relation`, `nominee_dob`, `nominee_age`, `scheme_ref_id`, `payment_ref_id`, `tenure`, `interest_rate`, `frequency`, `loan_date`, `loan_amount`, `sanction_amount`, `interest_type`, `document_chrages`, `loan_status`, `created_by`, `approved_by`, `approved_at`, `rejected_by`, `rejected_at`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, '001', 1, 'kar', 'fathar', '2000-03-21', 22, 1, 1, 12, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:10:54', '2022-03-31 04:10:54', NULL),
+(3, 1, '001', 1, 'kar', 'fathar', '2000-03-21', 22, 1, 1, 12, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:27:39', '2022-03-31 04:27:39', NULL),
+(5, 1, '001', 1, 'kar', 'fathar', '2000-03-21', 22, 1, 1, 12, 1, 1, '2022-03-31', '199998.00', '0.00', NULL, '0.00', 'pending', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 04:28:23', '2022-03-31 04:28:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -546,16 +458,12 @@ CREATE TABLE `gold_loan_items` (
   `noof_items` tinyint(4) NOT NULL,
   `gold_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `purity_in_karrot` tinyint(4) NOT NULL,
-  `purity_karat_value` decimal(8,2) NOT NULL DEFAULT 0.00,
   `gross_weight` decimal(8,2) NOT NULL,
   `stone_weight` decimal(8,2) NOT NULL DEFAULT 0.00,
   `net_weight` decimal(10,2) NOT NULL DEFAULT 0.00,
   `current_gold_rate` decimal(10,2) NOT NULL DEFAULT 0.00,
   `lending_gold_rate` decimal(10,2) NOT NULL DEFAULT 0.00,
   `net_weight_value` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `wo_deduct_value` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `deduct_value` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `deduct_gold_value` decimal(10,2) NOT NULL DEFAULT 0.00,
   `remarks` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `item_image` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `item_image_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -571,124 +479,9 @@ CREATE TABLE `gold_loan_items` (
 -- Dumping data for table `gold_loan_items`
 --
 
-INSERT INTO `gold_loan_items` (`id`, `gold_loan_id`, `group_id`, `item_id`, `noof_items`, `gold_type`, `purity_in_karrot`, `purity_karat_value`, `gross_weight`, `stone_weight`, `net_weight`, `current_gold_rate`, `lending_gold_rate`, `net_weight_value`, `wo_deduct_value`, `deduct_value`, `deduct_gold_value`, `remarks`, `item_image`, `item_image_path`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 3, 1, 1, 2, '1', 22, '0.00', '12.00', '2.00', '10.00', '2800.00', '1500.00', '15.00', '0.00', '0.00', '0.00', 'test', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-03-31 04:27:39', '2022-03-31 04:27:39', NULL),
-(2, 5, 1, 1, 2, '1', 22, '0.00', '12.00', '2.00', '10.00', '2800.00', '1500.00', '15.00', '0.00', '0.00', '0.00', 'test', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-03-31 04:28:23', '2022-03-31 04:28:23', NULL),
-(3, 8, 1, 1, 1, '1', 1, '0.00', '1.00', '0.00', '1.00', '2511.00', '80.00', '79.92', '0.00', '0.00', '0.00', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-23 07:28:18', '2022-04-23 07:28:18', NULL),
-(4, 9, 1, 1, 1, '1', 1, '0.00', '1.00', '0.00', '1.00', '2511.00', '80.00', '79.92', '0.00', '0.00', '0.00', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-23 07:28:46', '2022-04-23 07:28:46', NULL),
-(5, 10, 1, 1, 1, '1', 1, '0.00', '1.00', '0.00', '1.00', '2511.00', '80.00', '79.92', '0.00', '0.00', '0.00', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-23 07:29:50', '2022-04-23 07:29:50', NULL),
-(6, 11, 1, 1, 1, '1', 1, '99.90', '1.00', '0.00', '1.00', '2511.00', '80.00', '79.92', '2511.00', '0.00', '2.51', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-23 07:39:03', '2022-04-23 07:39:03', NULL),
-(7, 12, 1, 1, 1, '1', 1, '99.90', '1.00', '0.00', '1.00', '2511.00', '80.00', '79.92', '2511.00', '0.00', '2.51', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-23 07:42:35', '2022-04-23 07:42:35', NULL),
-(8, 22, 1, 1, 1, '2', 50, '50.00', '1.00', '0.00', '1.00', '2511.00', '80.00', '40.00', '2511.00', '0.50', '1255.50', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-23 08:40:53', '2022-04-23 08:40:53', NULL),
-(9, 25, 2511, 1, 1, '1', 1, '99.90', '1.00', '0.10', '0.90', '2511.00', '80.00', '71.93', '2259.90', '0.00', '2.26', 'test', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-25 09:38:07', '2022-04-25 09:38:07', NULL),
-(10, 26, 2511, 1, 1, '1', 1, '99.90', '1.00', '0.10', '0.90', '2511.00', '80.00', '71.93', '2259.90', '0.00', '2.26', 'test', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-25 09:38:54', '2022-04-25 09:38:54', NULL),
-(11, 27, 2511, 1, 1, '1', 1, '99.90', '1.00', '0.10', '0.90', '2511.00', '80.00', '71.93', '2259.90', '0.00', '2.26', 'test', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-25 09:39:12', '2022-04-25 09:39:12', NULL),
-(12, 29, 1, 1, 1, '1', 8, '50.00', '10.00', '0.00', '10.00', '2511.00', '80.00', '400.00', '25110.00', '5.00', '12555.00', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-25 09:47:23', '2022-04-25 09:47:23', NULL),
-(13, 29, 1, 8, 1, '2', 50, '50.00', '10.00', '0.00', '10.00', '2511.00', '80.00', '400.00', '25110.00', '5.00', '12555.00', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-25 09:47:23', '2022-04-25 09:47:23', NULL),
-(14, 30, 1, 1, 1, '1', 8, '50.00', '10.00', '0.00', '10.00', '2511.00', '80.00', '400.00', '25110.00', '5.00', '12555.00', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-25 09:47:44', '2022-04-25 09:47:44', NULL),
-(15, 30, 1, 8, 1, '2', 50, '50.00', '10.00', '0.00', '10.00', '2511.00', '80.00', '400.00', '25110.00', '5.00', '12555.00', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-25 09:47:44', '2022-04-25 09:47:44', NULL),
-(16, 31, 1, 1, 1, '2', 50, '50.00', '1.00', '0.10', '0.90', '2511.00', '80.00', '36.00', '2259.90', '0.45', '1129.95', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-26 02:18:01', '2022-04-26 02:18:01', NULL),
-(17, 31, 1, 8, 1, '1', 4, '83.30', '10.00', '0.00', '10.00', '2511.00', '80.00', '666.40', '25110.00', '1.67', '4193.37', '', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-04-26 02:18:01', '2022-04-26 02:18:01', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gold_loan_item_totals`
---
-
-CREATE TABLE `gold_loan_item_totals` (
-  `id` int(11) NOT NULL,
-  `loan_type_id` bigint(20) NOT NULL,
-  `total_gross_weight` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `total_stone_weight` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `total_net_weight` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `total_percentage_deduction` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `total_value_for_item` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `total_value_for_deduction` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `total_value_for_net_weight` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gold_loan_item_totals`
---
-
-INSERT INTO `gold_loan_item_totals` (`id`, `loan_type_id`, `total_gross_weight`, `total_stone_weight`, `total_net_weight`, `total_percentage_deduction`, `total_value_for_item`, `total_value_for_deduction`, `total_value_for_net_weight`, `created_at`, `updated_at`) VALUES
-(3, 22, '1.00', '0.00', '1.00', '0.50', '2511.00', '1255.50', '40.00', '2022-04-23 14:10:53', '2022-04-23 14:10:53'),
-(6, 25, '11.00', '1.10', '9.90', '9.00', '24858.90', '22601.26', '71.93', '2022-04-25 15:08:07', '2022-04-25 15:08:07'),
-(7, 26, '11.00', '1.10', '9.90', '9.00', '24858.90', '22601.26', '71.93', '2022-04-25 15:08:54', '2022-04-25 15:08:54'),
-(8, 27, '11.00', '1.10', '9.90', '9.00', '24858.90', '22601.26', '71.93', '2022-04-25 15:09:12', '2022-04-25 15:09:12'),
-(10, 29, '20.00', '0.00', '20.00', '10.00', '50220.00', '25110.00', '800.00', '2022-04-25 15:17:23', '2022-04-25 15:17:23'),
-(11, 30, '20.00', '0.00', '20.00', '10.00', '50220.00', '25110.00', '800.00', '2022-04-25 15:17:44', '2022-04-25 15:17:44'),
-(12, 31, '11.00', '0.10', '10.90', '2.12', '27369.90', '5323.32', '702.40', '2022-04-26 07:48:01', '2022-04-26 07:48:01');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gold_loan_status_histories`
---
-
-CREATE TABLE `gold_loan_status_histories` (
-  `id` int(11) NOT NULL,
-  `loan_type_id` bigint(20) NOT NULL,
-  `loan_status` varchar(50) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gold_loan_status_histories`
---
-
-INSERT INTO `gold_loan_status_histories` (`id`, `loan_type_id`, `loan_status`, `created_at`, `created_by`, `updated_at`) VALUES
-(1, 22, 'completed', '2022-04-23 14:10:53', 1, '2022-04-23 14:10:53'),
-(4, 25, 'completed', '2022-04-25 15:08:07', 1, '2022-04-25 15:08:07'),
-(5, 26, 'completed', '2022-04-25 15:08:54', 1, '2022-04-25 15:08:54'),
-(6, 27, 'completed', '2022-04-25 15:09:12', 1, '2022-04-25 15:09:12'),
-(8, 29, 'completed', '2022-04-25 15:17:23', 1, '2022-04-25 15:17:23'),
-(9, 30, 'completed', '2022-04-25 15:17:44', 1, '2022-04-25 15:17:44'),
-(10, 31, 'completed', '2022-04-26 07:48:01', 1, '2022-04-26 07:48:01');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gold_purities`
---
-
-CREATE TABLE `gold_purities` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `group_id` int(11) NOT NULL,
-  `karat_type` tinyint(4) NOT NULL,
-  `hallmark` int(11) NOT NULL,
-  `purity` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `status` tinyint(4) NOT NULL DEFAULT 1,
-  `created_by` int(11) NOT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_by` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `gold_purities`
---
-
-INSERT INTO `gold_purities` (`id`, `group_id`, `karat_type`, `hallmark`, `purity`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 24, 999, '99.90', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(2, 1, 22, 916, '91.60', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(3, 1, 21, 875, '87.50', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(4, 1, 20, 833, '83.30', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(5, 1, 18, 750, '75.00', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(6, 1, 15, 625, '62.50', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(7, 1, 14, 583, '58.30', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(8, 1, 12, 500, '50.00', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(9, 1, 10, 417, '41.70', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(10, 1, 9, 375, '37.50', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(11, 1, 8, 333, '33.30', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL),
-(12, 1, 6, 250, '25.00', 1, 1, NULL, NULL, '2022-04-20 08:35:39', NULL, NULL);
+INSERT INTO `gold_loan_items` (`id`, `gold_loan_id`, `group_id`, `item_id`, `noof_items`, `gold_type`, `purity_in_karrot`, `gross_weight`, `stone_weight`, `net_weight`, `current_gold_rate`, `lending_gold_rate`, `net_weight_value`, `remarks`, `item_image`, `item_image_path`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 3, 1, 1, 2, '1', 22, '12.00', '2.00', '10.00', '2800.00', '1500.00', '15.00', 'test', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-03-31 04:27:39', '2022-03-31 04:27:39', NULL),
+(2, 5, 1, 1, 2, '1', 22, '12.00', '2.00', '10.00', '2800.00', '1500.00', '15.00', 'test', 'profilr.jpeg', 'http://localhost/', 1, NULL, NULL, '2022-03-31 04:28:23', '2022-03-31 04:28:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -717,7 +510,7 @@ CREATE TABLE `gold_rates` (
 
 INSERT INTO `gold_rates` (`id`, `group_id`, `current_rate`, `current_date`, `notes`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, '2511.00', '2022-03-30', 'notes', 1, 1, 1, NULL, '2022-03-30 01:46:32', '2022-04-04 07:20:53', NULL),
-(3, 1, '23120.00', '2022-03-21', 'test', 1, 1, 1, NULL, '2022-04-04 07:12:20', '2022-04-04 07:14:44', '2022-03-30 01:46:32'),
+(3, 1, '23120.00', '2022-03-21', 'test', 1, 1, 1, NULL, '2022-04-04 07:12:20', '2022-04-04 07:14:44', '2022-04-04 07:14:44'),
 (4, 4, '2000.00', '2022-04-08', 'test', 1, 1, 1, NULL, '2022-04-05 00:53:54', '2022-04-11 02:01:16', NULL);
 
 -- --------------------------------------------------------
@@ -745,8 +538,7 @@ CREATE TABLE `groups` (
 INSERT INTO `groups` (`id`, `name`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Gold', 1, 1, 1, NULL, '2022-03-29 12:19:16', '2022-04-04 23:54:40', NULL),
 (2, 'Diamond', 1, 1, 1, NULL, '2022-03-29 22:58:53', '2022-04-05 01:12:40', NULL),
-(4, 'Silver', 0, 1, 1, NULL, '2022-04-04 01:37:52', '2022-04-08 09:12:59', NULL),
-(6, 'Silver1', 1, 1, NULL, NULL, '2022-04-26 02:07:14', '2022-04-26 02:07:14', NULL);
+(4, 'Silver', 0, 1, 1, NULL, '2022-04-04 01:37:52', '2022-04-08 09:12:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -838,15 +630,7 @@ INSERT INTO `interest_rates` (`id`, `scheme_id`, `from`, `to`, `type`, `interest
 (89, 76, 1, 30, 'days', '13.00', '2022-04-07 23:06:50', '2022-04-08 06:23:41', '2022-04-08 06:23:41'),
 (90, 76, 31, 60, 'days', '14.00', '2022-04-07 23:06:50', '2022-04-08 06:23:41', '2022-04-08 06:23:41'),
 (91, 76, 61, 90, 'days', '15.00', '2022-04-07 23:06:50', '2022-04-08 06:23:41', '2022-04-08 06:23:41'),
-(92, 76, 1, 30, 'days', '13.00', '2022-04-08 06:23:41', '2022-04-19 05:18:52', '2022-04-19 05:18:52'),
-(93, 76, 1, 30, 'days', '13.00', '2022-04-19 05:18:52', '2022-04-19 05:45:47', '2022-04-19 05:45:47'),
-(94, 76, 1, 30, 'days', '13.00', '2022-04-19 05:45:47', '2022-04-19 06:59:43', '2022-04-19 06:59:43'),
-(95, 76, 1, 30, 'days', '13.00', '2022-04-19 06:59:43', '2022-04-19 06:59:43', NULL),
-(96, 77, 1, 30, 'days', '18.00', '2022-04-25 07:15:07', '2022-04-25 07:15:07', NULL),
-(97, 78, 1, 30, 'days', '18.00', '2022-04-25 07:27:32', '2022-04-25 07:27:32', NULL),
-(98, 81, 1, 30, 'days', '18.00', '2022-04-25 07:32:31', '2022-04-25 07:32:31', NULL),
-(99, 82, 1, 30, 'days', '18.00', '2022-04-25 07:35:02', '2022-04-25 07:36:25', '2022-04-25 07:36:25'),
-(100, 82, 1, 30, 'days', '19.00', '2022-04-25 07:36:25', '2022-04-25 07:36:25', NULL);
+(92, 76, 1, 30, 'days', '13.00', '2022-04-08 06:23:41', '2022-04-08 06:23:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -900,15 +684,14 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `group_id`, `name`, `item_code`, `description`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'Chain', '0045', 'description1', 1, 1, 1, NULL, '2022-03-30 03:35:24', '2022-04-19 01:37:50', NULL),
+(1, 1, 'Silver', '0045', 'description1', 1, 1, 1, NULL, '2022-03-30 03:35:24', '2022-03-30 03:40:05', NULL),
 (3, 3, 'Item3', '005', 'description', 0, 1, 1, NULL, '2022-03-30 03:53:54', '2022-04-05 03:33:01', '2022-04-05 03:33:01'),
 (4, 2, 'tttrew', NULL, '12333', 1, 1, NULL, NULL, '2022-04-05 03:21:32', '2022-04-05 03:21:32', NULL),
 (5, 5, 'tttrew', NULL, '12333', 1, 1, 1, NULL, '2022-04-05 03:23:17', '2022-04-05 03:32:35', '2022-04-05 03:32:35'),
 (6, 2, 'tttrew', '000006', '12333', 1, 1, NULL, NULL, '2022-04-05 03:23:45', '2022-04-05 03:23:45', NULL),
 (7, 0, '1', '000007', 'segment description', 1, 1, NULL, NULL, '2022-04-05 03:31:52', '2022-04-05 03:32:05', '2022-04-05 03:32:05'),
-(8, 1, 'Ring', '000008', 'description', 1, 1, 1, NULL, '2022-04-05 05:39:34', '2022-04-19 01:37:30', NULL),
-(9, 1, 'Bangle', '000009', 'description12', 1, 1, NULL, NULL, '2022-04-12 23:55:32', '2022-04-12 23:55:32', NULL),
-(10, 1, 'necklace', '000010', 'test', 1, 1, NULL, NULL, '2022-04-26 02:08:46', '2022-04-26 02:08:46', NULL);
+(8, 1, 'product2', '000008', 'description', 1, 1, 1, NULL, '2022-04-05 05:39:34', '2022-04-05 05:39:59', NULL),
+(9, 1, 'Bangle', '000009', 'description12', 1, 1, NULL, NULL, '2022-04-12 23:55:32', '2022-04-12 23:55:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -944,8 +727,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2022_03_29_093813_create_designations_table', 1),
 (16, '2022_03_29_093909_create_interest_types_table', 1),
 (17, '2022_03_29_093940_create_payment_types_table', 1),
-(18, '2022_03_29_101126_create_audits_table', 2),
-(19, '2022_04_20_072701_create_gold_purities_table', 3);
+(18, '2022_03_29_101126_create_audits_table', 2);
 
 -- --------------------------------------------------------
 
@@ -1011,32 +793,23 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `schemes` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `scheme_type_id` bigint(20) NOT NULL,
-  `group_ref_id` bigint(20) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `item_ref_id` bigint(20) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `loan_basis` tinyint(4) NOT NULL,
-  `calc_method` tinyint(4) NOT NULL,
-  `pay_frequency` tinyint(4) DEFAULT 0,
-  `compound_interest` tinyint(4) NOT NULL DEFAULT 0,
-  `payment_in_advance` tinyint(4) NOT NULL DEFAULT 0,
-  `loyal_point` tinyint(4) NOT NULL DEFAULT 0,
-  `auto_round` int(9) NOT NULL DEFAULT 0,
-  `round_to` decimal(5,2) NOT NULL DEFAULT 0.00,
-  `round_mode` tinyint(4) NOT NULL DEFAULT 0,
-  `preclosure_time` tinyint(4) DEFAULT 0,
-  `penalty_type` tinyint(4) DEFAULT 0,
-  `penalty` decimal(5,2) DEFAULT NULL,
-  `payment_basis_on` tinyint(4) DEFAULT 0,
-  `loan_period` int(9) DEFAULT NULL,
+  `subscheme` tinyint(4) NOT NULL DEFAULT 0,
+  `payment_in_advance` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `preclosure_time` bigint(20) DEFAULT NULL,
+  `penalty_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `penalty` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_basis_on` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `loan_period` tinyint(4) DEFAULT NULL,
+  `lending_rate` decimal(10,2) NOT NULL DEFAULT 0.00,
   `minimum_loan_amount` decimal(10,2) NOT NULL DEFAULT 0.00,
   `maximum_loan_amount` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `process_feestype` tinyint(4) NOT NULL DEFAULT 0,
   `processing_fees` decimal(8,2) NOT NULL DEFAULT 0.00,
-  `lending_rate` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `loan_approval` int(9) NOT NULL DEFAULT 0,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subscheme` tinyint(4) NOT NULL DEFAULT 0,
   `status` tinyint(4) NOT NULL DEFAULT 1,
   `created_by` bigint(20) NOT NULL,
   `updated_by` bigint(20) DEFAULT NULL,
@@ -1050,41 +823,37 @@ CREATE TABLE `schemes` (
 -- Dumping data for table `schemes`
 --
 
-INSERT INTO `schemes` (`id`, `scheme_type_id`, `group_ref_id`, `name`, `start_date`, `end_date`, `loan_basis`, `calc_method`, `pay_frequency`, `compound_interest`, `payment_in_advance`, `loyal_point`, `auto_round`, `round_to`, `round_mode`, `preclosure_time`, `penalty_type`, `penalty`, `payment_basis_on`, `loan_period`, `minimum_loan_amount`, `maximum_loan_amount`, `process_feestype`, `processing_fees`, `lending_rate`, `loan_approval`, `description`, `subscheme`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 2, 1, 'Scheme1', '2022-03-21', '2022-03-23', 2, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '2510.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-29 23:14:34', '2022-03-29 23:14:34', NULL),
-(2, 2, 1, 'Scheme2', '2022-03-21', '2022-03-23', 2, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-29 23:32:17', '2022-03-29 23:32:17', NULL),
-(3, 2, 1, 'Scheme3', '2022-03-21', '2022-03-23', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-29 23:33:28', '2022-03-29 23:33:28', NULL),
-(4, 2, 1, 'Scheme4', '2022-03-21', '2022-03-23', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-29 23:34:29', '2022-03-29 23:34:29', NULL),
-(5, 2, 1, 'Scheme5', '2022-03-21', '2022-03-23', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-30 00:43:37', '2022-03-30 00:43:37', NULL),
-(6, 2, 1, 'Scheme6', '2022-03-21', '2022-03-23', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-30 00:45:32', '2022-03-30 00:45:32', NULL),
-(7, 2, 1, 'Scheme7', '2022-03-21', '2022-03-23', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-30 00:46:23', '2022-03-30 00:46:23', NULL),
-(8, 2, 1, 'Scheme8', '2022-03-21', '2022-03-23', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-30 00:47:59', '2022-03-30 00:47:59', NULL),
-(9, 2, 1, 'Scheme9', '2022-03-21', '2022-03-23', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-30 00:48:32', '2022-03-30 00:48:32', NULL),
-(10, 2, 1, 'Scheme', '2022-03-21', '2022-03-23', 2, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-30 00:48:43', '2022-03-30 00:48:43', NULL),
-(11, 2, 1, 'Scheme', '2022-03-21', '2022-03-23', 2, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-30 00:53:04', '2022-03-30 00:53:04', NULL),
-(12, 2, 1, 'Scheme', '2022-03-21', '2022-03-23', 2, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 1, 1, NULL, NULL, '2022-03-30 00:53:20', '2022-03-30 00:53:20', NULL),
-(14, 2, 1, 'Scheme', '2022-03-21', '2022-03-23', 2, 0, 0, 0, 1, 0, 0, '0.00', 0, 25, 1, '38.00', 1, 12, '10000.00', '100000.00', 0, '100.00', '80.00', 0, 'description', 0, 0, 1, 1, NULL, '2022-03-30 00:55:10', '2022-04-05 00:25:38', '2022-04-05 00:25:38'),
-(44, 1, 0, 'schemename', '2022-04-06', '2022-04-16', 2, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '12.00', 0, 'des1233', 0, 1, 1, NULL, NULL, '2022-04-06 06:54:53', '2022-04-06 06:54:53', NULL),
-(48, 1, 2, 'Testproduct', '2022-04-07', '2022-04-09', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'test122', 0, 1, 1, NULL, NULL, '2022-04-06 06:59:48', '2022-04-06 06:59:48', NULL),
-(49, 1, 2, 'Coderz', '2022-04-06', '2022-04-23', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'twess', 0, 1, 1, NULL, NULL, '2022-04-06 07:02:00', '2022-04-06 07:02:00', NULL),
-(50, 1, 1, 'Coderz1', '2022-04-07', '2022-04-19', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'test', 0, 1, 1, NULL, NULL, '2022-04-06 07:05:21', '2022-04-06 07:05:21', NULL),
-(57, 1, 2, 'Coderz11', '2022-04-06', '2022-04-07', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, '23332', 0, 1, 1, NULL, NULL, '2022-04-06 07:15:57', '2022-04-06 07:15:57', NULL),
-(60, 1, 2, 'Coderzq', '2022-04-06', '2022-04-07', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'qwee', 0, 1, 1, NULL, NULL, '2022-04-06 07:20:51', '2022-04-06 07:20:51', NULL),
-(61, 1, 2, 'Coderz344', '2022-04-14', '2022-04-07', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, '4errr', 0, 1, 1, NULL, NULL, '2022-04-06 07:22:04', '2022-04-06 07:22:04', NULL),
-(62, 1, 2, 'Coderz', '2022-04-06', '2022-04-07', 1, 0, 0, 0, 2, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'tesst', 0, 1, 1, NULL, NULL, '2022-04-06 07:23:39', '2022-04-06 07:23:39', NULL),
-(66, 1, 2, 'Coderzo', '2022-04-06', '2022-04-07', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'ytru', 0, 1, 1, NULL, NULL, '2022-04-06 07:38:16', '2022-04-06 07:38:16', NULL),
-(68, 1, 4, 'Coderz90', '2022-04-06', '2022-04-07', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'test', 0, 1, 1, NULL, NULL, '2022-04-06 07:42:12', '2022-04-06 07:42:12', NULL),
-(69, 1, 4, 'Coderz90', '2022-04-06', '2022-04-07', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'test', 0, 1, 1, NULL, NULL, '2022-04-06 07:43:29', '2022-04-06 07:43:29', NULL),
-(70, 1, 2, 'Coderz11', '2022-04-06', '2022-04-06', 2, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'ass', 0, 1, 1, NULL, NULL, '2022-04-06 07:45:18', '2022-04-06 07:45:18', NULL),
-(71, 1, 2, 'Coderz11', '2022-04-06', '2022-04-06', 2, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'ass', 0, 1, 1, NULL, NULL, '2022-04-06 07:46:40', '2022-04-06 07:46:40', NULL),
-(72, 1, 1, 'Coderz222', '2022-04-06', '2022-04-08', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'eerr', 0, 1, 1, NULL, NULL, '2022-04-06 07:49:12', '2022-04-06 07:49:12', NULL),
-(73, 1, 1, 'Coderzqqq', '2022-04-06', '2022-04-07', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'qqqqq', 0, 1, 1, NULL, NULL, '2022-04-06 07:51:13', '2022-04-06 07:51:13', NULL),
-(74, 1, 1, 'Coderz222', '2022-04-06', '2022-04-08', 1, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '80.00', 0, 'eerr', 0, 1, 1, 1, NULL, '2022-04-07 02:00:04', '2022-04-07 02:00:04', NULL),
-(76, 1, 4, 'Coderz2k', '2022-04-06', '2022-04-08', 3, 0, 0, 0, 1, 0, 0, '0.00', 0, 12, 2, '2.00', 1, 24, '11222.00', '22222.00', 0, '12.00', '2000.00', 0, 'eerr', 0, 1, 1, 1, NULL, '2022-04-07 02:00:37', '2022-04-19 06:59:43', NULL),
-(77, 1, 0, 'Scheme 1', '2022-04-06', '2022-04-27', 1, 1, 0, 1, 1, 0, 1, '0.00', 1, 20, 1, '10.00', 1, 365, '1000.00', '12000.00', 1, '0.00', '2000.00', 100, 'des', 0, 1, 1, NULL, NULL, '2022-04-25 07:15:07', '2022-04-25 07:15:07', NULL),
-(78, 1, 0, 'Scheme 1', '2022-04-06', '2022-04-27', 1, 1, 0, 1, 1, 0, 1, '0.00', 1, 20, 1, '10.00', 1, 365, '1000.00', '12000.00', 1, '0.00', '2000.00', 100, 'des', 0, 1, 1, NULL, NULL, '2022-04-25 07:27:32', '2022-04-25 07:27:32', NULL),
-(81, 1, 0, 'Scheme 1', '2022-04-06', '2022-04-27', 1, 1, 0, 1, 1, 0, 1, '0.00', 1, 20, 1, '10.00', 1, 365, '1000.00', '12000.00', 1, '0.00', '2000.00', 100, 'des', 0, 1, 1, NULL, NULL, '2022-04-25 07:32:31', '2022-04-25 07:32:31', NULL),
-(82, 1, 1, 'Scheme 1', '2022-04-06', '2022-04-27', 1, 1, 0, 1, 1, 0, 1, '0.00', 1, 20, 1, '10.00', 1, 365, '1000.00', '12000.00', 1, '0.00', '2000.00', 100, 'des', 0, 0, 1, 1, NULL, '2022-04-25 07:35:02', '2022-04-26 02:23:52', NULL);
+INSERT INTO `schemes` (`id`, `scheme_type_id`, `name`, `description`, `item_ref_id`, `start_date`, `end_date`, `loan_basis`, `subscheme`, `payment_in_advance`, `preclosure_time`, `penalty_type`, `penalty`, `payment_basis_on`, `loan_period`, `loan_approval`, `minimum_loan_amount`, `maximum_loan_amount`, `processing_fees`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 2, 'Scheme1', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:14:34', '2022-03-29 23:14:34', NULL),
+(2, 2, 'Scheme2', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:32:17', '2022-03-29 23:32:17', NULL),
+(3, 2, 'Scheme3', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:33:28', '2022-03-29 23:33:28', NULL),
+(4, 2, 'Scheme4', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-29 23:34:29', '2022-03-29 23:34:29', NULL),
+(5, 2, 'Scheme5', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:43:37', '2022-03-30 00:43:37', NULL),
+(6, 2, 'Scheme6', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:45:32', '2022-03-30 00:45:32', NULL),
+(7, 2, 'Scheme7', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:46:23', '2022-03-30 00:46:23', NULL),
+(8, 2, 'Scheme8', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:47:59', '2022-03-30 00:47:59', NULL),
+(9, 2, 'Scheme9', 'description', 1, '2022-03-21', '2022-03-23', 1, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:48:32', '2022-03-30 00:48:32', NULL),
+(10, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:48:43', '2022-03-30 00:48:43', NULL),
+(11, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:53:04', '2022-03-30 00:53:04', NULL),
+(12, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 1, 1, NULL, NULL, '2022-03-30 00:53:20', '2022-03-30 00:53:20', NULL),
+(14, 2, 'Scheme', 'description', 1, '2022-03-21', '2022-03-23', 2, 0, '1', 25, '1', '38', '1', 12, '80', '10000.00', '100000.00', '100.00', 0, 1, 1, NULL, '2022-03-30 00:55:10', '2022-04-05 00:25:38', '2022-04-05 00:25:38'),
+(44, 1, 'schemename', 'des1233', 0, '2022-04-06', '2022-04-16', 2, 0, '1', 12, '2', '2', '1', 24, '12', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 06:54:53', '2022-04-06 06:54:53', NULL),
+(48, 1, 'Testproduct', 'test122', 2, '2022-04-07', '2022-04-09', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 06:59:48', '2022-04-06 06:59:48', NULL),
+(49, 1, 'Coderz', 'twess', 2, '2022-04-06', '2022-04-23', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:02:00', '2022-04-06 07:02:00', NULL),
+(50, 1, 'Coderz1', 'test', 1, '2022-04-07', '2022-04-19', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:05:21', '2022-04-06 07:05:21', NULL),
+(57, 1, 'Coderz11', '23332', 2, '2022-04-06', '2022-04-07', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:15:57', '2022-04-06 07:15:57', NULL),
+(60, 1, 'Coderzq', 'qwee', 2, '2022-04-06', '2022-04-07', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:20:51', '2022-04-06 07:20:51', NULL),
+(61, 1, 'Coderz344', '4errr', 2, '2022-04-14', '2022-04-07', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:22:04', '2022-04-06 07:22:04', NULL),
+(62, 1, 'Coderz', 'tesst', 2, '2022-04-06', '2022-04-07', 1, 0, '2', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:23:39', '2022-04-06 07:23:39', NULL),
+(66, 1, 'Coderzo', 'ytru', 2, '2022-04-06', '2022-04-07', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:38:16', '2022-04-06 07:38:16', NULL),
+(68, 1, 'Coderz90', 'test', 4, '2022-04-06', '2022-04-07', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:42:12', '2022-04-06 07:42:12', NULL),
+(69, 1, 'Coderz90', 'test', 4, '2022-04-06', '2022-04-07', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:43:29', '2022-04-06 07:43:29', NULL),
+(70, 1, 'Coderz11', 'ass', 2, '2022-04-06', '2022-04-06', 2, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:45:18', '2022-04-06 07:45:18', NULL),
+(71, 1, 'Coderz11', 'ass', 2, '2022-04-06', '2022-04-06', 2, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:46:40', '2022-04-06 07:46:40', NULL),
+(72, 1, 'Coderz222', 'eerr', 1, '2022-04-06', '2022-04-08', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:49:12', '2022-04-06 07:49:12', NULL),
+(73, 1, 'Coderzqqq', 'qqqqq', 1, '2022-04-06', '2022-04-07', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, NULL, NULL, '2022-04-06 07:51:13', '2022-04-06 07:51:13', NULL),
+(74, 1, 'Coderz222', 'eerr', 1, '2022-04-06', '2022-04-08', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, 1, NULL, '2022-04-07 02:00:04', '2022-04-07 02:00:04', NULL),
+(76, 1, 'Coderz2k', 'eerr', 1, '2022-04-06', '2022-04-08', 1, 0, '1', 12, '2', '2', '1', 24, '80', '11222.00', '22222.00', '12.00', 1, 1, 1, NULL, '2022-04-07 02:00:37', '2022-04-07 23:06:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -1111,7 +880,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `status`, `view_permission`, `role_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@coderzvision.com', NULL, '$2y$10$xqD3uxBu98gQobC6xCPgo..WmVUW6Mqoa.e15HAkX6a5g.gXBFkmi', 0, 'global', 0, 'OfXQY1ZxxMs8NZDZRjYhmaIGYqfjS1RjWqhKxShb8chrRVqgj51fDeXC9w2H', '2022-04-06 04:42:55', NULL);
+(1, 'Admin', 'admin@coderzvision.com', NULL, '$2y$10$xqD3uxBu98gQobC6xCPgo..WmVUW6Mqoa.e15HAkX6a5g.gXBFkmi', 0, 'global', 0, 'VNxsqxsahyA0tGKBtDi0m2ei0ruVDjXXCu9LGXubImAhqhFMGyEZP3MIii7A', '2022-04-06 04:42:55', NULL);
 
 --
 -- Indexes for dumped tables
@@ -1173,24 +942,6 @@ ALTER TABLE `gold_loans`
 -- Indexes for table `gold_loan_items`
 --
 ALTER TABLE `gold_loan_items`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `gold_loan_item_totals`
---
-ALTER TABLE `gold_loan_item_totals`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `gold_loan_status_histories`
---
-ALTER TABLE `gold_loan_status_histories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `gold_purities`
---
-ALTER TABLE `gold_purities`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1273,7 +1024,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `audits`
 --
 ALTER TABLE `audits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=386;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=272;
 
 --
 -- AUTO_INCREMENT for table `branches`
@@ -1309,31 +1060,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `gold_loans`
 --
 ALTER TABLE `gold_loans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `gold_loan_items`
 --
 ALTER TABLE `gold_loan_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `gold_loan_item_totals`
---
-ALTER TABLE `gold_loan_item_totals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `gold_loan_status_histories`
---
-ALTER TABLE `gold_loan_status_histories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `gold_purities`
---
-ALTER TABLE `gold_purities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `gold_rates`
@@ -1345,13 +1078,13 @@ ALTER TABLE `gold_rates`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `interest_rates`
 --
 ALTER TABLE `interest_rates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `interest_types`
@@ -1363,13 +1096,13 @@ ALTER TABLE `interest_types`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `payment_types`
@@ -1387,7 +1120,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `schemes`
 --
 ALTER TABLE `schemes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `users`

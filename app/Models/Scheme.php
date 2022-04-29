@@ -16,6 +16,11 @@ class Scheme extends Model implements Auditable
         'item','interests'
     ];
 
+    public function gold_rates()
+    {
+        return $this->hasMany(GoldRates::class,'group_id','group_ref_id');
+    }
+
     public function group()
     {
         return $this->belongsTo(Group::class,'group_ref_id','id');

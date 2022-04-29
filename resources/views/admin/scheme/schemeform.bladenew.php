@@ -89,10 +89,28 @@
 											</div>
 										</div>
 
-										<div class="col-xl-6 col-lglg-6 col-md-6 col-sm-6 col-12">
+										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
-												<label for="inputName">{{ __('app.general.description') }}</label><span class="text-danger">*</span>
-												<textarea class="form-control"  name="description" rows="2" placeholder="{{ __('app.general.description') }}">{{ $scheme->description ?? '' }}</textarea>
+												<label for="inputName">{{ __('app.general.tenure') }}</label><span class="text-danger">*</span>
+												<input type="text" class="form-control" name="loan_period" placeholder="{{ __('app.general.tenure') }}" value="{{ $scheme->loan_period ?? '' }}" required>
+											</div>
+										</div>
+
+										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+											<div class="form-group">
+												<label for="inputName">{{ __('app.general.tenure-freq') }}</label><span class="text-danger">*</span>
+												<select class="form-control" name="loan_basis" id="loan_basis">
+													<option>Select</option>
+													@if( isset($scheme->loan_basis) && $scheme->loan_basis !='')         
+														<option value="1" {{ $scheme->loan_basis == '1' ? 'selected="selected"' : '' }} >Day(s)</option>
+														<option value="2" {{ $scheme->loan_basis == '2' ? 'selected="selected"' : '' }} >Week(s)</option>
+														<option value="3" {{ $scheme->loan_basis == '3' ? 'selected="selected"' : '' }} >Month(s)</option>
+													@else
+														<option value="1" >Daily</option>
+														<option value="2" >Weekly</option>
+														<option value="3" >Monthly</option>
+													@endif
+												</select>
 											</div>
 										</div>
 
@@ -106,37 +124,66 @@
 
 										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
-												<label for="inputName">{{ __('app.general.applicable-from') }}</label><span class="text-danger">*</span>
-												<input type="date" class="form-control" name="start_date" placeholder="{{ __('app.general.applicable-from') }}" value="{{ $scheme->start_date ?? '' }}" required>
+												<label for="inputName">{{ __('app.general.interest-rate') }} (%)</label><span class="text-danger">*</span>
+												<input type="text" class="form-control" name="interest_rate" placeholder="{{ __('app.general.interest-rate') }}" value="{{ $scheme->interest_rate ?? '' }}" >
 											</div>
 										</div>
 
 										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
-												<label for="inputName">{{ __('app.general.to') }}</label><span class="text-danger">*</span>
-												<input type="date" class="form-control" name="end_date" placeholder="{{ __('app.general.to') }}" value="{{ $scheme->end_date ?? '' }}" required>
-											</div>
-										</div>
-										
-										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
-											<div class="form-group">
-												<label for="inputName">{{ __('app.general.cal-basis') }}</label><span class="text-danger">*</span>
-												<select class="form-control" name="loan_basis" id="loan_basis">
+												<label for="inputName">{{ __('app.general.pay-frequency') }}</label><span class="text-danger">*</span>
+												<select class="form-control" name="payment_frequency" id="payment_frequency">
 													<option>Select</option>
-													@if( isset($scheme->loan_basis) && $scheme->loan_basis !='')         
-														<option value="1" {{ $scheme->loan_basis == '1' ? 'selected="selected"' : '' }} >Daily</option>
-														<option value="2" {{ $scheme->loan_basis == '2' ? 'selected="selected"' : '' }} >Weekly</option>
-														<option value="3" {{ $scheme->loan_basis == '3' ? 'selected="selected"' : '' }} >Monthly</option>
+													@if( isset($scheme->payment_frequency) && $scheme->payment_frequency !='')         
+														<option value="1" {{ $scheme->payment_frequency == '1' ? 'selected="selected"' : '' }} >Daily</option>
+														<option value="2" {{ $scheme->payment_frequency == '2' ? 'selected="selected"' : '' }} >Weekly</option>
+														<option value="3" {{ $scheme->payment_frequency == '3' ? 'selected="selected"' : '' }} >Monthly</option>
 													@else
 														<option value="1" >Daily</option>
 														<option value="2" >Weekly</option>
 														<option value="3" >Monthly</option>
 													@endif
-													
 												</select>
 											</div>
 										</div>
+
+										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+											<div class="form-group">
+												<label for="inputName">{{ __('app.general.pay-freq-days') }}</label><span class="text-danger">*</span>
+												<input type="text" class="form-control" name="payment_frequency_days" placeholder="{{ __('app.general.pay-freq-days') }}" value="{{ $scheme->payment_frequency_days ?? '' }}" >
+											</div>
+										</div>
+
+										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+											<div class="form-group">
+												<label for="inputName">{{ __('app.general.lending-rate') }} {{ __('app.general.pergm') }}</label><span class="text-danger">*</span>
+												<input type="text" class="form-control" name="lending_rate" placeholder="{{ __('app.general.lending-rate') }}" value="{{ $scheme->lending_rate ?? '' }}" >
+											</div>
+										</div>
 										
+										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+											<div class="form-group">
+												<label for="inputName">{{ __('app.general.auto-round') }}</label><span class="text-danger">*</span>
+												<select class="form-control" name="auto_round" id="auto_round">
+													@if( isset($scheme->auto_round) && $scheme->auto_round !='')         
+														<option value="1" {{ $scheme->auto_round == '1' ? 'selected="selected"' : '' }} >No</option>
+														<option value="2" {{ $scheme->auto_round == '2' ? 'selected="selected"' : '' }} >Yes</option>
+													@else
+														<option value="1">No</option>
+														<option value="2">Yes</option>
+													@endif
+													>
+												</select>
+											</div>
+										</div>
+
+										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+											<div class="form-group">
+												<label for="inputName">{{ __('app.general.round-decimal') }}</label><span class="text-danger">*</span>
+												<input type="text" class="form-control" name="round_decimal" placeholder="{{ __('app.general.round-decimal') }}" value="{{ $scheme->round_decimal ?? '' }}" >
+											</div>
+										</div>
+
 										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
 												<label for="inputName">{{ __('app.general.pay-advance') }}</label><span class="text-danger">*</span>
@@ -160,6 +207,26 @@
 											</div>
 										</div>
 										
+										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+											<div class="form-group">
+												<label for="inputName">{{ __('app.general.penalty-method') }}</label><span class="text-danger">*</span>
+												<select class="form-control" name="penalty_method" id="penalty_method">
+													<option>Select</option>
+													@if( isset($scheme->penalty_method) && $scheme->penalty_method !='')         
+														<option value="1" {{ $scheme->penalty_method == '1' ? 'selected="selected"' : '' }} >Cumulative</option>
+														<option value="2" {{ $scheme->penalty_method == '2' ? 'selected="selected"' : '' }} >Relative</option>
+														<option value="3" {{ $scheme->penalty_method == '3' ? 'selected="selected"' : '' }} >Cum-Relative</option>
+														<option value="4" {{ $scheme->penalty_method == '3' ? 'selected="selected"' : '' }} >Consider all days for interest</option>
+													@else
+														<option value="1" >Cumulative</option>
+														<option value="2" >Relative</option>
+														<option value="3" >Cum-Relative</option>
+														<option value="4" >Consider all days for interest</option>
+													@endif
+												</select>
+											</div>
+										</div>
+
 										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
 												<label for="inputName">{{ __('app.general.penalty-type') }}</label><span class="text-danger">*</span>
@@ -201,15 +268,22 @@
 										
 										<!-- <div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
-												<label for="inputName">{{ __('app.general.gold-approval') }}</label><span class="text-danger">*</span>
-												<input type="text" class="form-control" name="jewel_approval" placeholder="{{ __('app.general.gold-approval') }}" value="{{ $scheme->jewel_approval ?? '' }}" required>
+												<label for="inputName">{{ __('app.general.loan-approval') }}</label><span class="text-danger">*</span>
+												<input type="text" class="form-control" name="loan_approval" placeholder="{{ __('app.general.loan-approval') }}" value="{{ $scheme->loan_approval ?? '' }}" required>
 											</div>
 										</div> -->
 
 										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
 											<div class="form-group">
-												<label for="inputName">{{ __('app.general.lending_rate') }} {{ __('app.general.pergm') }}</label><span class="text-danger">*</span>
-												<input type="text" class="form-control" name="lending_rate" placeholder="{{ __('app.general.lending_rate') }}" value="{{ $scheme->lending_rate ?? '' }}" required>
+												<label for="inputName">{{ __('app.general.apply-from') }}</label><span class="text-danger">*</span>
+												<input type="date" class="form-control" name="start_date" placeholder="{{ __('app.general.apply-from') }}" value="{{ $scheme->start_date ?? '' }}" required>
+											</div>
+										</div>
+
+										<div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+											<div class="form-group">
+												<label for="inputName">{{ __('app.general.to') }}</label><span class="text-danger">*</span>
+												<input type="date" class="form-control" name="end_date" placeholder="{{ __('app.general.to') }}" value="{{ $scheme->end_date ?? '' }}" required>
 											</div>
 										</div>
 										
@@ -233,6 +307,15 @@
 												<input type="text" class="form-control" name="processing_fees" placeholder="{{ __('app.general.process-fees') }}" value="{{ $scheme->processing_fees ?? '' }}" required>
 											</div>
 										</div>
+
+										<div class="col-xl-6 col-lglg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="inputName">{{ __('app.general.description') }}</label><span class="text-danger">*</span>
+												<textarea class="form-control"  name="description" rows="2" placeholder="{{ __('app.general.description') }}">{{ $scheme->description ?? '' }}</textarea>
+											</div>
+										</div>
+
+										
 
 									</div>
 									<!-- Row end -->
